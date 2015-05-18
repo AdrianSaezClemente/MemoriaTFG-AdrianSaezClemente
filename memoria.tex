@@ -178,6 +178,7 @@ just before submitting.
 \pagenumbering{arabic} % para empezar la numeracin de pgina con nmeros
 
 \section{Descripci\'on del proyecto}
+\label{sec:descripcion}
 En este proyecto se implementa una aplicaci\'on web que consiste en el desarrollo de un planeta de blogs. Est\'a enfocado al \'ambito educativo y puede
 ser usado en cualquier entorno que simule un aula, ya sea en universidades, institutos, colegios, academias, cursos online, etc,...
 
@@ -194,54 +195,11 @@ Existe una secci\'on de b\'usqueda para poder encontrar entradas introduciendo n
 aplicaci\'on se puede encontrar otra secci\'on con las bases de las puntuaciones.
 
 \section{Contexto tecnol\'ogico}
+\label{sec:contexto}
 
 
-\section{}
-\label{sec:}
 
-\subsection{Estilo}
-\label{subsec:estilo}
 
-Sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}
-
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Pgina con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
-
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
 
 
 
@@ -285,9 +243,223 @@ Tambin existe la posibilidad de poner notas al pie de pgina, por ejemplo,
 una para indicarte que visite la pgina de 
 LibreSoft\footnote{\url{http://www.libresoft.es}}.
 
-\section{Seccin 1} 
-\label{sec:seccion1}
+\section{Django y Python} 
+\label{sec:djangopython}
 
+\subsection{Django} 
+\label{subsec:django}
+Django es un framework de desarrollo web de c\'odigo abierto. Est\'a escrito en Python, y respeta el paradigma Modelo-Vista-Controlador. 
+Este patr\'on se usa para desarrollar software y se basa en la separaci\'on de los datos, de la interfaz del usuario y de la l\'ogica interna. 
+En aplicaciones web se usa con mucha frecuencia, d\'onde la vista es la p\'agina HTML, el modelo es el Sistema de Gesti\'on de Base de Datos y la 
+l\'ogica interna, y el controlador es el responsable de recibir los eventos y darles soluci\'on.
+
+-Modelo: Es la capa de acceso a la base de datos. Esta capa contiene toda la informaci\'on sobre los datos: como acceder a estos, como validarlos, 
+cual es el comportamiento que tiene, y las relaciones entre los datos. Se utiliza como representaci\'on de la informaci\'on en el sistema. Trabaja junto 
+a la vista para mostrar la informaci\'on al usuario y es accedido por el controlador para a\~nadir, eliminar, consultar o actualizar datos. 
+     
+-Vista: Es la capa de la l\'ogica de negocios. Esta capa contiene la l\'ogica que accede al modelo y la delega a la plantilla apropiada. Se presenta 
+como un puente entre los modelos y las plantillas.
+
+-Controlador: Es el elemento m\'as abstracto. Recibe, trata y responde los eventos enviados por el usuario o por la propia aplicaci\'on. Interactua 
+tanto con el modelo como con la vista.
+
+
+
+\subsection{Python} 
+\label{subsec:python}
+Python es un lenguaje de programaci\'on con una sintaxis muy limpia y que favorece un c\'odigo legible. Se ejecuta utilizando un programa intermedio 
+llamado int\'erprete, en lugar de compilar el c\'odigo a lenguaje m\'aquina que pueda comprender
+y ejecutar directamente una computadora. Tiene una ejecuci\'on m\'as lenta que los lenguajes compilados pero es m\'as flexible y portable.
+
+Tiene la caracter\'istica de tipado din\'amico que se refiere a que no es necesario declarar el tipo de dato que va a contener una determinada 
+variable, sino que su tipo se determinar\'a en tiempo de ejecuci\'on seg\'un el tipo del valor al que se asigne, y el tipo de esta variable puede 
+cambiar si se le asigna un valor de otro tipo. Adem\'as, Python es un lenguaje fuertemente tipado que no permite tratar a una variable como si fuera 
+de un tipo distinto al que tiene, es necesario convertir de forma expl\'icita dicha variable al nuevo tipo previamente. 
+
+El int\'erprete de Python est\'a disponible en multitud de plataformas (UNIX, Solaris, Linux, DOS, Windows, OS/2, Mac OS, etc,..) 
+por lo que si no utilizamos librer\'ias espec\'ificas de cada plataforma nuestra aplicaci\'on podr\'a correr en todos estos sistemas sin grandes 
+cambios.
+
+Es un lenguaje orientado a objetos. Este concepto se define como un paradigma de programaci\'on en el que los conceptos del mundo real relevantes 
+para nuestro problema se trasladan a clases y objetos en nuestra aplicaci\'on. La ejecuci\'on de la aplicaci\'on consiste en una serie de interacciones 
+entre los objetos.
+
+En este proyecto, Python se usa principalmente para el desarrollo de las vistas en el lado del servidor, donde mediante 
+peticiones de los usuarios, recoge y procesa la informaci\'on y devuelve los datos a la presentaci\'on correspondiente.
+
+
+\section{HTML5}
+\label{sec:html5}
+HTML5 (HyperText Markup Language) Es la versi\'on 5 del lenguaje en el que se escriben las p\'aginas webs. Un lenguaje que s\'olo son capaces 
+de leer los \'ultimos navegadores, ya que los que son m\'as anticuados hay algunas etiquetas que no son capaces de interpretar. Sirve para integrar 
+contenidos multimedia, flash y para dar un sentido sem\'antico a cada parte de la p\'agina web.
+
+HTML5 disminuye el tiempo de carga de las p\'aginas y tambi\'en ayuda a bajar el ratio de texto/HTML ya que es un lenguaje m\'as simple.
+Es un lenguaje m\'as sem\'antico que dota de un significado a las diferentes partes de la p\'agina Web. Ayuda a los buscadores a entender la p\'agina 
+web y tambi\'en sirve para que los navegadores muestren de forma inteligente diferentes versiones de la p\'agina Web sin tener que usar plug-ins para 
+dispositivos espec\'ificos.
+
+HTML5 incluye m\'as elementos gr\'aficos y multimedia. Permite la inserci\'on de etiquetas canvas, que sustituyen a las animaciones en Flash y tambi\'en 
+permite incluir de forma muy sencilla v\'ideos, m\'usica y otros elementos multimedia como por ejemplo los videojuegos. Adem\'as incluye la 
+geolocalizaci\'on. Es posible saber desde que lugar se esta visualizando un sitio Web, gracias a sistemas de referenciaci\'on como el GPS, 
+la tecnolog\'ia 3G de los dispositivos m\'oviles o las conexiones tipo WiFi.
+
+HTML5 permite el uso de las Webs offline. Aunque no tengas conexi\'on a Internet si el programador lo desea podr\'as ver parte o toda la p\'agina Web, 
+e incluso interactuar con los contenidos. Esto mejora la usabilidad de la Web y permite al usuario trabajar con aplicaciones online desconectado, 
+algo importante en los dispositivos m\'oviles cuando te mueves en entornos en los que no tienes una conexi\'on de calidad.
+
+
+\section{JavaScript}
+\label{sec:javascript}
+
+
+\subsection{jQuery}
+\label{subsec:jquery}
+jQuery es una librer\'ia JavaScript pensada y creada para acceder f\'acilmente a los elementos del DOM, para automatizar tareas comunes 
+y simplificar las labores complicadas de JavaScript.
+
+Esta librer\'ia da una serie de ventajas: 
+\begin{itemize}
+  \item Facilidad de acceso en el documento.
+  \item Para la localizaci\'on de partes espec\'ificas en la estructura del documento HTML, jQuery tiene un mecanismo de selector s\'olido y 
+eficiente con el que puede recuperar piezas exactas del DOM (Document Object Model).
+  \item Modifica la apariencia de un sitio web. Puede llenar vacios que CSS no puede cubrir. Y tambi\'en puede cambiar clases y estilos aplicados 
+en CSS incluso despu\'es de que la p\'agina ya est\'e renderizada en el navegador.
+  \item Altera contenidos del documento. JQuery puede modificar cualquier contenido en el documento.
+  \item Responde a la interacci\'on del usuario. Ofrece una forma elegante de controlar acciones y nos presenta una amplia variedad de eventos 
+que responden a diversas acciones del usuario sin necesidad de saturar el c\'odigo HTML.
+  \item Simplifica tareas comunes de JavaScript. Esta librer\'ia ofrece mejoras en el momento de desarrollar en JavaScript, nos ahorra tiempo 
+y el c\'odigo ser\'a siempre m\'as limpio y sencillo.
+\end{itemize}
+
+
+\subsection{jQuery-ui}
+\label{subsec:jqueryui}
+jQuery-ui es una biblioteca de componentes para la librer\'ia jQuery que le a\~naden un conjunto de plug-ins, widgets y efectos visuales para la 
+creaci\'on de aplicaciones web.
+
+
+\subsection{AJAX}
+\label{subsec:ajax}
+AJAX (Asynchronous JavaScript And XML) se usa para la transferencia de informaci\'on mediante JavaScript. Esta informaci\'on fluye por dos canales 
+entre el cliente y el servidor, y puede ser transferida en formato XML, texto simple u otros est\'andares como JSON.
+
+AJAX sirve para actualizar una porci\'on de nuestra p\'agina web sin necesidad de cargar el c\'odigo, atributos gr\'aficos e im\'agenes de nuevo. Esto
+provoca mayor rapidez en la interacci\'on cliente-servidor. El cliente no percibe demoras puesto que las comunicaciones se producen en segundo plano y
+no hay interrupciones. AJAX tiene la capacidad de comprimir las funciones de una aplicaci\'on en un espacio HTML m\'as reducido de lo que antes pod\'ia
+ser necesario.
+
+Algunos de los inconvenientes de AJAX son el aumento de la complejidad en el desarrollo de aplicaciones, problemas con restricciones de seguridad 
+relacionados con su uso, y aumento de la dificultad en la indexaci\'on para los motores de b\'usqueda ya que el contenido deja de ser est\'atico.
+
+
+\subsection{JSON}
+\label{subsec:json}
+JSON es un formato de fichero de texto ligero utilizado para el intercambios de datos. B\'asicamente JSON describe los datos con una sintaxis dedicada 
+que se usa para identificar y gestionar los datos. Este formato es simple, directo, ligero y muy importante para el desarrollo de aplicaciones basadas 
+en lenguajes Web y para dispositivos m\'oviles. Cada dato es un par nombre/valor.
+
+
+\section{CSS3}
+\label{sec:css3}
+CSS (Cascading Style Sheets) se refiere a la tecnolog\'ia desarrollada para separar la presentaci\'on de la estructura HTML de un sitio web. 
+Esta tecnolog\'ia aplica reglas de estilo a los elementos HTML, quedando de esta manera separada de la estructura HTML. Poco a poco este lenguaje se 
+ha ido haciendo m\'as importante entre los dise\~nadores gracias a toda la facilidad de uso, y los resultados que son muy flexibles.
+
+CSS3 es la versi\'on 3 de CSS, donde se definen las caracter\'isticas de este lenguaje, a\~nadiendo muchas funciones y mejorado otras.
+En una hoja de estilo \'o fichero .css, se definen reglas en las cuales se van a aplicar diferentes y muy variados efectos a las etiquetas HTML.
+Las reglas se forman a partir de selectores, atributos y valores. 
+
+Los selectores se usan para definir sobre qu\'e etiqueta HTML vamos a aplicar atributos y valores. Existen selectores de etiquetas HTML, los cuales 
+se utilizan escribiendo el nombre de la etiqueta a la que se aplicar\'a el estilo. Tambi\'en existen selectores de identificador, que son aquellos que 
+empiezan por ``\#'' seguido del id de la etiqueta a la que queremos darle los atributos. Y por \'ultimo, selectores de clase que se escriben en el 
+documento CSS comenzando por ``.'' y va seguido del nombre de la clase de la etiqueta.
+
+Los atributos son efectos o estilos que aplicaremos a las etiquetas HTML. Se aplican sobre texto, enlaces, im\'agenes, listas, tablas, formularios, 
+etc,.. Tambi\'en incluye la posibilidad de realizar animaciones con porcentajes de tiempo.
+
+Una vez definidos los selectores y los atributos, se les da un valor a los atributos. 
+
+
+\section{BootStrap}
+\label{sec:bootstrap}
+Bootstrap es un framework originalmente creado por Twitter, que permite crear interfaces web con CSS y JavaScript y cuya particularidad es la de adaptar 
+la interfaz del sitio web al tama\~no del dispositivo en que se visualice, ya sea pantalla de PC, port\'atil, tablet, Smartphone,.. 
+Esta t\'ecnica de dise\~no y desarrollo se conoce como dise\~no adaptativo o `responsive design'.
+El beneficio de usar dise\'no adaptativo en un sitio web, es principalmente que el sitio web se adapta autom\'aticamente al dispositivo desde donde 
+se acceda. Aun ofreciendo todas las posibilidades que ofrece Bootstrap a la hora de crear interfaces web, los dise\'nos creados con Bootstrap son 
+simples, limpios e intuitivos, esto les da agilidad a la hora de cargar y adaptarse a otros dispositivos. El framework trae varios elementos con 
+estilos predefinidos f\'aciles de configurar como botones, men\'us desplegables, formularios incluyendo todos sus elementos, y jQuery integrado para 
+ofrecer ventanas y tooltips din\'amicos.
+El uso de Bootstrap ofrece una serie de ventajas:
+\begin{itemize}
+  \item Permite tener un mismo lenguaje para la comunicaci\'on entre dise\~nadores y equipo de desarrollo.
+  \item Tiene un comportamiento unificado entre diferentes navegadores.
+  \item Es compatible con navegadores modernos, dispositivos y navegadores antiguos (hasta Internet Explorer 8)
+  \item Soporte avanzado para Responsive web Design (se podr\'ia utilizar como NO responsive pero forz\'andolo).
+  \item Comportamiento y plugins basados en jQuery muy \'utiles y usados habitualmente.
+  \item Bootstrap es responsive y viene con un grid de 12 columnas y cuenta con diferentes `Media queries': 768 px (tablets), 992 px (Desktop) y 
+  1200 px (Large Desktop) + Mobile (por defecto en Bootstrap).
+  \item Y por \'ultimo y m\'as importante, usa un sistema de rejillas.
+\end{itemize}
+
+Bootstrap incluye una rejilla flu\'ida pensada para m\'oviles. Esta rejilla crece hasta 12 columnas a medida que crece el tama\~no de la pantalla del 
+dispositivo. Bootstrap incluye clases CSS para utilizar la rejilla directamente en tus dise\~nos y tambi\'en define mixins de LESS para que puedas 
+crear dise\~nos m\'as sem\'anticos.
+
+\begin{figure}[htbp] 
+  \label{figura:bootstrap}
+  \centering
+  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{img/BootStrap}}
+  \caption{Tama\~nos en diferentes dispositivos}
+\end{figure}
+
+El dise\~no de p\'aginas basado en rejilla se realiza mediante filas y columnas donde se colocan los contenidos. La rejilla de Bootstrap funciona del
+siguiente modo: Las filas siempre se definen dentro de un contenedor de clase .container (anchura fija) o de tipo .container-fluid (anchura variable), 
+de esta forma las filas se alinean bien y muestran el padding correcto. Las filas se utilizan para agrupar horizontalmente a varias columnas. 
+El contenido siempre se coloca dentro de las columnas, ya que las filas s\'olo deber\'ian contener como hijos elementos de tipo columna. Bootstrap 
+define muchas clases CSS (como por ejemplo .row y .col-xs-4) para crear rejillas r\'apidamente. La separaci\'on entre columnas se realiza aplicando 
+padding. Para contrarrestar sus efectos en la primera y \'ultima columnas, las filas (elementos .row) aplican m\'argenes negativos. Las columnas de la 
+rejilla definen su anchura especificando cu\'antas de las 12 columnas de la fila ocupan. Si por ejemplo quieres dividir una fila en tres columnas 
+iguales, utilizar\'ias la clase .col-xs-4 (el 4 indica que cada columna ocupa 4 de las 12 columnas en las que se divide cada fila).
+
+\begin{figure}[htbp] 
+  \label{figura:bootstrap1}
+  \centering
+  \subfigure[Dispositivo mediano]{\includegraphics[width=11cm]{img/BootStrapMD}}
+  \subfigure[Dispositivo peque\~no]{\includegraphics[width=11cm]{img/BootStrapXS}}
+  \caption{Ejemplo para dispositivos medianos (clase col-md-x) y peque\~nos (clase col-xs-x)}
+\end{figure}
+
+Por \'ultimo, hay que decir que Bootstrap permite el anidamiento, el reordenamiento y el desplazamiento de las columnas 
+(tanto por la izquierda como por la derecha).
+
+\section{Git}
+\label{sec:git}
+Git es un sistema de control de versiones distribuido de c\'odigo abierto relativamente nuevo que nos ofrece las mejores caracter\'isticas en la 
+actualidad, pero sin perder la sencillez. Es el sistema de control de versiones m\'as usado por desarrolladores en el mundo. 
+A los programadores ayuda a ser m\'as eficientes en su trabajo, ya que ha universalizado las herramientas de control de versiones del software que 
+hasta entonces no estaban tan popularizadas y tan al alcance del com\'un de los desarrolladores.
+
+Git es multiplataforma, por lo que puedes usarlo y crear repositorios locales en todos los sistemas operativos m\'as comunes, Windows, Linux o Mac. 
+Existen multitud de GUIs (Graphical User Interface o Interfaz de Usuario Gr\'afica) para trabajar con Git. Una de ellas es por l\'inea de comandos.
+
+Dentro de este proyecto, para hacer uso de este sistema de control de versiones se ha utilizado Github. Github es un servicio para alojamiento de 
+repositorios de software gestionados por el sistema de control de versiones Git. Por tanto, Git es algo m\'as general que nos sirve para controlar 
+el estado de un desarrollo a lo largo del tiempo, mientras que Github es un sitio web que usa Git para ofrecer a la comunidad de desarrolladores 
+repositorios de software. En definitiva, Github es un sitio web pensado para hacer posible el compartir el c\'odigo de una manera m\'as f\'acil.
+
+
+\section{Pivotal tracker}
+\label{sec:pivotal}
+Pivotal Tracker es un servicio para la gesti\'on \'agil de proyectos y colaboraci\'on creado por Pivotal Labs. Esta herramienta incluye soporte 
+para el intercambio de archivos y gesti\'on de tareas, as\'i como para la planificaci\'on de las iteraciones. Adem\'as posee una API para extensiones y 
+herramientas de terceros.
+
+
+\section{Crontab}
+\label{sec:crontab}
+https://www.open6hosting.com/crontab/
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,20 +468,74 @@ LibreSoft\footnote{\url{http://www.libresoft.es}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Diseo e implementacin}
+\chapter{Dise\~no e implementaci\'on}
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
+En esta secci\'on se define la estructura interna del proyecto. En la figura~\ref{fig:arquitectura} se muestra una imagen detallada de los directorios y 
+subdirectorios con sus respectivos archivos que hacen posible el funcionamiento de la aplicaci\'on.
+En dicha estructura cabe destacar los siguientes bloques:
+\begin{itemize}
+  \item {\bfseries actualizar.py}: Es un script Python que realiza la funci\'on de actualizaci\'on autom\'atica de entradas. Cada vez que un alumno ingresa
+  una nueva entrada en su blog, este script es el encargado de detectar esos nuevos cambios a trav\'es de los RSS guardados en base de datos.
+  \item {\bfseries bbdd.sqlite}: Es la base de datos del proyecto donde se van a guardar todos los datos estructurados a partir de los modelos definidos en 
+  \texttt{models.py}
+  \item {\bfseries planetablogs}: Contiene la parte fundamental de la funcionalidad del proyecto. Dentro de este directorio se encuentran distintos ficheros
+  python. \texttt{admin.py} hace la funci\'on de modificar la interfaz de administraci\'on que \textit{Django} genera por defecto. En \texttt{formularios.py}
+  se definen todos los formularios que ser\'an utilizados por los usuarios dentro de la aplicaci\'on para crear nuevos elementos o actualizar elementos
+  existentes en la base de datos. En \texttt{models.py} se encuentran los modelos que se convertir\'an en tablas dentro de la base de datos. Estos modelos se
+  encargan de representar los datos dentro de la aplicaci\'on y contienen los campos necesarios y el comportamiento de los datos que ser\'an almacenados.
+  Por \'ultimo, \texttt{views.py} es un fichero donde se implementa toda la l\'ogica del proyecto llevando a cabo todas las peticiones de los usuarios.
+  \item {\bfseries plantillas}: En este directorio se encuentran todas las plantillas de los documentos \textit{HTML} que ser\'an enviados al usuario y 
+  mostrados por el navegador para dar una interfaz gr\'afica a la aplicaci\'on.
+  \item {\bfseries static}: Esta carpeta contiene las librer\'ias \textit{BootStrap}, \textit{jQuery} y \textit{jQuery-ui}. Tambi\'en incluye un subdirectorios
+  donde se guardan tanto las im\'agenes propias del proyecto como las im\'agenes de perfil introducidas por los usuarios como informaci\'on de registro. 
+  Y adem\'as, se localizan todos los ficheros \textit{.js} y \textit{.css} que a\~nadir\'an funcionalidad y definir\'an el dise\~no a su respectivo 
+  documento \textit{HTML} o p\'agina web.
+  \item {\bfseries TFG}: Contiene ficheros b\'asicos para el correcto funcionamiento de la aplicaci\'on.\\ \texttt{settings.py} es un fichero de 
+  configuraci\'on que contiene todas las rutas relativas o directorios necesarios. \texttt{urls.py} define todas las urls y las asocia a una vista en
+  \texttt{views.py} que se encargar\'a de procesar las peticiones de los clientes.
+\end{itemize}
 
-figura~\ref{fig:arquitectura}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura}
-  \caption{Estructura del parser bsico}
+  \includegraphics[width=9cm, keepaspectratio]{img/tree}
+  \caption{Estructura de directorios. Utilizando la herramienta \textit{tree}.}
   \label{fig:arquitectura}
 \end{figure}
 
+
+\section{Estructura \textit{Django} del proyecto} 
+\label{sec:estructuradjango}
+En esta secci\'on se expone una descripci\'on m\'as detallada del funcionamiento del proyecto. Se empieza con una introducci\'on que cuenta la estructura
+o esqueleto de \textit{Django} y termina con una explicaci\'on m\'as espec\'ifica del dise\~no de las distintas partes implementadas en \'el.
+
+
+\subsection{Introducci\'on a la estructura de \textit{Django}} 
+\label{sec:introestructura}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{img/diagrama}
+  \caption{\textit{Estructura general \textit{Django}.}}
+  \label{fig:introestructura}
+\end{figure}
+
+
+\subsection{Dise\~no de la base de datos} 
+\label{sec:disenobbdd}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{img/mis_modelos}
+  \caption{\textit{Estructura gr\'afica de la base de datos.}}
+  \label{fig:disenobbdd}
+\end{figure}
+
+
+\subsection{Dise\~no de las vistas y urls} 
+\label{sec:vistasurls}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
