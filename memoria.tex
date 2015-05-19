@@ -494,37 +494,117 @@ En dicha estructura cabe destacar los siguientes bloques:
   documento \textit{HTML} o p\'agina web.
   \item {\bfseries TFG}: Contiene ficheros b\'asicos para el correcto funcionamiento de la aplicaci\'on.\\ \texttt{settings.py} es un fichero de 
   configuraci\'on que contiene todas las rutas relativas o directorios necesarios. \texttt{urls.py} define todas las urls y las asocia a una vista en
-  \texttt{views.py} que se encargar\'a de procesar las peticiones de los clientes.
+  \texttt{views.py} que se encargar\'a de procesar las peticiones de los clientes.\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \end{itemize}
 
 
 \begin{figure}
   \centering
   \includegraphics[width=9cm, keepaspectratio]{img/tree}
-  \caption{Estructura de directorios. Utilizando la herramienta \textit{tree}.}
+  \caption{Estructura de directorios. Utilizando la herramienta \href{http://www.computerhope.com/unix/tree.htm}{\textit{tree}}.}
   \label{fig:arquitectura}
 \end{figure}
 
 
-\section{Estructura \textit{Django} del proyecto} 
+\section{Estructura Django del proyecto} 
 \label{sec:estructuradjango}
 En esta secci\'on se expone una descripci\'on m\'as detallada del funcionamiento del proyecto. Se empieza con una introducci\'on que cuenta la estructura
-o esqueleto de \textit{Django} y termina con una explicaci\'on m\'as espec\'ifica del dise\~no de las distintas partes implementadas en \'el.
+o esqueleto del sistema \textit{Django} y termina con una explicaci\'on m\'as espec\'ifica del dise\~no de las distintas partes implementadas en \'el.
 
 
-\subsection{Introducci\'on a la estructura de \textit{Django}} 
+\subsection{Introducci\'on a la estructura de Django} 
 \label{sec:introestructura}
+En la figura~\ref{fig:introestructura} se muestra un boceto de c\'omo funciona \textit{Django} internamente. Hay dos partes diferenciadas que separan al
+cliente del servidor. El cliente es el navegador y el servidor \textit{Django}. El cliente tiene las funciones de enviar peticiones al servidor y de 
+mostrar la presentaci\'on o interfaz al usuario final. Las peticiones las lleva a cabo el cliente a trav\'es del usuario en el momento en que \'este 
+pulsa sobre un enlace o pide una url en concreto en la barra del navegador mientras que el servidor se encarga de procesar dichas peticiones y de 
+transferir los datos necesarios al cliente para que puedan ser visualizados por el usuario.
 
+El proceso del sistema \textit{Django} comienza con una solicitud por parte del usuario. Esta solicitud puede ser de tipo \texttt{GET} para conseguir 
+informaci\'on de la base de datos o de tipo \texttt{POST} para guardar o modificar informaci\'on de la base de datos. La petici\'on es enviada por el 
+cliente o navegador mediante una url. \textit{Django} atrapar\'a esa url y comprobar\'a en su fichero \texttt{urls.py} si la url existe o no 
+\rule[1mm]{4mm}{0.1mm}en el caso de que la url no exista \textit{Django} devolver\'a al cliente una plantilla \textit{HTML} de error\rule[1mm]{4mm}{0.1mm}.
+En caso de que la petici\'on sea correcta, \textit{Django} mediante el \textit{URLConf} interpretar\'a dicha url y se dirigir\'a a la vista apropiada 
+\rule[1mm]{4mm}{0.1mm}en el fichero \texttt{urls.py} cada url est\'a asociada a una vista\rule[1mm]{4mm}{0.1mm}. Dentro del fichero \texttt{views.py} se
+ubicar\'a la vista que se necesita, la cual se encargar\'a de interactuar con el modelo, bien para obtener datos \rule[1mm]{4mm}{0.1mm}en caso de 
+petici\'on \texttt{GET}\rule[1mm]{4mm}{0.1mm} o bien para guardar o modificar alg\'un elemento del modelo de datos \rule[1mm]{4mm}{0.1mm}en caso de 
+petici\'on \texttt{POST}\rule[1mm]{4mm}{0.1mm}. La vista se redirigir\'a al fichero \texttt{forms.py} en caso de que la petici\'on se hubiera dado a trav\'es
+de un formulario. Por \'ultimo, la funci\'on final de la vista ser\'a la de llamar a la plantilla situada en el directorio de templates, y \'esta plantilla
+se ocupar\'a de renderizar la respuesta a la solicitud del cliente.
+
+\textit{Django} se responsabiliza del env\'io de los diferentes documentos que se encuentran en la parte del servidor. La respuesta al cliente se traduce
+en forma de documento \textit{HTML}. Este documento contendr\'a las plantillas necesarias para mostrar los datos servidos al cliente por parte de 
+\textit{Django}. El servidor tambi\'en se encarga de servir los ficheros referenciados dentro de ese documento \textit{HTML}. El fichero \textit{JavaScript}
+a\~nadir\'a la funcionalidad necesaria \rule[1mm]{4mm}{0.1mm}mediante \textit{JavaScript} puro, \textit{jQuery} o \textit{jQuery-ui}\rule[1mm]{4mm}{0.1mm}
+para dar distintos comportamientos a los datos servidos \rule[1mm]{4mm}{0.1mm}datos proporcionados directamente en plantillas o serializados con formato
+\textit{JSON}\rule[1mm]{4mm}{0.1mm}
+
+En la interacci\'on del usuario con la interfaz recibida por el cliente cabe destacar el uso de \textit{AJAX}. El usuario usar\'a la aplicaci\'on de tal
+modo que cuando env\'ie una petici\'on \textit{AJAX} a trav\'es del fichero \textit{JavaScript} referenciado en la p\'agina \textit{HTML} que est\'e manejando,
+el servidor contestar\'a enviando los datos que pide sin necesidad de recargar esa p\'agina desde la cual se realiz\'o dicha petici\'on \textit{AJAX}.
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{img/diagrama}
-  \caption{\textit{Estructura general \textit{Django}.}}
+  \caption{\textit{Estructura general del sistema \textit{Django}.}}
   \label{fig:introestructura}
 \end{figure}
 
 
 \subsection{Dise\~no de la base de datos} 
 \label{sec:disenobbdd}
+El dise\~no de la base de datos se resume visualizando la gr\'afica~\ref{fig:disenobbdd} donde aparecen todos los modelos definidos en el fichero 
+\texttt{models.py} dentro del bloque ''planetablogs'' del sistema de directorios y se manifiestan todos los elementos de todos los modelos con las
+respectivas relaciones entre ellos. 
+
+La gr\'afica sido obtenida mediante una extensi\'on de \textit{Django} denominada 
+\href{https://code.djangoproject.com/wiki/DjangoGraphviz}{\textit{Graphviz}}.
+
+\subsubsection{\textit{Models}} 
+\label{sec:models}
+Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos en este proyecto son:
+
+\begin{itemize}
+  \item {\bfseries User}: Este modelo es creado por \textit{Django} y simboliza un usuario gen\'erico que se registra a la aplicaci\'on introduciendo sus 
+  atributos: Nombre de usuario \textit{Username}, nombre de pila \textit{Firstname}, segundo apellido \textit{Lastname}, primer apellido \textit{Password} 
+  y direcci\'on de correo electr\'onico \textit{Email}. Dentro del fichero \texttt{models.py} se a\~nade un nuevo atributo \textit{Imagen} 
+  \rule[1mm]{4mm}{0.1mm}se agrega con la funci\'on \texttt{addtoclass}\rule[1mm]{4mm}{0.1mm} que una vez introducida mediante un formulario de registro 
+  junto con el resto de campos, ser\'a guardada en la carpeta ''perfiles'' dentro del sistema de directorios del proyecto. 
+  
+  \texttt{User} contendr\'a todos los usuarios de aplicaci\'on previamente registrados, y ninguno de \'estos podr\'a coincidir con otro en nombre de usuario
+  puesto que en la p\'agina de registro se aplica un filtro al introducir el dato \textit{Username}.
+  \item {\bfseries Profesor}: El modelo \texttt{Profesor} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}.
+  \item {\bfseries Alumno}: El modelo \texttt{Alumno} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}.
+  \item {\bfseries Asignatura}: Este modelo representa una asignatura. Cada asignatura es creada como un hilo de aplicaci\'on con su propia tem\'atica
+  identificativa. Los atributos de este modelo son: \textit{Titulo} guarda un string de m\'aximo 35 caracteres y define el t\'itulo de la asignatura, 
+  \textit{Descripcion} guarda un texto de m\'aximo 150 caracteres y da una descripci\'on breve y concisa sobre la tem\'atica del hilo y \textit{Entradas} 
+  es un n\'umero entero que indica el n\'umero total de entradas que tiene esa asignatura.
+  \item {\bfseries Rss}: El modelo \texttt{Rss} representa al blog o blogs de los usuarios. Cada usuario necesita un blog nuevo para cada asignatura en la
+  que se suscriba. Tiene como campos: \textit{Rss} que es la url del RSS del blog y \textit{UltimaFecha} que guarda la fecha de la entrada de ese blog 
+  que se guard\'o por \'ultima vez en base de datos.
+  \item {\bfseries Entrada}: Este modelo representa una entrada de blog. Sus propiedades o comportamientos son los siguientes: \textit{Entrada} es un campo 
+  entero que guarda el identificador de la entrada \rule[1mm]{4mm}{0.1mm}no es el campo pk de la tabla, sino un contador que se incrementa para diferenciar
+  entradas con mismo identificador pero de distintas asignaturas\rule[1mm]{4mm}{0.1mm}, \textit{Titulo} guarda un string de m\'aximo 10 caracteres y define 
+  el t\'itulo de la entrada, \textit{Descripcion} guarda un texto sin longitud m\'axima de caracteres y da una descripci\'on detallada de la entrada,
+  \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{link} salva la url donde se ubica la propia entrada dentro del blog de usuario, 
+  \textit{UrlBlog} guarda la url del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
+  \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada y \textit{Total} guarda la puntuaci\'on que lleva hasta el
+  momento la entrada teniendo en cuenta valoraciones positivas y valoraciones negativas \rule[1mm]{4mm}{0.1mm}esta puntuaci\'on se usa para imprimir en 
+  la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm}
+  \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripcion}
+  guarda el contenido del comentario y \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario.
+  \item {\bfseries Up}: El modelo \texttt{Up} representa una valoraci\'on positiva de una entrada determinada.
+  \item {\bfseries Down}: El modelo \texttt{Comentario} representa una valoraci\'on negativa de una entrada determinada.
+  \item {\bfseries Valoracion}: \texttt{Valoracion} representa la valoraci\'on total de cada usuario. Tiene como atributos: \textit{Puntos} guarda el total
+  de puntos obtenidos y \textit{Nivel} guarda el nivel en el que se situa con respecto a los puntos obtenidos.
+\end{itemize}
+
+\subsubsection{\textit{Relaciones}} 
+\label{sec:relaciones}
+El atributo pk de un elemento \texttt{Profesor} puede ser diferente al atributo pk del elemento \texttt{User} que hereda.
+
+Al igual que en el caso del modelo \texttt{Profesor}, el atributo pk de un elemento \texttt{Alumno} puede ser diferente al atributo pk del elemento 
+\texttt{User} que hereda. Esto se debe a que a la hora de realizar un registro en la aplicaci\'on, se puede elegir entre hacerlo como profesor o hacerlo 
+como alumno.
 
 \begin{figure}
   \centering
