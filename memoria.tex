@@ -572,8 +572,10 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   
   \texttt{User} contendr\'a todos los usuarios de aplicaci\'on previamente registrados, y ninguno de \'estos podr\'a coincidir con otro en nombre de usuario
   puesto que en la p\'agina de registro se aplica un filtro al introducir el dato \textit{Username}.
-  \item {\bfseries Profesor}: El modelo \texttt{Profesor} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}.
-  \item {\bfseries Alumno}: El modelo \texttt{Alumno} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}.
+  \item {\bfseries Profesor}: El modelo \texttt{Profesor} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}. Se crea un
+  atributo \textit{ProfesorId} que coincide con el id que ocupa en la tabla del modelo \texttt{User}.
+  \item {\bfseries Alumno}: El modelo \texttt{Alumno} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}. Se crea un
+  atributo \textit{AlumnoId} que coincide con el id que ocupa en la tabla del modelo \texttt{User}.
   \item {\bfseries Asignatura}: Este modelo representa una asignatura. Cada asignatura es creada como un hilo de aplicaci\'on con su propia tem\'atica
   identificativa. Los atributos de este modelo son: \textit{Titulo} guarda un string de m\'aximo 35 caracteres y define el t\'itulo de la asignatura, 
   \textit{Descripcion} guarda un texto de m\'aximo 150 caracteres y da una descripci\'on breve y concisa sobre la tem\'atica del hilo y \textit{Entradas} 
@@ -593,18 +595,48 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripcion}
   guarda el contenido del comentario y \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario.
   \item {\bfseries Up}: El modelo \texttt{Up} representa una valoraci\'on positiva de una entrada determinada.
-  \item {\bfseries Down}: El modelo \texttt{Comentario} representa una valoraci\'on negativa de una entrada determinada.
+  \item {\bfseries Down}: El modelo \texttt{Down} representa una valoraci\'on negativa de una entrada determinada.
   \item {\bfseries Valoracion}: \texttt{Valoracion} representa la valoraci\'on total de cada usuario. Tiene como atributos: \textit{Puntos} guarda el total
   de puntos obtenidos y \textit{Nivel} guarda el nivel en el que se situa con respecto a los puntos obtenidos.
 \end{itemize}
 
 \subsubsection{\textit{Relaciones}} 
 \label{sec:relaciones}
-El atributo pk de un elemento \texttt{Profesor} puede ser diferente al atributo pk del elemento \texttt{User} que hereda.
+Las relaciones entre modelos que tienen lugar en el proyecto son:
 
-Al igual que en el caso del modelo \texttt{Profesor}, el atributo pk de un elemento \texttt{Alumno} puede ser diferente al atributo pk del elemento 
-\texttt{User} que hereda. Esto se debe a que a la hora de realizar un registro en la aplicaci\'on, se puede elegir entre hacerlo como profesor o hacerlo 
-como alumno.
+\begin{itemize}
+  \item {\bfseries Profesor}: El modelo \texttt{Profesor} se vincula con el modelo \texttt{User} ya que un profesor es un usuario. El atributo pk de un 
+  elemento \texttt{Profesor} puede ser diferente al atributo pk del elemento \texttt{User} que hereda.
+  \item {\bfseries Alumno}: El modelo \texttt{Alumno} se relaciona con el modelo \texttt{User} puesto que un alumno es un usuario. Al igual que en el caso 
+  del modelo \texttt{Profesor}, el atributo pk de un elemento \texttt{Alumno} puede ser diferente al atributo pk del elemento \texttt{User} que hereda. 
+  Esto se debe a que a la hora de realizar un registro en la aplicaci\'on, se puede elegir entre hacerlo como profesor o hacerlo como alumno.
+  \item {\bfseries Asignatura}: Este modelo tiene una relaci\'on \textit{ManyToMany} con el modelo \texttt{Profesor} puesto que una asignatura puede ser 
+  ense\~nada por varios profesores y un profesor puede ense\~nar varias asignaturas. Lo mismo ocurre con el modelo \texttt{Alumno}, una asignatura puede 
+  ser aprendida por muchos alumnos y un alumno puede tener muchas asignaturas, aunque en este caso se implementa de manera diferente a la relaci\'on con 
+  \texttt{Profesor}.
+  
+  Para realizar la relaci\'on \texttt{Asignatura} - \texttt{Alumno} se ha utilizado un modelo intermedio \texttt{Rss} a trav\'es del argumento 
+  \textit{Through}. Con este argumento, a la relaci\'on \textit{ManyToMany} se le est\'a se\~nalando que va a actuar un modelo intermediario. El modelo 
+  intermediario se utilizar\'a para regular esta relaci\'on por lo que se pueden colocar campos adicionales en \texttt{Rss} para que \texttt{Asignatura}
+  pueda acceder a m\'as datos relevantes de \texttt{Alumno}.
+  \item {\bfseries Rss}: El modelo \texttt{Rss} tendr\'a dos relaciones \textit{ForeignKey} con \texttt{Alumno} y \texttt{Asignatura} debido
+  a que un rss s\'olo puede pertenecer a un alumno y a una asignatura. Los alumnos se suscriben a las asignaturas por medio de un rss que adem\'as de 
+  ser v\'alido, no debe estar repetido en base de datos, sino se muestra un error de validaci\'on.
+  \item {\bfseries Entrada}: \texttt{Entrada} se relaciona con los modelos \texttt{Alumno} y \texttt{Asignatura}. Una entrada debe ser \'unica para un 
+  alumno y en una asignatura. Mediante el proceso de actualizaci\'on autom\'atica de entradas, las entradas ser\'an guardadas en este modelo asociadas
+  a un alumno y una asignatura o hilo en concreto.
+  \item {\bfseries Comentario}: El modelo \texttt{Comentario} tiene una correspondencia directa con los modelos \texttt{Alumno}, \texttt{Asignatura} y 
+  \texttt{Entrada}. Cada comentario ser\'a escrito por un alumno, en una entrada y en un hilo.
+  \item {\bfseries Up}: El modelo \texttt{Up} tiene una relaci\'on con los modelos \texttt{Alumno}, \texttt{Asignatura} y \texttt{Entrada}. La acci\'on de 
+  ''hacer click'' sobre el bot\'on de valoraci\'on positiva tendr\'a lugar en una entrada de un hilo por medio del alumno que realice dicha acci\'on.
+  \item {\bfseries Down}: Lo mismo pasa con el modelo \texttt{Down}. La acci\'on de ''hacer click'' sobre el bot\'on de valoraci\'on negativa tendr\'a 
+  lugar en una entrada de un hilo por medio del alumno que realice dicha acci\'on.
+  \item {\bfseries Valoracion}: \texttt{Valoracion} tiene un nexo con los modelos \texttt{Alumno} y \texttt{Asignatura}. La valoraci\'on de un usuario se 
+  basa en la obtenci\'on de puntos al interactuar con la aplicaci\'on mediante entradas, comentarios, valoraciones positivas o valoraciones negativas.
+  Una valoraci\'on de un alumno tiene que pertenecer a un hilo en concreto para poder diferenciar valoraciones en el caso de que un alumno est\'e suscrito
+  a varias asignaturas.
+\end{itemize}
+
 
 \begin{figure}
   \centering
@@ -614,8 +646,177 @@ como alumno.
 \end{figure}
 
 
+\subsection{Estructura de documentos HTML} 
+\label{sec:estructurahtml}
+Todas las p\'aginas servidas por \textit{Django} en este proyecto contienen en su cabecera (etiqueta \texttt{<head>}) las mismas referencias a ficheros 
+\textit{JavaScript} y a ficheros \textit{CSS}. Estas referencias se vinculan con las tecnolog\'ias que ser\'an usadas dentro de los documentos \textit{HTML}:
+Las bibliotecas \textit{JavaScript} de \textit{jQuery.js}, \textit{jQuery-ui.js} y \textit{BootStrap.js} son utilizadas para manejar distintas 
+funcionalidades. Las bibliotecas \textit{CSS} de \textit{jQuery-ui.css} y \textit{BootStrap.css} son utilizadas para cambios en el dise\~no de la interfaz. 
+Y por \'ultimo, los ficheros \textit{JavaScript} y \textit{CSS} propios de cada p\'agina que son utilizados para a\~nadir y mejorar tanto funcionalidad 
+como dise\~no.
+
+Dentro de la etiqueta \texttt{<body>} se introduce un elemento \texttt{<div>} con una clase \textit{.container} que mantiene una misma estructura en cada 
+una de las p\'aginas:
+\begin{itemize}
+  \item {\bfseries Cabecera}: Dependiendo de la plantilla que se cargue en el cliente, la cabecera puede variar desde un mensaje de bienvenida a una barra
+  de navegaci\'on.
+  \item {\bfseries Contenedor}: En esta parte se muestra toda la informaci\'on con la que el usuario final podr\'a interactuar.
+  \item {\bfseries Pie de p\'agina}: En todos los pies de p\'agina se muestra un enlace a la p\'agina de inicio de la aplicaci\'on para que cualquier 
+  usuario pueda compartirla, ya que es el \'unico documento \textit{HTML} al que se puede acceder sin tener ning\'un perfil creado. La \'unica p\'agina 
+  en la que no existe pie de p\'agina es \texttt{inicio.html}.
+\end{itemize}
+
 \subsection{Dise\~no de las vistas y urls} 
 \label{sec:vistasurls}
+Por la parte del servidor de un proyecto \textit{Django} existe una parte importante que se encarga de procesar las solicitudes del cliente. Esta parte se
+almacena en un fichero llamado \texttt{views.py}. Est\'a compuesto por vistas o funciones a las que \textit{Django} accede despu\'es de que el usuario 
+realice una petici\'on mediante una url. El fichero \texttt{urls.py} define todas las urls a las que se asociar\'a una vista distinta. A continuaci\'on
+la vista procesa la solicitud y devuelve al cliente la informaci\'on pedida en forma de documento \textit{HTML} o \textit{JSON}.
+
+Cada una de esas vistas se explican en las siguientes subsecciones:
+
+\subsubsection{P\'agina de inicio} 
+\label{sec:paginainicio}
+El documento HTML mostrado en la figura~\ref{fig:paginainicio} es la p\'agina de inicio. La p\'agina es servida tras una previa petici\'on GET del cliente 
+mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de inicio: \texttt{/planetablogs/login/}}. La vista asociada a ese recurso 
+es \texttt{inicio}, la cual devuelve la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina puede entrar cualquier usuario que pretenda crearse un perfil en la aplicaci\'on o quiera acceder a su perfil una vez creado.
+
+En la cabecera se visualiza un mensaje de bienvenida animando a un ingreso en la aplicaci\'on. En el contenedor existen dos partes diferenciadas: 
+\begin{itemize}
+  \item {\bfseries \textit{Reg\'istrate}}: Se ofrece la posibilidad de darle a dos botones coloreados en verde, \textit{Alumno} o \textit{Tutor}. Debajo 
+  de los botones se halla un mensaje explicativo que resumen la acci\'on de pulsar sobre ambos botones. Si se pulsa sobre el bot\'on \textit{Alumno} se 
+  redirecciona a la p\'agina que se encarga de crear un perfil como alumno. Si se pulsa sobre el bot\'on \textit{Tutor} se redirecciona a la p\'agina que 
+  se encarga de crear un perfil como tutor.
+  \item {\bfseries \textit{Identif\'icate}}: En el formulario, una vez creado un usuario de aplicaci\'on, el usuario puede introducir sus datos 
+  (\texttt{usuario} y \texttt{contrase\~na}) para identificarse y poder entrar a su perfil de usuario dentro de la aplicaci\'on. 
+  
+  Una vez se introducen los datos y el usuario pulsa en el bot\'on \textit{Aceptar}, el cliente realiza una petici\'on \texttt{POST} sobre la misma url 
+  por lo que ser\'a procesada por la misma vista \texttt{inicio}. Esta vista identifica la petici\'on como \texttt{POST}, almacena la informaci\'on enviada
+  mediante el formulario, y la autentifica a trav\'es del proceso de autentificaci\'on de \textit{Django} (\texttt{.authenticate}). Si el usuario est\'a 
+  guardado en el modelo \texttt{User}, se ejecuta el proceso de login de \textit{Django} (\texttt{.login}). A continuaci\'on se comprueba el tipo de usuario
+  que se ha logado en la aplicaci\'on y dependiendo de si el tipo es \texttt{Alumno} o \texttt{Profesor}, la vista env\'ia una respuesta \textit{HTTP} 
+  redireccionando a la p\'agina de perfil del alumno o a la p\'agina de perfil del tutor, respectivamente. En el caso de que la informaci\'on sea incorrecta 
+  la vista renderizar\'a la plantilla \texttt{inicio.html} con un mensaje de error de login.
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/PaginaInicio}
+  \caption{\textit{P\'agina de inicio.}}
+  \label{fig:paginainicio}
+\end{figure}
+
+
+\subsubsection{Registro de alumno} 
+\label{sec:registroalumno}
+El documento HTML mostrado en la figura~\ref{fig:registroalumno} es la p\'agina de registro realizado por parte de un alumno. La p\'agina es servida 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+\texttt{/planetablogs/nuevoalumno/}}. La vista asociada a ese recurso es \texttt{nuevo\_alumno}, la cual devuelve la plantilla \texttt{nuevoalumno.html} 
+que crea el documento HTML de la respuesta.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumno}
+  \caption{\textit{P\'agina de registro de un alumno.}}
+  \label{fig:registroalumno}
+\end{figure}
+
+
+\subsubsection{Registro de tutor} 
+\label{sec:registrotutor}
+El documento HTML mostrado en la figura~\ref{fig:registrotutor} es la p\'agina de registro realizado por parte de un tutor. La p\'agina es servida 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+\texttt{/planetablogs/nuevoprofesor/}}. La vista asociada a ese recurso es \texttt{nuevo\_profesor}, la cual devuelve la plantilla 
+\texttt{nuevoprofesor.html} que crea el documento HTML de la respuesta.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroTutor}
+  \caption{\textit{P\'agina de registro de un tutor.}}
+  \label{fig:registrotutor}
+\end{figure}
+
+
+\subsubsection{Presentaci\'on de alumno} 
+\label{sec:presentacionalumno}
+El documento HTML mostrado en la figura~\ref{fig:presentacionalumno} es la p\'agina de presentaci\'on del perfil de un alumno. La p\'agina es servida 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+\texttt{/planetablogs/alumnos/}}. La vista asociada a ese recurso es \texttt{presentacionalumno}, la cual devuelve la plantilla 
+\texttt{presentacionalumno.html} que crea el documento HTML de la respuesta.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}
+  \caption{\textit{Presentaci\'on del perfil de un alumno.}}
+  \label{fig:presentacionalumno}
+\end{figure}
+
+
+\subsubsection{Presentaci\'on de tutor}
+\label{sec:presentaciontutor}
+El documento HTML mostrado en la figura~\ref{fig:presentaciontutor} es la p\'agina de presentaci\'on del perfil de un tutor. La p\'agina es servida 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+\texttt{/planetablogs/tutores/}}. La vista asociada a ese recurso es \texttt{presentacionprofesor}, la cual devuelve la plantilla 
+\texttt{presentacionprofesor.html} que crea el documento HTML de la respuesta.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutor}
+  \caption{\textit{Presentaci\'on del perfil de un tutor.}}
+  \label{fig:presentaciontutor}
+\end{figure}
+
+
+\subsubsection{Hilo de alumno} 
+\label{sec:hiloalumno}
+En la figura~\ref{fig:hilos}
+En la figura~\ref{fig:hiloalumno}
+\begin{figure}
+  \centering
+  \subfigure[Hilo limpio en alumno]{\includegraphics[width=7cm]{imagenes/HiloAlumno}}
+  \subfigure[Hilo limpio en tutor]{\includegraphics[width=7cm]{imagenes/HiloTutor}}
+  \caption{\textit{P\'agina principal de un hilo limpio.}}
+  \label{fig:hilos}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradas}
+  \caption{\textit{P\'agina principal de un hilo de un alumno.}}
+  \label{fig:hiloalumno}
+\end{figure}
+
+
+\subsubsection{Hilo de tutor} 
+\label{sec:hilotutor}
+En la figura~\ref{fig:hilotutor}
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}
+  \caption{\textit{P\'agina principal de un hilo de un tutor.}}
+  \label{fig:hilotutor}
+\end{figure}
+
+
+\subsubsection{Vistas con AJAX} 
+\label{sec:vistasajax}
+
+
+\subsubsection{Cierre de sesi\'on} 
+\label{sec:cierresesion}
+El enlace mostrado en la figura~\ref{fig:cierresesion} en color rojo (\textit{Desconectar}) corresponde con el cierre de sesi\'on por parte de alumno o 
+tutor. Al pulsar sobre el enlace se produce una petici\'on GET del cliente. La vista asociada al recurso interno del enlace es \texttt{salir}, la cual 
+redirecciona a la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta (Figura~\ref{fig:paginainicio}).
+
+Este enlace se sit\'ua en la parte derecha de la barra de navegaci\'on...
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/CierreSesion}
+  \caption{\textit{Enlace de cierre de sesi\'on.}}
+  \label{fig:cierresesion}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
