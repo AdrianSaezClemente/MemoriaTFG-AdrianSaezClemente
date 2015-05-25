@@ -681,7 +681,7 @@ El documento HTML mostrado en la figura~\ref{fig:paginainicio} es la p\'agina de
 mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de inicio: \texttt{/planetablogs/login/}}. La vista asociada a ese recurso 
 es \texttt{inicio}, la cual devuelve la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta.
 
-A esta p\'agina puede entrar cualquier usuario que pretenda crearse un perfil en la aplicaci\'on o quiera acceder a su perfil una vez creado.
+A esta p\'agina puede entrar cualquier usuario externo que pretenda crearse un perfil en la aplicaci\'on o quiera acceder a su perfil una vez creado.
 
 En la cabecera se visualiza un mensaje de bienvenida animando a un ingreso en la aplicaci\'on. En el contenedor existen dos partes diferenciadas: 
 \begin{itemize}
@@ -716,6 +716,22 @@ tras una previa petici\'on GET del cliente mediante el correspondiente recurso \
 \texttt{/planetablogs/nuevoalumno/}}. La vista asociada a ese recurso es \texttt{nuevo\_alumno}, la cual devuelve la plantilla \texttt{nuevoalumno.html} 
 que crea el documento HTML de la respuesta.
 
+A esta p\'agina puede acceder cualquier usuario externo que pretenda crearse un perfil en la aplicaci\'on.
+
+En la cabecera se visualiza un mensaje informativo aclarando que el registro del perfil se crear\'a y guardar\'a como alumno. En el contenedor aparece un
+formulario con la mayor\'ia de los campos del modelo \texttt{User} (\textit{Imagen}, \textit{Nick}, \textit{Nombre}, \textit{Apellidos}, \textit{Email} y 
+\textit{Contrase\~na}).
+
+Una vez relleno, el formulario se env\'ia pulsando sobre el bot\'on \texttt{Guardar} coloreado en verde. En ese momento, se realiza una petici\'on 
+\texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{nuevo\_alumno}. Esta vista identifica la petici\'on como 
+\texttt{POST}. La informaci\'on es enviada mediante un formulario de registro definido en \texttt{formularios.py}, y si este formulario es v\'alido, dicha
+informaci\'on se almacena. La vista crea dos objetos, uno \texttt{User} y otro \texttt{Alumno}, y ambos los guarda en la base de datos. Y posteriormente, 
+env\'ia una respuesta \textit{HTTP} redireccionando a la p\'agina de inicio de la aplicaci\'on. En caso de que el formulario sea inv\'alido, la vista 
+renderizar\'a la plantilla \texttt{nuevoalumno.html} con un mensaje de error de registro.
+
+En caso de error de registro, te indicar\'a que puedes pasar el rat\'on por encima del icono de informaci\'on situado a la izquierda del bot\'on 
+\texttt{Guardar}. Si esto sucede, mediante \textit{jQuery} y el evento \textit{.mouseover} en el fichero \texttt{nuevousuario.js}, se levanta un di\'alogo 
+de informaci\'on que se encontraba previamente oculto.
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumno}
@@ -731,6 +747,22 @@ tras una previa petici\'on GET del cliente mediante el correspondiente recurso \
 \texttt{/planetablogs/nuevoprofesor/}}. La vista asociada a ese recurso es \texttt{nuevo\_profesor}, la cual devuelve la plantilla 
 \texttt{nuevoprofesor.html} que crea el documento HTML de la respuesta.
 
+A esta p\'agina puede acceder cualquier usuario externo que pretenda crearse un perfil en la aplicaci\'on.
+
+En la cabecera se visualiza un mensaje informativo aclarando que el registro del perfil se crear\'a y guardar\'a como tutor. En el contenedor aparece un
+formulario con la mayor\'ia de los campos del modelo \texttt{User} (\textit{Imagen}, \textit{Nick}, \textit{Nombre}, \textit{Apellidos}, \textit{Email} y 
+\textit{Contrase\~na}).
+
+Una vez relleno, el formulario se env\'ia pulsando sobre el bot\'on \texttt{Guardar} coloreado en verde. En ese momento, se realiza una petici\'on 
+\texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{nuevo\_profesor}. Esta vista identifica la petici\'on como 
+\texttt{POST}. La informaci\'on es enviada mediante un formulario de registro definido en \texttt{formularios.py}, y si este formulario es v\'alido, dicha
+informaci\'on se almacena. La vista crea dos objetos, uno \texttt{User} y otro \texttt{Profesor}, y ambos los guarda en la base de datos. Y posteriormente, 
+env\'ia una respuesta \textit{HTTP} redireccionando a la p\'agina de inicio de la aplicaci\'on. En caso de que el formulario sea inv\'alido, la vista 
+renderizar\'a la plantilla \texttt{nuevoprofesor.html} con un mensaje de error de registro.
+
+En caso de error de registro, te indicar\'a que puedes pasar el rat\'on por encima del icono de informaci\'on situado a la izquierda del bot\'on 
+\texttt{Guardar}. Si esto sucede, mediante \textit{jQuery} y el evento \textit{.mouseover} en el fichero \texttt{nuevousuario.js}, se levanta un di\'alogo 
+de informaci\'on que se encontraba previamente oculto.
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroTutor}
@@ -744,7 +776,30 @@ tras una previa petici\'on GET del cliente mediante el correspondiente recurso \
 El documento HTML mostrado en la figura~\ref{fig:presentacionalumno} es la p\'agina de presentaci\'on del perfil de un alumno. La p\'agina es servida 
 tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/alumnos/}}. La vista asociada a ese recurso es \texttt{presentacionalumno}, la cual devuelve la plantilla 
-\texttt{presentacionalumno.html} que crea el documento HTML de la respuesta.
+\texttt{presentacionalum.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como alumno.
+
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma url de la 
+p\'agina servida, por lo que la recargar\'a, y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
+de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
+
+Dentro del contenedor hay que destacar dos partes importantes:
+\begin{itemize}
+  \item {\bfseries \texttt{Hilos disponibles}}: Aparecen todas las asignaturas disponibles a las que se puede suscribir el alumno. Cada formulario 
+  corresponde con una asignatura de la cual se muestra su t\'itulo y su descripci\'on. El campo del formulario se debe rellenar con un Rss v\'alido antes 
+  de enviarlo pulsando sobre el bot\'on \texttt{Guardar y a\~nadir} coloreado en naranja. En ese instante, se realiza una petici\'on 
+  \texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{presentacionalumno}. Esta vista identifica la petici\'on como 
+  \texttt{POST}. La informaci\'on es enviada mediante un formulario (\textit{FormularioAgregarRSS}) definido en \texttt{formularios.py}. La vista valida 
+  el formulario de tal forma que cumpla que la url del Rss tiene que ser correcta y no estar ocupada por ninguna asignatura de ning\'un alumno registrado 
+  en la aplicaci\'on. La vista crea un objeto en la tabla del modelo \texttt{Rss} en base de datos con el dato introducido en el formulario y una fecha que 
+  marca el inicio de la actividad de ese Rss. Adem\'as, la vista crea otro objeto en el modelo \texttt{Valoracion} para inicializar la puntuaci\'n y el 
+  nivel de ese alumno en esa asignatura. Por \'ultimo, se env\'ia una respuesta \textit{HTTP} redireccionando a la p\'agina de presentaci\'on del alumno. 
+  En caso de que el formulario sea inv\'alido, la vista renderizar\'a la plantilla \texttt{presentacionalum.html} con un mensaje de error de dato 
+  introducido.
+  \item {\bfseries \texttt{Mis hilos}}: La vista busca por el \texttt{ID} del alumno y filtra las asignaturas a las que est\'a suscrito ese alumno para 
+  imprimirlas posteriormente a la hora de renderizar la plantilla \texttt{presentacionalum.html}.
+\end{itemize}
 
 \begin{figure}
   \centering
@@ -759,7 +814,28 @@ tras una previa petici\'on GET del cliente mediante el correspondiente recurso \
 El documento HTML mostrado en la figura~\ref{fig:presentaciontutor} es la p\'agina de presentaci\'on del perfil de un tutor. La p\'agina es servida 
 tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/tutores/}}. La vista asociada a ese recurso es \texttt{presentacionprofesor}, la cual devuelve la plantilla 
-\texttt{presentacionprofesor.html} que crea el documento HTML de la respuesta.
+\texttt{presentacionprof.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como profesor.
+
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma url de la 
+p\'agina servida, por lo que la recargar\'a, y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
+de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
+
+Dentro del contenedor hay que destacar tres partes importantes:
+\begin{itemize}
+  \item {\bfseries \texttt{Crear hilo}}: Es un bot\'on que despliega un formulario a trav\'es de un efecto \texttt{toggle} de \textit{jQuery-ui}. Este 
+  formulario introduce dos campos, t\'itulo y descripci\'on, que definen un objeto del modelo \texttt{Asignatura}. Se env\'ia pulsando sobre el bot\'on
+  \texttt{Enviar} y se realiza una petici\'on \texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{presentacionprofesor}.
+  Esta vista identifica la petici\'on como \texttt{POST}. La informaci\'on es enviada mediante un formulario (\textit{FormularioHilo}) definido en 
+  \texttt{formularios.py}. La vista valida el formulario y crea un objeto en la tabla del modelo \texttt{Asignatura} en base de datos con los dos datos 
+  introducidos en el formulario y un campo \texttt{entradas} que inicializa el n\'umero de entradas totales existentes en ese hilo. Se renderiza 
+  la plantilla \texttt{presentacionprof.html} en la respuesta a la petici\'on la cual redirecciona a la p\'agina de presentaci\'on del profesor. 
+  \item {\bfseries \texttt{Hilos disponibles}}: Aparecen todas las asignaturas disponibles a las que puede seguir el profesor, sin contar las asignaturas
+  agregadas a su secci\'on de \texttt{Mis hilos}.
+  \item {\bfseries \texttt{Mis hilos}}: La vista busca por el \texttt{ID} del profesor y filtra las asignaturas a las que sigue ese profesor para 
+  imprimirlas posteriormente a la hora de renderizar la plantilla \texttt{presentacionprof.html}.
+\end{itemize}
 
 \begin{figure}
   \centering
