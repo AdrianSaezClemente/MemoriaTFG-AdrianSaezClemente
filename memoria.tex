@@ -845,10 +845,28 @@ Dentro del contenedor hay que destacar tres partes importantes:
 \end{figure}
 
 
-\subsubsection{Hilo de alumno} 
-\label{sec:hiloalumno}
-En la figura~\ref{fig:hilos}
-En la figura~\ref{fig:hiloalumno}
+\subsubsection{Hilos} 
+\label{sec:hilos}
+En la figura~\ref{fig:hilos} se muestran dos documentos HTML que recogen el contenido de un hilo. En la figura~\ref{fig:hilos}(a) se visualiza el interior
+de un hilo limpio, sin entradas, en la parte del alumno. En la figura~\ref{fig:hilos}(b) se visualiza el interior del mismo hilo limpio en la parte del 
+tutor. La diferencia entre ambas im\'agenes se explicar\'a en las dos pr\'oximas subsecciones.
+
+La cabecera de ambas im\'agenes se pueden observar los distintos \'items de la barra de navegaci\'on. La barra de navegaci\'on ser\'a la misma dentro de
+todas las plantillas con la siguiente url: {\scriptsize \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/[\textit(buscar),\textit(puntuaciones),
+\textit(infopuntuaciones)]}}
+\begin{itemize}
+  \item {\bfseries \textit{Mis hilos}}: Es un enlace que hace referencia a la url de la presentaci\'on del perfil de usuario 
+  (Secci\'on~\ref{sec:presentacionalumno}).
+  \item {\bfseries \textit{Asignatura}}: Enlace que hace referencia a la misma url de la p\'agina servida, por lo que la recargar\'a (en este caso, 
+  la asignatura se llama \texttt{DAT}).
+  \item {\bfseries \textit{Buscar}}: Es un enlace que hace referencia a la url de b\'usqueda (Secci\'on~\ref{sec:buscar}).
+  \item {\bfseries \textit{Puntuaciones}}: Es una lista desplegable compuesta por dos enlaces. \textit{Ranking} hace referencia a la url donde se muestran 
+  todas las puntuaciones de los usuarios de un determinado hilo e \textit{Informaci\'on} hace referencia a la url que recoge las bases de esas puntuaciones.
+  \item {\bfseries \textit{Desconectar}}: Enlace que hace referencia a la url servida para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
+\end{itemize}
+Tambi\'en se expone, debajo de la barra de navegaci\'on, una imagen correspondiente al logo de la aplicaci\'on con su t\'itulo. Y en la parte derecha un 
+apartado que agrupa las entradas m\'as valoradas del hilo.
+
 \begin{figure}
   \centering
   \subfigure[Hilo limpio en alumno]{\includegraphics[width=7cm]{imagenes/HiloAlumno}}
@@ -857,6 +875,27 @@ En la figura~\ref{fig:hiloalumno}
   \label{fig:hilos}
 \end{figure}
 
+
+\subsubsection{Hilo de alumno} 
+\label{sec:hiloalumno}
+El documento HTML mostrado en la figura~\ref{fig:hiloalumno} es el contenedor de la p\'agina de un determinado hilo al que est\'a suscrito un alumno. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente al hilo al que est\'a
+suscrito un alumno: \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)}}. La vista asociada a ese recurso es \texttt{mostrarhiloalumno}, la cual 
+devuelve la plantilla \texttt{index.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on como alumno y que est\'e suscrito a la
+correspondiente asignatura de inter\'es.
+
+La vista filtra por el usuario conectado y por el Id de la asignatura pasada como argumento en el recurso de la petici\'on, para obtener la lista de 
+usuarios, la lista de comentarios, la lista de entradas m\'as valoradas, y la lista de entradas pertenecientes a esa asignatura. 
+El contenedor de la plantilla expone la lista de entradas tal y como se muestra en la figura. En la parte derecha del contenedor se re\'une la lista de 
+usuarios suscritos a este hilo. Cabe destacar que la lista de entradas dentro del contenedor est\'a limitada por un paginador creado por la vista. Cada 
+p\'agina dentro del hilo mostrar\'a en su contenedor cinco entradas como m\'aximo. El orden de la lista de entradas est\'a colocado de menor a mayor por 
+antiguedad, siendo las primeras entradas visibles las m\'as recientes.
+
+La respuesta de la vista tambi\'en contiene tres estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
+todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}) y todos los alumnos del modelo \texttt{Alumno} 
+(\textit{json\_alumnos}).
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradas}
@@ -867,12 +906,91 @@ En la figura~\ref{fig:hiloalumno}
 
 \subsubsection{Hilo de tutor} 
 \label{sec:hilotutor}
+El documento HTML mostrado en la figura~\ref{fig:hilotutor} es el contenedor de la p\'agina de un determinado hilo al que est\'a suscrito un tutor. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente al hilo al que est\'a
+suscrito un tutor: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)}}. La vista asociada a ese recurso es \texttt{mostrarhiloprofesor}, la cual 
+devuelve la plantilla \texttt{index\_tutor.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on como profesor y que est\'e suscrito a la
+correspondiente asignatura de inter\'es.
+
+La vista filtra por el Id de la asignatura pasada como argumento en el recurso de la petici\'on, para obtener la lista de 
+usuarios, la lista de comentarios, la lista de entradas m\'as valoradas, y la lista de entradas pertenecientes a esa asignatura. 
+El contenedor de la plantilla expone la lista de entradas tal y como se muestra en la figura. En la parte derecha del contenedor se re\'une la lista de 
+usuarios suscritos a este hilo. Cabe destacar que la lista de entradas dentro del contenedor est\'a limitada por un paginador creado por la vista. Cada 
+p\'agina dentro del hilo mostrar\'a en su contenedor cinco entradas como m\'aximo. El orden de la lista de entradas est\'a colocado de menor a mayor por 
+antiguedad, siendo las primeras entradas visibles las m\'as recientes.
+
+La respuesta de la vista tambi\'en contiene tres estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
+todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}) y todos los alumnos del modelo \texttt{Alumno} 
+(\textit{json\_alumnos}).
+
+La principal diferencia con las p\'aginas de los hilos mostrados por parte de los alumnos, es que los tutores tienen el permiso de eliminar entradas de la 
+lista de entradas o usuarios de la lista de usuarios.
 En la figura~\ref{fig:hilotutor}
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}
   \caption{\textit{P\'agina principal de un hilo de un tutor.}}
   \label{fig:hilotutor}
+\end{figure}
+
+
+\subsubsection{B\'usqueda avanzada} 
+\label{sec:buscar}
+El documento HTML mostrado en la figura~\ref{fig:buscar} es el contenedor de la p\'agina de b\'usqueda avanzada de entradas. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+b\'usqueda: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/buscar/}}. La vista asociada a ese recurso es \texttt{buscar}, la cual 
+devuelve la plantilla \texttt{buscar.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la correspondiente 
+asignatura de inter\'es.
+
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}. La parte del documento de la clase 
+\textit{.container} crea un formulario con una etiqueta \texttt{<select>} la cual despliega dos opciones de b\'usqueda a elegir, por \textit{Nick de usuario} 
+y por \textit{Id de entrada}.
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoBuscar}
+  \caption{\textit{P\'agina de b\'usqueda avanzada de entradas.}}
+  \label{fig:buscar}
+\end{figure}
+
+
+\subsubsection{Ranking} 
+\label{sec:ranking}
+El documento HTML mostrado en la figura~\ref{fig:ranking} es el contenedor de la p\'agina de ranking de un determinado hilo. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/puntuaciones/}}. La vista asociada a ese recurso es \texttt{puntuaciones}, la cual 
+devuelve la plantilla \texttt{puntuaciones.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la
+correspondiente asignatura de inter\'es.
+
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}.
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoRanking}
+  \caption{\textit{P\'agina de ranking.}}
+  \label{fig:ranking}
+\end{figure}
+
+
+\subsubsection{Informaci\'on de las puntuaciones} 
+\label{sec:informacionpuntuaciones}
+El documento HTML mostrado en la figura~\ref{fig:informacionpuntuaciones} muestra informaci\'on sobre las condiciones o bases de las puntuaciones. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+bases de las puntuaciones:\\ \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/infopuntuaciones/}}. La vista asociada a ese recurso es 
+\texttt{infopuntuaciones}, la cual devuelve la plantilla \texttt{infopuntuaciones.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on.
+
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}.
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoInfoPuntuaciones}
+  \caption{\textit{P\'agina con las bases de las puntuaciones.}}
+  \label{fig:informacionpuntuaciones}
 \end{figure}
 
 
