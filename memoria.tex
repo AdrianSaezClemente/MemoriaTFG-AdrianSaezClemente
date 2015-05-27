@@ -938,7 +938,7 @@ En la figura~\ref{fig:hilotutor}
 
 \subsubsection{B\'usqueda avanzada} 
 \label{sec:buscar}
-El documento HTML mostrado en la figura~\ref{fig:buscar} es el contenedor de la p\'agina de b\'usqueda avanzada de entradas. 
+El documento HTML mostrado en la figura~\ref{fig:buscar} pertenece la p\'agina de b\'usqueda avanzada de entradas. 
 La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
 b\'usqueda: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/buscar/}}. La vista asociada a ese recurso es \texttt{buscar}, la cual 
 devuelve la plantilla \texttt{buscar.html} que crea el documento HTML de la respuesta.
@@ -959,7 +959,7 @@ y por \textit{Id de entrada}.
 
 \subsubsection{Ranking} 
 \label{sec:ranking}
-El documento HTML mostrado en la figura~\ref{fig:ranking} es el contenedor de la p\'agina de ranking de un determinado hilo. 
+El documento HTML mostrado en la figura~\ref{fig:ranking} corresponde con la p\'agina de ranking de un determinado hilo. 
 La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
 ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/puntuaciones/}}. La vista asociada a ese recurso es \texttt{puntuaciones}, la cual 
 devuelve la plantilla \texttt{puntuaciones.html} que crea el documento HTML de la respuesta.
@@ -967,7 +967,15 @@ devuelve la plantilla \texttt{puntuaciones.html} que crea el documento HTML de l
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la
 correspondiente asignatura de inter\'es.
 
-La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}.
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}. 
+
+La vista \texttt{puntuaciones} recibe como par\'ametro el Id del hilo, y mediante ese Id procesa la petici\'on obteniendo la asignatura y la lista 
+de valoraciones asociadas a esa asignatura. Serializa una lista \textit{JSON} con todos los objetos del modelo \texttt{User} (\textit{json\_usuarios}).
+Toda esa informaci\'on es enviada como respuesta a la solicitud en la plantilla \texttt{puntuaciones.html}. 
+
+Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa todos los usuarios de una asignatura en una tabla HTML (etiqueta 
+\texttt{<table>}) con varios elementos de informaci\'on: \textit{Posici\'on}, \textit{Usuario}, \textit{Planets} y \textit{Nivel}.
+
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoRanking}
@@ -986,6 +994,13 @@ bases de las puntuaciones:\\ \texttt{/planetablogs/tutores/hilo/\textit(IdAsigna
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on.
 
 La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}.
+
+La vista \texttt{puntuaciones} recibe como par\'ametro el Id del hilo, y mediante ese Id procesa la petici\'on obteniendo el objeto completo de dicha 
+asignatura. El contenedor de la plantilla re\'une una serie de condiciones de texto plano mediante una lista num\'erica (etiqueta \texttt{<ol>}) y 
+en la parte inferior muestra una tabla HTML que resume la consecuci\'on de niveles con respecto a la puntuaci\'on obtenida. Al pasar el rat\'on por encima 
+de un nivel, y mediante los eventos \textit{JavaScript}, \texttt{mouseover} y \texttt{mouseout} del fichero \texttt{infopuntuaciones.js}, se a\~nade 
+(\textit{.addClass}) y se remueve (\textit{.removeClass}) una clase \textit{CSS} que colorea seg\'un el nivel se\~nalado.
+
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoInfoPuntuaciones}
@@ -996,7 +1011,45 @@ La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en l
 
 \subsubsection{Vistas con AJAX} 
 \label{sec:vistasajax}
+Hasta ahora hemos visto todas las vistas que procesaban peticiones con necesidad de renderizar una plantilla como respuesta a esas solicitudes. Con 
+\textit{AJAX} se han definido numerables vistas para intercambio de datos entre cliente y servidor sin necesidad de recargar la p\'agina, simplemente 
+enviando como respuesta el cacho de HTML que se necesita.
 
+Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de este proyecto son las siguientes:
+
+\begin{itemize}
+  \item {\bfseries \textit{Eliminar hilo en presentaci\'on de alumno}}: En la secci\'on donde se ubican \textit{Mis hilos}, cada hilo de la lista mostrada 
+  tiene dos botones a su derecha. El bot\'on \texttt{Eliminar} mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
+  \texttt{EliminarHilo} del fichero \texttt{presentacionalum.js}. Esta funci\'on lanza un di\'alogo definido por \textit{BootStrap} que da la opci\'on de
+  eliminar el hilo o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminarhiloalumno}. 
+  
+  Al hacer click sobre el bot\'on \texttt{Eliminar} del cuadro de di\'alogo, se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{eliminarasignaturaalumno}. La petici\'on es enviada desde el fichero \texttt{presentacionalum.js} usando \textit{jQuery} e incluye como dato el 
+  Id de la asignatura. Una vez llega la solicitud al servidor, la vista filtra por medio de ese Id y del Id del alumno en los modelos \texttt{Rss}, 
+  \texttt{Valoracion} y \texttt{Entrada}, para realizar un borrado (\texttt{.delete}) de todos los objetos que ofrecen alguna dependencia con el hilo. La 
+  funci\'on \textit{AJAX} no recibe ning\'un dato como respuesta.
+  
+  \item {\bfseries \textit{Agregar hilo en presentaci\'on de tutor}}: En \textit{Hilos disponibles}, cada hilo de la lista ofrece la posibilidad de pinchar 
+  sobre un bot\'on \texttt{A\~nadir} de color azul. Mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} \texttt{Agregar} del 
+  fichero \texttt{presentacionprof.js}. Esta funci\'on 
+  \item {\bfseries \textit{Eliminar hilo en presentaci\'on de tutor}}:
+  \item {\bfseries \textit{Puntuaciones}}:
+  \item {\bfseries \textit{Desconectar}}: 
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}
+  \caption{\textit{Eliminar hilo en una presentaci\'on de alumno.}}
+  \label{fig:eliminarhiloalumno}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorEliminarHilo}
+  \caption{\textit{Eliminar hilo en una presentaci\'on de tutor.}}
+  \label{fig:eliminarhilotutor}
+\end{figure}
 
 \subsubsection{Cierre de sesi\'on} 
 \label{sec:cierresesion}
