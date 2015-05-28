@@ -1029,27 +1029,93 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   \texttt{Valoracion} y \texttt{Entrada}, para realizar un borrado (\texttt{.delete}) de todos los objetos que ofrecen alguna dependencia con el hilo. La 
   funci\'on \textit{AJAX} no recibe ning\'un dato como respuesta.
   
+  \begin{figure}
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}
+    \caption{\textit{Eliminar hilo en una presentaci\'on de alumno.}}
+    \label{fig:eliminarhiloalumno}
+  \end{figure}
+
   \item {\bfseries \textit{Agregar hilo en presentaci\'on de tutor}}: En \textit{Hilos disponibles}, cada hilo de la lista ofrece la posibilidad de pinchar 
   sobre un bot\'on \texttt{A\~nadir} de color azul. Mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} \texttt{Agregar} del 
-  fichero \texttt{presentacionprof.js}. Esta funci\'on 
-  \item {\bfseries \textit{Eliminar hilo en presentaci\'on de tutor}}:
-  \item {\bfseries \textit{Puntuaciones}}:
-  \item {\bfseries \textit{Desconectar}}: 
+  fichero \texttt{presentacionprof.js}. Esta funci\'on realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{agregarasignaturaprofesor}. La petici\'on es enviada desde el fichero \texttt{presentacionprof.js} usando \textit{jQuery} e incluye como dato el 
+  Id de la asignatura. La vista filtra por el par\'ametro recibido en el modelo \texttt{Asignatura}. Una vez consigue el hilo, asocia al usuario que 
+  puls\'o el bot\'on a\~nadir a ese hilo. La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on \textit{jQuery} 
+  \texttt{.prepend} en la presentaci\'on se agrega el hilo en \textit{Mis hilos}, mientras que paralelamente con la funci\'on \texttt{.hide} de 
+  \textit{jQuery-ui} se elimina de \textit{Hilos disponibles}.
+
+  \item {\bfseries \textit{Eliminar hilo en presentaci\'on de tutor}}: En la secci\'on donde se ubican \textit{Mis hilos}, cada hilo de la lista mostrada 
+  tiene dos botones a su derecha. El bot\'on \texttt{Eliminar} mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
+  \texttt{EliminarHilo} del fichero \texttt{presentacionprof.js}. Esta funci\'on lanza un di\'alogo definido por \textit{BootStrap} que da la opci\'on de
+  eliminar el hilo o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminarhilotutor}. 
+  
+  Al hacer click sobre el bot\'on \texttt{Eliminar} del cuadro de di\'alogo, se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{eliminarasignaturaprofesor}. La petici\'on es enviada desde el fichero \texttt{presentacionprof.js} usando \textit{jQuery} e incluye como dato el 
+  Id de la asignatura. Una vez llega la solicitud al servidor, la vista filtra por medio de ese Id y remueve el objeto con Id del tutor en el modelo
+  \texttt{Asignatura} mediante el m\'etodo \textit{.remove}. La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on 
+  \textit{jQuery} \texttt{.prepend} en la presentaci\'on se agrega el hilo en \textit{Hilos disponibles}, mientras que paralelamente con la funci\'on 
+  \texttt{.hide} de \textit{jQuery-ui} se elimina de \textit{Mis hilos}.
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorEliminarHilo}
+    \caption{\textit{Eliminar hilo en una presentaci\'on de tutor.}}
+    \label{fig:eliminarhilotutor}
+  \end{figure}
+  
+  \item {\bfseries \textit{Agregar comentario en hilo de alumno}}: Las entradas de un hilo dan la posibilidad de comentar esa entrada mediante un texto
+  introducido en una etiqueta \texttt{<textarea>} y un bot\'on \texttt{Enviar} como se muestra en la figura~\ref{fig:agregarcomentario}.
+  
+  El bot\'on \texttt{Enviar} mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript}\\ \texttt{AgregarComentario} del fichero 
+  \texttt{index.js}. Realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista \texttt{agregarcomentario}. La petici\'on es enviada desde el 
+  fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura, el Id de la entrada, el Id del usuario y la descripci\'on.
+  Una vez llega la solicitud al servidor, si la descripci\'on es distinto de \textit{null} (es decir, se ha escrito alg\'un comentario), la vista crea un
+  objeto \texttt{Comentario} y lo guarda en base de datos. Suma la valoraci\'on del comentario al alumno de la asignatura correspondiente y actualiza su 
+  nivel. Por \'ultimo, la vista declara datos a trav\'es de un elemento que incluye dos \textit{JSON} (\texttt{json\_usuario} y \texttt{json\_comentario})
+  que se traspasar\'an por medio de la respuesta HTTP al cliente. La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML y datos \textit{JSON}. 
+  Mediante la funci\'on \textit{jQuery} \texttt{.append} en la plantilla se plasma el comentario en la parte inferior de la entrada.
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentario}
+    \caption{\textit{Comentario agregado en una entrada.}}
+    \label{fig:agregarcomentario}
+  \end{figure}
+  
+  \item {\bfseries \textit{Eliminar comentario en hilo de alumno}}: Las entradas de un hilo dan la posibilidad de eliminar comentarios sobre esa entrada 
+  al pulsar el bot\'on \texttt{Eliminar comentario} que mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
+  \texttt{EliminarComentario} del fichero \texttt{index.js}.
+  
+  La petici\'on \textit{AJAX} de tipo \texttt{GET} se vincula con la vista \texttt{eliminarcomentario}. La solicitud es enviada desde el 
+  fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura y el Id del comentario.
+  El servidor procesa la solicitud obteniendo el objeto \texttt{Comentario} a borrar. Cuando lo obtiene realiza un borrado con el m\'etodo \textit{.delete} 
+  y resta la puntuaci\'on del objeto \texttt{Valoracion} perteneciente al alumno que elimina el comentario y actualiza su nivel.
+  La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on \textit{jQuery} \texttt{.remove} suprime el comentario de la 
+  plantilla y con la funci\'on \texttt{.show} muestra un mensaje de informaci\'on de borrado como se ve en la figura~\ref{fig:eliminarcomentario}.
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentarioBorrado}
+    \caption{\textit{Comentario eliminado en una entrada.}}
+    \label{fig:eliminarcomentario}
+  \end{figure}
+  
+  \item {\bfseries \textit{Valoraci\'on positiva y negativa de una entrada}}: 
+  
+  \begin{figure}
+    \centering
+    \subfigure[Botones sin valoraci\'on]{\includegraphics[width=7cm]{imagenes/SinValoracion}}
+    \subfigure[Botones con valoraci\'on]{\includegraphics[width=7cm]{imagenes/ConValoracion}}
+    \caption{\textit{Valoraci\'on de una entrada.}}
+    \label{fig:hilos}
+  \end{figure}
+
 \end{itemize}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}
-  \caption{\textit{Eliminar hilo en una presentaci\'on de alumno.}}
-  \label{fig:eliminarhiloalumno}
-\end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorEliminarHilo}
-  \caption{\textit{Eliminar hilo en una presentaci\'on de tutor.}}
-  \label{fig:eliminarhilotutor}
-\end{figure}
+
+
 
 \subsubsection{Cierre de sesi\'on} 
 \label{sec:cierresesion}
