@@ -1083,14 +1083,14 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \label{fig:agregarcomentario}
   \end{figure}
   
-  \item {\bfseries \textit{Eliminar comentario en hilo de alumno}}: Las entradas de un hilo dan la posibilidad de eliminar comentarios sobre esa entrada 
-  al pulsar el bot\'on \texttt{Eliminar comentario} que mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
+  \item {\bfseries \textit{Eliminar comentario en hilo de alumno o tutor}}: Las entradas de un hilo dan la posibilidad de eliminar comentarios sobre esa 
+  entrada al pulsar el bot\'on \texttt{Eliminar comentario} que mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
   \texttt{EliminarComentario} del fichero \texttt{index.js}.
   
   La petici\'on \textit{AJAX} de tipo \texttt{GET} se vincula con la vista \texttt{eliminarcomentario}. La solicitud es enviada desde el 
   fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura y el Id del comentario.
   El servidor procesa la solicitud obteniendo el objeto \texttt{Comentario} a borrar. Cuando lo obtiene realiza un borrado con el m\'etodo \textit{.delete} 
-  y resta la puntuaci\'on del objeto \texttt{Valoracion} perteneciente al alumno que elimina el comentario y actualiza su nivel.
+  y resta la puntuaci\'on del objeto \texttt{Valoracion} perteneciente al usuario que elimina el comentario y actualiza su nivel.
   La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on \textit{jQuery} \texttt{.remove} suprime el comentario de la 
   plantilla y con la funci\'on \texttt{.show} muestra un mensaje de informaci\'on de borrado como se ve en la figura~\ref{fig:eliminarcomentario}.
   
@@ -1101,7 +1101,28 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \label{fig:eliminarcomentario}
   \end{figure}
   
-  \item {\bfseries \textit{Valoraci\'on positiva y negativa de una entrada}}: 
+  \item {\bfseries \textit{Valoraci\'on positiva y negativa de una entrada}}: Dentro de cada entrada se agrupan dos botones, de color verde para 
+  valoraciones positivas y de color rojo para valoraciones negativas (figura~\ref{fig:hilos}(a)). Son enlaces \textit{hyperlink} que mediante el evento \textit{onClick} llaman a las 
+  funciones \textit{JavaScript} \texttt{Up} o \texttt{Down} respectivamente. Estas funciones se definen en el fichero \texttt{index.js}. 
+  
+  Ambas funciones env\'ian una petici\'on \textit{AJAX} de tipo \texttt{GET} a su correspondiente vista mediante su recurso o url. La petici\'on es enviada 
+  desde el fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura, el Id del alumno, el Id de la entrada y el entero 
+  Up o Down (valor del bot\'on antes de enviar la petici\'on).
+  
+  La vista \texttt{up} procesar\'a una valoraci\'on positiva. La vista crea un objeto en el modelo \texttt{Up} con los par\'ametros pasados en la solicitud. 
+  Guarda el objeto y modifica la entrada del modelo \texttt{Entrada} en la que se efectu\'o el click del bot\'on positivo. En el objeto \texttt{Entrada} se
+  cambia el campo \textit{total} (suma dos puntos que es la puntuaci\'on que se bonifica al hacer una valoraci\'on positiva) y el campo \textit{totalup} 
+  (indica el total de valoraciones positivas que ha recibido esa entrada). Por \'ultimo, la vista modifica el objeto \texttt{Valoracion} sumando esos dos 
+  puntos y actualizando el nivel al usuario.
+  
+  La vista \texttt{down} procesar\'a una valoraci\'on negativa. La vista crea un objeto en el modelo \texttt{Down} con los par\'ametros pasados en la 
+  solicitud. Guarda el objeto y modifica la entrada del modelo \texttt{Entrada} en la que se efectu\'o el click del bot\'on negativo. En el objeto 
+  \texttt{Entrada} se cambia el campo \textit{total} (resta un punto que es la puntuaci\'on que se penaliza al hacer una valoraci\'on negativa) y el campo 
+  \textit{totaldown} (indica el total de valoraciones negativas que ha recibido esa entrada). Por \'ultimo, la vista modifica el objeto \texttt{Valoracion} 
+  restando ese punto y actualizando el nivel al usuario.
+  
+  La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on \textit{jQuery} \texttt{.html} en la entrada del documento HTML 
+  se crean dos botones deshabilitados con la cantidad total de valoraciones positivas y negativas que ha recibido (figura~\ref{fig:hilos}(b))
   
   \begin{figure}
     \centering
@@ -1111,6 +1132,79 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \label{fig:hilos}
   \end{figure}
 
+  \item {\bfseries \textit{Eliminar entrada en hilo de tutor}}: Un tutor puede eliminar las entradas de un hilo escritas por un alumno a trav\'es del 
+  bot\'on \texttt{Eliminar entrada} (figura~\ref{fig:eliminarentrada}(a)). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
+  \textit{JavaScript} \texttt{EliminarEntradaPopUp} del fichero \texttt{index\_tutor.js}. Esta funci\'on lanza un di\'alogo definido por \textit{BootStrap} 
+  que da la opci\'on de eliminar la entrada o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminarentrada}(b). 
+  
+  Al hacer click sobre el bot\'on \texttt{Eliminar} del cuadro de di\'alogo, se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{eliminarentrada}. La petici\'on es enviada desde el fichero \texttt{index\_tutor.js} usando \textit{jQuery} e incluye como datos el 
+  Id de la asignatura y el Id de la entrada. La solicitud es aceptada en el servidor. La vista remueve el objeto \texttt{Entrada} mediante el m\'etodo 
+  \textit{.remove} y elimina las valoraciones negativas o positivas de los modelos \texttt{Up} y \texttt{Down}. Adem\'as realiza un rec\'alculo del objeto 
+  \texttt{Valoracion} al suprimir estas valoraciones y actualiza el nivel del alumno.
+  
+  La funci\'on \textit{AJAX} no recibe ning\'un dato como respuesta.
+  
+  \begin{figure}
+    \centering
+    \subfigure[Entrada en hilo de tutor.]{\includegraphics[width=10cm]{imagenes/EntradaTutor}}
+    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarEntrada}}
+    \caption{\textit{Eliminaci\'on de una entrada en el hilo de un tutor.}}
+    \label{fig:eliminarentrada}
+  \end{figure}
+
+  
+  \item {\bfseries \textit{Eliminar alumno en hilo de tutor}}: Un tutor puede eliminar los alumnos suscritos a un hilo a trav\'es del 
+  bot\'on \texttt{Eliminar} (figura~\ref{fig:eliminaralumno}(a)). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
+  \textit{JavaScript} \texttt{EliminarAlumnoPopUp} del fichero \texttt{index\_tutor.js}. Esta funci\'on lanza un di\'alogo definido por \textit{BootStrap} 
+  que da la opci\'on de eliminar el alumno o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminaralumno}(b). 
+  
+  Al hacer click sobre el bot\'on \texttt{Eliminar} del cuadro de di\'alogo, se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{eliminaralumno}. La petici\'on es enviada desde el fichero \texttt{index\_tutor.js} usando \textit{jQuery} e incluye como datos el 
+  Id de la asignatura y el Id del alumno. La solicitud es aceptada en el servidor. La vista remueve el objeto \texttt{Rss} mediante el m\'etodo 
+  \textit{.delete} y procede a la eliminaci\'on de todas las entradas del alumno en ese hilo. Adem\'as se elimina su objeto \texttt{Valoracion},
+  por lo que se habr\'a realizado un borrado completo de ese alumno en ese hilo.
+  
+  La funci\'on \textit{AJAX} no recibe ning\'un dato como respuesta.
+  
+  \begin{figure}
+    \centering
+    \subfigure[Tabla de suscriptores en hilo de tutor.]{\includegraphics[width=10cm]{imagenes/HiloTutorAlumnos}}
+    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarAlumno}}
+    \caption{\textit{Eliminaci\'on de un alumno en el hilo de un tutor.}}
+    \label{fig:eliminaralumno}
+  \end{figure}
+  
+  
+  \item {\bfseries \textit{B\'usqueda avanzada}}: Un alumno o un tutor tienen la opci\'on de buscar entradas por \textit{Nick de usuario} o 
+  \textit{Id de entrada}. Cada opci\'on se selecciona con una etiqueta \texttt{<select>}. Al pulsar sobre el bot\'on \texttt{Buscar} el evento 
+  \textit{onClick} llama a la funci\'on \textit{JavaScript} \texttt{Buscar} del fichero \texttt{buscar.js}. 
+  
+  Ambas acciones ejecutan una petici\'on \textit{AJAX} de tipo \texttt{GET}. La petici\'on es enviada desde el fichero \texttt{buscar.js} usando 
+  \textit{jQuery} e incluye como datos el Id de la opci\'on y el texto escrito.
+
+  En la figura~\ref{fig:buscarajax}(a) se procede a buscar por \textit{Nick de usuario}. La solicitud \textit{AJAX} vincula su recurso \textit{url} a la 
+  vista \texttt{buscarNickUsuario}. Comprueba que el texto enviado en la petici\'on no est\'a vac\'io y si existe un \texttt{username} que coincide con lo
+  introducido. Una vez validado correctamente se crean dos listas \textit{JSON} de usuario (\texttt{list\_usuario}) y de entradas (\texttt{list\_entradas}) 
+  filtradas por el Id del alumno. Estos datos \textit{JSON} son inclu\'idas como respuesta HTTP al cliente. En caso de que la validaci\'on sea incorrecta 
+  se enviar\'a como respuesta HTTP un \textit{JSON} vac\'io que saltar\'a en la plantilla renderizada como un mensaje de aviso.
+
+  En la figura~\ref{fig:buscarajax}(b) se procede a buscar por \textit{Id de entrada}. La solicitud \textit{AJAX} vincula su recurso \textit{url} a la 
+  vista \texttt{buscarIdEntrada}. Comprueba que el texto enviado en la petici\'on no est\'a vac\'io y si existe un Id de entrada que coincide con lo
+  introducido. Una vez validado correctamente se crean dos listas \textit{JSON} de usuario (\texttt{list\_usuario}) y de entrada (\texttt{list\_entrada}). 
+  Estos datos \textit{JSON} son inclu\'idas como respuesta HTTP al cliente. En caso de que la validaci\'on sea incorrecta se enviar\'a como respuesta HTTP 
+  un \textit{JSON} vac\'io que saltar\'a en la plantilla renderizada como un mensaje de aviso.
+  
+  La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo HTML. Mediante la funci\'on \textit{jQuery} \texttt{.append} en el contenedor del documento 
+  HTML se agrega las entradas enviadas en la respuesta HTTP.
+  
+  \begin{figure}
+    \centering
+    \subfigure[Buscar entradas por Nick de usuario.]{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorNick}}
+    \subfigure[Buscar entrada por Id de entrada.]{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorId}}
+    \caption{\textit{Ejecuci\'on de una b\'usqueda.}}
+    \label{fig:buscarajax}
+  \end{figure}
 \end{itemize}
 
 
