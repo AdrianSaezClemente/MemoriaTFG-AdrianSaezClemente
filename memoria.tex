@@ -232,7 +232,7 @@ label{sec:planificacion-temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Estado del arte}
+\chapter{Tecnolog\'ias utilizadas}
 
 Descripcin de las tecnologas que utilizas en tu trabajo. Con dos o tres prrafos por cada tecnologa, vale.
 
@@ -1169,8 +1169,8 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Tabla de suscriptores en hilo de tutor.]{\includegraphics[width=10cm]{imagenes/HiloTutorAlumnos}}
-    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarAlumno}}
+    \subfigure[Tabla de suscriptores en hilo de tutor.]{\includegraphics[width=8cm]{imagenes/HiloTutorAlumnos}}
+    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=8cm]{imagenes/HiloTutorEliminarAlumno}}
     \caption{\textit{Eliminaci\'on de un alumno en el hilo de un tutor.}}
     \label{fig:eliminaralumno}
   \end{figure}
@@ -1205,6 +1205,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \caption{\textit{Ejecuci\'on de una b\'usqueda.}}
     \label{fig:buscarajax}
   \end{figure}
+  
 \end{itemize}
 
 
@@ -1215,12 +1216,13 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
 \label{sec:cierresesion}
 El enlace mostrado en la figura~\ref{fig:cierresesion} en color rojo (\textit{Desconectar}) corresponde con el cierre de sesi\'on por parte de alumno o 
 tutor. Al pulsar sobre el enlace se produce una petici\'on GET del cliente. La vista asociada al recurso interno del enlace es \texttt{salir}, la cual 
-redirecciona a la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta (Figura~\ref{fig:paginainicio}).
+redirecciona a la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta.
 
-Este enlace se sit\'ua en la parte derecha de la barra de navegaci\'on...
+Este enlace se sit\'ua en la parte derecha de la barra de navegaci\'on de cualquier plantilla dentro de la aplicaci\'on que se cargue despu\'es de un previo
+registro.
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/CierreSesion}
+  \includegraphics[width=10cm, keepaspectratio]{imagenes/CierreSesion}
   \caption{\textit{Enlace de cierre de sesi\'on.}}
   \label{fig:cierresesion}
 \end{figure}
@@ -1310,69 +1312,198 @@ las tecnologas utilizadas y dems.
 \chapter{Manual de usuario}
 \label{app:manual}
 
+
+
 \section{P\'agina de inicio}
+Para entrar a la aplicaci\'on es necesario visitar la p\'agina de inicio~\ref{figura:inicio}. Cuando accedes a dicha p\'agina tienes dos posibles 
+acciones a realizar:
+
 \begin{figure}[htbp] 
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PaginaInicio}}
+  \caption{P\'agina de inicio.}
   \label{figura:inicio}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PaginaInicio}}
-  \caption{P\'agina de inicio}
 \end{figure}
+
+\begin{itemize}
+  \item {\bfseries Identif\'icate}: Iniciar sesi\'on con un formulario que aparece para introducir nombre de usuario y contrase\~na~\ref{figura:inicio1}(a).
+  En caso de que los datos introducidos sean err\'oneos saldr\'a un mensaje indicando de que se deben introducir datos v\'alidos~\ref{figura:inicio1}(b).
+  \item {\bfseries Reg\'istrate}: Antes de iniciar sesi\'on como usuario dado de alta en la aplicaci\'on es obligatorio crearse un perfil pulsando sobre 
+  uno de los dos botones que aparecen en verde. Con etiqueta ''Alumno'' para registrarse como alumno, y con etiqueta ''Tutor'' para registrarse como tutor.
+\end{itemize} 
+
 \begin{figure}[htbp] 
+  \centering
+  \subfigure[Formulario de inicio de sesi\'on.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/InicioComoAlumno}}}
+  \subfigure[Inicio de sesi\'on err\'onea.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/InicioError}}}
+  \caption{Inicio de sesi\'on.}
   \label{figura:inicio1}
-  \centering
-  \subfigure[Inicio de sesi\'on]{\includegraphics[width=6cm]{imagenes/InicioComoAlumno}}
-  \subfigure[Inicio de sesi\'on err\'onea]{\includegraphics[width=6cm]{imagenes/InicioError}}
-  \caption{Inicio de sesi\'on}
 \end{figure}
-\newpage
-\paragraph{}
-Como se muestra en la figura
 
 
-\newpage
+
 \section{P\'agina de registro}
+La creaci\'on de un perfil de usuario pasa por rellenar los campos del formulario que se observan en ambas figuras. Tanto en el registro de  
+alumnos~\ref{figura:registro}(a), como en el registro de tutores~\ref{figura:registro}(b) se rellenan los mismos campos: Una imagen, un nick de usuario,
+un nombre y sus apellidos, un email y una contrase\~na.
 \begin{figure}[htbp] 
+  \centering
+  \subfigure[Registro como alumno.]{\doublebox{\includegraphics[width=12cm]{imagenes/RegistroAlumno}}}
+  \subfigure[Registro como tutor.]{\doublebox{\includegraphics[width=12cm]{imagenes/RegistroTutor}}}
+  \caption{Inicio de sesi\'on}
   \label{figura:registro}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumno}}
-  \caption{Registro como alumno}
 \end{figure}
-\begin{figure}[htbp] 
-  \label{figura:registro1}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroTutor}}
-  \caption{Registro como tutor}
-\end{figure}
-\begin{figure}[htbp] 
-  \label{figura:registro2}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/NickCorrectoOcupado}}
-  \caption{Rellenar nick}
-\end{figure}
-\begin{figure}[htbp] 
-  \label{figura:registro3}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumnoError}}
-  \caption{Registro err\'oneo}
-\end{figure}
-\begin{figure}[htbp] 
-  \label{figura:registro4}
-  \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumnoInfo}}
-  \caption{Informaci\'on de registro}
-\end{figure}
-se muestra todo
 
-\newpage
-\section{Presentaci\'on de tutor}
-\begin{figure}[htbp] 
-  \label{figura:tutor}
+El nick de usuario debe ser \'unico y no estar ocupado por ning\'un integrante de la aplicaci\'on. Seg\'un se teclea el nick se mostrar\'a si el nick est\'a 
+apropiado por otro usuario en rojo o por el contrario se encuentra libre en verde (figura~\ref{figura:registro1}).\\\\
+\begin{figure}[htbp]
   \centering
-  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutor}}
-  \caption{P\'agina de presentaci\'on de tutor}
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/NickCorrectoOcupado}}
+  \caption{Rellenar nick}
+  \label{figura:registro1}
 \end{figure}
-figura \hyperref[figura:registro1]{A.4}
-\newpage
+
+Una vez relleno todos los campos del formulario se debe pulsar el bot\'on ''Guardar''. Si los datos son correctos se redirigir\'a a la p\'agina de inicio
+de sesi\'on para que se proceda con la identificaci\'on. Si los datos son incorrectos se mostrar\'a una alerta o panel rojo debajo del formulario con un 
+mensaje de informaci\'on err\'onea que anime a introducirlos otra vez. Se puede dar al icono de la ''X'' para cerrar el panel 
+(figura~\ref{figura:registro2}).
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumnoError}}
+  \caption{Registro err\'oneo}
+  \label{figura:registro2}
+\end{figure}
+
+Seg\'un se ve en el mensaje de informaci\'on err\'onea existe la posibilidad de pasar el rat\'on por encima del icono de informaci\'on, a la izquierda del 
+bot\'on ''Guardar''. Al realizar esta acci\'on se abre una alerta azul con un mensaje recordatorio de como debe ser los datos introducidos para un correcto
+registro de perfil de usuario. Son cinco condiciones que se enumeran en la figura~\ref{figura:registro3}.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumnoInfo}}
+  \caption{Informaci\'on de registro}
+  \label{figura:registro3}
+\end{figure}
+
+Otra acci\'on a destacar dentro de la p\'agina de registro es la opci\'on de cancelar el registro con el bot\'on azul ''Cancelar''. Si se pulsa sobre \'el se
+redirigir\'a a la p\'agina de inicio de sesi\'on.
+
+
+\section{Presentaci\'on de tutor}
+Despu\'es de haber realizado el registro de usuario como tutor y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
+comienza con la presentaci\'on de tutor o perfil de tutor (figura~\ref{figura:tutor}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on (a la derecha, pulsando el 
+enlace ''Desconectar'' en rojo). S\'olo aparece una pesta\~na ''Mis hilos'' a la izquierda la cual tiene la funci\'on de actualizar la p\'agina de perfil 
+de tutor. Tambi\'en se exhibe una foto del usuario y un t\'itulo con la expresi\'on \textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el
+perfil.
+
+\begin{figure}[htbp] 
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutor}}
+  \caption{P\'agina de presentaci\'on de tutor.}
+  \label{figura:tutor}
+\end{figure}
+
+Las secciones que se incluyen en la presentaci\'on de un tutor son:
+
+\begin{itemize}
+  \item {\bfseries Crear hilo}: Al presionar el bot\'on verde y alargado ''Crear hilo'', se extiende un formulario como el de la figura~\ref{figura:tutor1} 
+  por el cual un tutor puede fundar un hilo asignando un t\'itulo y una descripci\'on breve sobre la tem\'atica del hilo. Al enviar el formulario, el hilo 
+  pasa directamente a la secci\'on de ''Hilos disponibles''.
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorCrearHilo}}
+    \caption{Formulario para la creaci\'on de un hilo.}
+    \label{figura:tutor1}
+  \end{figure}
+  
+  \item {\bfseries Hilos disponibles}: Se presentan todos los hilos creados anteriormente a los que el tutor no est\'a suscrito (ya sean creados o no por 
+  el tutor del propio perfil). Como se ve en la figura~\ref{figura:tutor2} cada hilo expone un bot\'on ''A\~nadir'' para que cuando sea presionado, el hilo 
+  correspondiente pase a la secci\'on de ''Mis hilos''.
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorHilosDisponibles}}
+    \caption{Secci\'on de \textit{Hilos disponibles} en una presentaci\'on de tutor.}
+    \label{figura:tutor2}
+  \end{figure}
+  
+  \item {\bfseries Mis hilos}: Se presentan todos los hilos a los que el tutor est\'a suscrito (figura~\ref{figura:tutor3}). Para cada hilo se hallan las 
+  alternativas de apretar el bot\'on ''Eliminar'' para suprimir el hilo de esta secci\'on y enviarlo a ''Hilos disponibles'', o de presionar el bot\'on
+  ''Visitar'' para acceder a la p\'agina propia de la asignatura pertinente. Al pulsar sobre el bot\'on ''Eliminar se abre un cuadro de di\'alogo en el 
+  centro de la pantalla para asegurarse de que es la acci\'on que realmente se quiere realizar.
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorMisHilos}}
+    \caption{Secci\'on de \textit{Mis hilos} en una presentaci\'on.}
+    \label{figura:tutor3}
+  \end{figure}
+\end{itemize} 
+
+
+\section{Presentaci\'on de alumno}
+Despu\'es de haber realizado el registro de usuario como alumno y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
+comienza con la presentaci\'on de alumno o perfil de alumno (figura~\ref{figura:alumno}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on 
+(a la derecha, pulsando el enlace ''Desconectar'' en rojo). S\'olo aparece una pesta\~na ''Mis hilos'' a la izquierda la cual tiene la funci\'on de 
+actualizar la p\'agina de perfil de alumno. Tambi\'en se exhibe una foto del usuario y un t\'itulo con la expresi\'on 
+\textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el perfil.
+
+\begin{figure}[htbp] 
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}}
+  \caption{P\'agina de presentaci\'on de alumno.}
+  \label{figura:alumno}
+\end{figure}
+
+Las secciones que se incluyen en la presentaci\'on de un alumno son:
+
+\begin{itemize}
+  \item {\bfseries Hilos disponibles}: Se presentan todos los hilos creados anteriormente a los que el alumno no est\'a suscrito. Como se ve en la 
+  figura~\ref{figura:alumno1} cada hilo expone un bot\'on ''Guardar y a\~nadir'' para que cuando sea presionado, el hilo correspondiente pase a la 
+  secci\'on de ''Mis hilos''. Pero antes se debe haber introducido un enlace \textit{Rss} v\'alido en el formulario proporcionado para ello. En ese 
+  \textit{Rss} ser\'a donde el alumno guardar\'a sus entradas para que dentro de la aplicaci\'on aparezcan autom\'aticamente en el hilo al que pertenecen.
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoHilosDisponibles}}
+    \caption{Secci\'on de \textit{Hilos disponibles} en una presentaci\'on de alumno.}
+    \label{figura:alumno1}
+  \end{figure}
+  
+  En caso de que el \textit{Rss} no sea v\'alido se recargar\'a la p\'agina de presentaci\'on de alumno indicando un error en un panel de alerta marr\'on 
+  (figura~\ref{figura:alumno1}).
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoErrorRss}}
+    \caption{Error al introducir \textit{Rss} en una presentaci\'on de alumno.}
+    \label{figura:alumno2}
+  \end{figure}
+  
+  \item {\bfseries Mis hilos}: Se presentan todos los hilos a los que el alumno est\'a suscrito (secci\'on id\'entica a la que expone la presentaci\'on de 
+  tutor~\ref{figura:tutor3}). Para cada hilo se hallan las alternativas de apretar el bot\'on ''Eliminar'' para suprimir el hilo de esta secci\'on y 
+  enviarlo a ''Hilos disponibles'', o de presionar el bot\'on ''Visitar'' para acceder a la p\'agina propia de la asignatura pertinente. Al pulsar sobre el 
+  bot\'on ''Eliminar se abre un cuadro de di\'alogo en el centro de la pantalla para asegurarse de que es la acci\'on que realmente se quiere realizar, 
+  avisando de los riesgos que ello conlleva (figura~\ref{figura:alumno3}).
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}}
+    \caption{Eliminar hilo de la secci\'on de \textit{Mis hilos} en una presentaci\'on de alumno.}
+    \label{figura:alumno3}
+  \end{figure}
+\end{itemize} 
+
+
+\section{Hilo de alumno}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSTALACION Y USO %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Instalaci\'on y uso}
+\label{app:instalacionuso}
+
+Para el uso de la aplicaci\'on web es necesario tener instalado \textit{Django} y \textit{Python}. Para su desarrollo, cabe destacar que se utiliz\'o la 
+versi\'on \textit{Django 1.6.6} y la versi\'on \textit{Python 2.7.6}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAFIA %
