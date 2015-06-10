@@ -1389,6 +1389,7 @@ redirigir\'a a la p\'agina de inicio de sesi\'on.
 
 
 \section{Presentaci\'on de tutor}
+\label{app:presentaciontutor}
 Despu\'es de haber realizado el registro de usuario como tutor y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
 comienza con la presentaci\'on de tutor o perfil de tutor (figura~\ref{figura:tutor}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on (a la derecha, pulsando el 
 enlace ''Desconectar'' en rojo). S\'olo aparece una pesta\~na ''Mis hilos'' a la izquierda la cual tiene la funci\'on de actualizar la p\'agina de perfil 
@@ -1439,6 +1440,7 @@ Las secciones que se incluyen en la presentaci\'on de un tutor son:
 
 
 \section{Presentaci\'on de alumno}
+\label{app:presentacionalumno}
 Despu\'es de haber realizado el registro de usuario como alumno y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
 comienza con la presentaci\'on de alumno o perfil de alumno (figura~\ref{figura:alumno}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on 
 (a la derecha, pulsando el enlace ''Desconectar'' en rojo). S\'olo aparece una pesta\~na ''Mis hilos'' a la izquierda la cual tiene la funci\'on de 
@@ -1467,7 +1469,7 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
   \end{figure}
   
   En caso de que el \textit{Rss} no sea v\'alido se recargar\'a la p\'agina de presentaci\'on de alumno indicando un error en un panel de alerta marr\'on 
-  (figura~\ref{figura:alumno1}).
+  (figura~\ref{figura:alumno2}).
   \begin{figure}[htbp] 
     \centering
     \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoErrorRss}}
@@ -1478,7 +1480,7 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
   \item {\bfseries Mis hilos}: Se presentan todos los hilos a los que el alumno est\'a suscrito (secci\'on id\'entica a la que expone la presentaci\'on de 
   tutor~\ref{figura:tutor3}). Para cada hilo se hallan las alternativas de apretar el bot\'on ''Eliminar'' para suprimir el hilo de esta secci\'on y 
   enviarlo a ''Hilos disponibles'', o de presionar el bot\'on ''Visitar'' para acceder a la p\'agina propia de la asignatura pertinente. Al pulsar sobre el 
-  bot\'on ''Eliminar se abre un cuadro de di\'alogo en el centro de la pantalla para asegurarse de que es la acci\'on que realmente se quiere realizar, 
+  bot\'on ''Eliminar'' se abre un cuadro de di\'alogo en el centro de la pantalla para asegurarse de que es la acci\'on que realmente se quiere realizar, 
   avisando de los riesgos que ello conlleva (figura~\ref{figura:alumno3}).
   \begin{figure}[htbp] 
     \centering
@@ -1490,9 +1492,170 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
 
 
 \section{Hilo de alumno}
+\label{app:hiloalumno}
+La p\'agina de una asignatura concreta por parte de un alumno se visualiza despu\'es de dar al bot\'on ''Visitar'' en su presentaci\'on. En la 
+figura~\ref{figura:hiloalumno} se muestra un hilo vac\'io en sus inicios, sin entradas.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumno}}
+  \caption{Hilo vac\'io de un alumno.}
+  \label{figura:hiloalumno}
+\end{figure}
+
+Para visualizar tus propias entradas es necesario escribir previamente en el blog asociado a esa asignatura. En la aplicaci\'on se ejecuta un script 
+autom\'atico cada sesenta segundos que se encarga de guardar y actualizar las entradas de todos los blogs de todos los alumnos que est\'en suscritos al 
+hilo. Cada vez que un usuario suscrito escriba un mensaje en su blog, este mensaje se plasmar\'a en el contenedor de la p\'agina. Para recargar la p\'agina 
+se puede pulsar sobre la pesta\~na que est\'a activa en cabecera, y que expone el t\'itulo del hilo.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoLleno}}
+  \caption{Hilo con entradas de un alumno.}
+  \label{figura:hiloalumno1}
+\end{figure}
+
+\subsection{Entradas}
+El usuario puede interactuar con una entrada (\ref{figura:hiloalumno1}) de diversas maneras:
+\begin{itemize}
+  \item {\bfseries Valoraci\'on cuantitativa}: Los botones verde y rojo aportan una valoraci\'on cuantitativa. Si se decide por pulsar 
+  la valoraci\'on positiva (bot\'on verde), el alumno que cre\'o la entrada recibir\'a una bonificaci\'on de dos \textit{planets} (el \textit{planet} es la 
+  moneda de la aplicaci\'on). Si se decide por pulsar la valoraci\'on negativa (bot\'on rojo), el alumno que cre\'o la entrada recibir\'a una penalizaci\'on 
+  de un \textit{planet}. Si un usuario presiona uno de los dos botones sobre una entrada, no podr\'a valorar m\'as veces en ella, ya que ambos botones 
+  emerger\'an deshabilitados con su contador total. En este momento, el usuario podr\'a visualizar el total de valoraciones positivas y negativas que posee 
+  esa entrada.
+  \item {\bfseries Valoraci\'on cualitativa}: El \'area facilitado para escribir un comentario aporta una valoraci\'on cualitativa. Si el usuario decide 
+  proponer una opini\'on sobre una entrada, este usuario recibir\'a una bonificaci\'on de tres \textit{planets} al presionar el bot\'on ''Enviar''. Si ese
+  comentario es eliminado, el usuario obtendr\'a una penalizaci\'on de tres \textit{planets}.
+  \item {\bfseries Ojear blog}: En una entrada existen dos enlaces que redirigir\'an directamente al blog del alumno donde se ubican todas sus entradas 
+  fuera de la aplicaci\'on. Los dos enlaces aparecen en forma de ''Nombre y apellidos'' y ''Nick'' (al lado de la fecha, en negrita).
+  
+  Si se presiona sobre el enlace del t\'itulo, se abrir\'a otra pesta\~na con la ubicaci\'on de la propia entrada dentro del blog.
+  \item {\bfseries Visualizar informaci\'on del usuario}: Al pasar el rat\'on por encima del enlace ''Nombre y apellidos'' brotar\'a un mensaje informativo 
+  con datos del usuario: Foto de perfil, nombre, apellidos, puntuaci\'on total y nivel (\ref{figura:hiloalumno2}).
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoInfoAlumno}}
+    \caption{Informaci\'on emergente de un alumno.}
+    \label{figura:hiloalumno2}
+  \end{figure}
+  
+  \item {\bfseries Informaci\'on adicional}: Adem\'as, la entrada muestra el n\'umero de identificaci\'on seguido de ''\#''. Para cada hilo no puede existir
+  dos entradas con un mismo n\'umero identificativo.
+\end{itemize}
+
+\subsection{Entradas m\'as valoradas}
+Otra parte importante se sit\'ua en la parte superior de la p\'agina debajo de la cabecera, donde se agrupan las entradas con m\'as valoraci\'on 
+cuantitativa de la asignatura. Se aplica una f\'ormula, la cual suma dos \textit{planets} por cada valoraci\'on positiva y resta un \textit{planet} por 
+cada valoraci\'on negativa. Se calcula el total de la suma y se plasman las seis mejores entradas.
+
+En la figura~\ref{figura:hiloalumno3} se muestra la secci\'on donde encajan las seis entradas seleccionadas. Cada una se rellena con el n\'umero de 
+posici\'on que ocupa, su identificador, su t\'itulo, la persona que lo escribi\'o, su fecha, las valoraciones positivas y negativas (en color verde y rojo,
+respectivamente), y por \'ultimo su n\'umero total de \textit{planets}. Para obtener el n\'umero total de planets es necesario pinchar encima de cada 
+entrada (al mantener el rat\'on encima un instante sale un mensaje informativo).
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradasValoradas}}
+  \caption{Entradas m\'as valoradas del hilo de alumno.}
+  \label{figura:hiloalumno3}
+\end{figure}
+
+\subsection{Usuarios suscritos}
+En la columna situada a la derecha se re\'unen en una tabla todos los alumnos suscritos en el hilo. Esta tabla se compone de tres columnas correspondientes
+al nick de usuario, nombre y apellidos de usuario, y un enlace que redirecciona al Rss del blog que est\'a asociado al hilo con el propio alumno 
+(~\ref{figura:hiloalumno4}).
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoUsuariosSuscritos}}
+  \caption{Usuarios suscritos al hilo.}
+  \label{figura:hiloalumno4}
+\end{figure}
+
+\subsection{Paginador y flecha}
+Estas dos funciones se pueden ver en la figura~\ref{figura:hiloalumno5}.
+
+El paginador se encuentra en la parte inferior de la p\'agina. Cada p\'agina del hilo mostrar\'a las cinco entradas m\'as recientes, las posteriores cinco 
+las pondr\'a en la siguiente p\'agina y as\'i sucesivamente.
+
+Otra funci\'on a\~nadida es la flecha de subida situada en la parte inferior derecha de la pantalla. \'Esta aparece cuando desciende el scroll una 
+determinada altura. Si se pulsa sobre ella, el scroll asciende autom\'aticamente hasta la parte superior de la p\'agina.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoPaginatorYFlecha}}
+  \caption{Paginador y flecha.}
+  \label{figura:hiloalumno5}
+\end{figure}
+
+\section{Hilo de profesor}
+Se conservan las mismas funciones que en el hilo de alumno (leer secci\'on~\ref{app:hiloalumno}) con algunos cambios en ''Entradas'' y en ''Usuarios 
+suscritos''. En la figura~\ref{figura:hiloprofesor} se observa como estos cambios se reducen simplemente a que un tutor tiene el permiso de eliminar 
+cualquier entrada y cualquier alumno de un determinado hilo.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}}
+  \caption{Hilo con entradas de un tutor.}
+  \label{figura:hiloprofesor}
+\end{figure}
+
+Al pulsar el bot\'on ''Eliminar entrada'' se abrir\'a una alerta de aviso con unos puntos que se podr\'an leer para confirmar si realmente se quiere esa 
+eliminaci\'on o no. Ver figura~\ref{figura:hiloprofesor1}(a).
+
+Al pulsar el bot\'on ''Eliminar'' se abrir\'a otra alerta de aviso con unos puntos que se podr\'an leer para confirmar si realmente se quiere eliminar ese
+usuario de ese hilo o no. Ver figura~\ref{figura:hiloprofesor1}(b).
+\begin{figure}
+  \centering
+  \subfigure[Eliminar entrada.]{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarEntrada}}
+  \subfigure[Eliminar alumno.]{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarAlumno}}
+  \caption{\textit{Eliminaciones en hilo de tutor.}}
+  \label{figura:hiloprofesor1}
+\end{figure}
+
+\section{Opciones de men\'u en cabecera}
+Dentro de la cabecera del hilo de un alumno o de un tutor se encuentran varias opciones. Cada pesta\~na esconde un enlace que redirigir\'a a su 
+perteneciente p\'agina. Una vez el usuario se encuentre en la p\'agina del enlace pulsado, la pesta\~na se mostrar\'a activa en color blanco mientras que 
+las dem\'as pesta\~nas permanecer\'an inactivas en color negro.
+
+\subsection{Mis hilos}
+La pesta\~na de ''Mis hilos'' devolver\'a al usuario a su presentaci\'on descrita anteriormente en la secci\'on~\ref{app:presentacionalumno} (si el usuario
+es un alumno) o en la secci\'on~\ref{app:presentaciontutor} (si el usuario es un tutor).
+
+\subsection{T\'itulo del hilo}
+Esta opci\'on es la p\'agina principal de cada hilo. Hay que tener en cuenta que por debajo de la aplicaci\'on se ejecuta un script autom\'aticamente cada 
+sesenta segundos para actualizar y guardar entradas nuevas de los distintos blogs, por lo que si se pulsa sobre esta pesta\~na, \'esta har\'a la funci\'on 
+de recargar la p\'agina para plasmar esas actualizaciones peri\'odicas en el contenedor de entradas.
+
+\subsection{Buscar}
+La p\'agina asociada a la pesta\~na ''Buscar'' se muestra en la figura~\ref{fig:buscar} mostrada en la secci\'on~\ref{sec:buscar} que explica la 
+vista ''B\'usqueda avanzada''.
+
+La b\'usqueda se puede realizar por identificador de entrada o por nick de usuario. Al elegir una opci\'on, se debe escribir un identificador de entrada o 
+un nick de usuario v\'alidos. En caso de \'exito se visualizar\'a la entrada por introducci\'on del identificador o las entradas por introducci\'on del nick
+(figura~\ref{fig:buscarajax}). En caso de no introducir un texto v\'alido se notificar\'a con un mensaje en rojo en el contenedor.
+
+\subsection{Puntuaci\'on}
+Si se despliega el men\'u ''Puntuaci\'on'' emergen dos opciones:
+\begin{itemize}
+  \item {\bfseries Ranking}: La figura~\ref{fig:ranking} de la secci\'on~\ref{sec:ranking} muestra la p\'agina al pulsar sobre el enlace de la pesta\~na 
+  ''Ranking''. La p\'agina es informativa en su mayor\'ia. Muestra el ranking del hilo en una tabla con cuatro columnas: Posici\'on, nick de usuario con su
+  foto, puntuaci\'on total y nivel.
+  
+  El usuario puede interactuar con esta p\'agina poniendo el rat\'on encima de la foto para ampliarla, y encima del nivel para visualizar el color al que 
+  est\'a asociado (\ref{figura:ranking}).
+  \begin{figure}
+    \centering
+    \subfigure[Color asociado al nivel.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingColor}}
+    \subfigure[Foto de perfil ampliada.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingFoto}}
+    \caption{\textit{Interacciones de usuario en la p\'agina de Ranking.}}
+    \label{figura:ranking}
+  \end{figure}
+  \item {\bfseries Informaci\'on}: La figura~\ref{fig:informacionpuntuaciones} de la secci\'on~\ref{sec:informacionpuntuaciones} muestra la p\'agina al 
+  presionar el enlace de la pesta\~na ''Informaci\'on''. La p\'agina es plenamente informativa. Crea unas bases de juego muy importantes para que el usuario
+  tenga noci\'on del sistema de puntuaciones. Tambi\'en se muestra una tabla con el rango de puntuaciones que pertenece a cada nivel. Si se pasa el rat\'on
+  por encima del nivel, \'este se iluminar\'a con su color asociado. El nivel 0 es el rojo y el nivel m\'aximo es el verde.
+\end{itemize}
 
 
-
+\subsection{Cierre de sesi\'on}
+El enlace en rojo ''Desconectar'' expuesto en la parte derecha de la cabecera se usa para cerrar la sesi\'on de usuario. Al presionarlo se saldr\'a de la 
+aplicaci\'on y volver\'a a la p\'agina de inicio para logarse otra vez si se desea.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INSTALACION Y USO %
