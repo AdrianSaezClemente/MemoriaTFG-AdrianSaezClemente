@@ -625,9 +625,10 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   \textit{UrlBlog} guarda la url del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
   \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada, \textit{Total} guarda la puntuaci\'on que lleva hasta el
   momento la entrada teniendo en cuenta valoraciones positivas y valoraciones negativas \rule[1mm]{4mm}{0.1mm}esta puntuaci\'on se usa para imprimir en 
-  la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm} y \textit{TotalComentarios} cuenta el total de comentarios que contiene la entrada 
-  \rule[1mm]{4mm}{0.1mm}este entero se mostrar\'a entre par\'entesis al lado de ''Mostrar comentarios''\rule[1mm]{4mm}{0.1mm}.
-  \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripcion}
+  la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm}, \textit{TotalComentarios} cuenta el total de comentarios que contiene la entrada 
+  \rule[1mm]{4mm}{0.1mm}este entero se mostrar\'a entre par\'entesis al lado de ''Mostrar comentarios''\rule[1mm]{4mm}{0.1mm} y \textit{PuntuacionTutor}
+  guarda la puntuaci\'on de la entrada recibida por el tutor.
+  \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripci\'on}
   guarda el contenido del comentario, \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario y \textit{Username} salva el nick del 
   usuario que realiz\'o el comentario.
   \item {\bfseries Up}: El modelo \texttt{Up} representa una valoraci\'on positiva de una entrada determinada.
@@ -854,7 +855,7 @@ tras una previa petici\'on GET del cliente mediante el correspondiente recurso \
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como profesor.
 
 En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma url de la 
-p\'agina servida, por lo que la recargar\'a, y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
+p\'agina servida, por lo que la recargar\'a, \texttt{Resetear contrase\~na} hace referencia a la url de cambio de contrase\~na y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
 de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
 
 Dentro del contenedor hay que destacar tres partes importantes:
@@ -880,6 +881,32 @@ Dentro del contenedor hay que destacar tres partes importantes:
 \end{figure}
 
 
+\subsubsection{Resetear contrase\~na} 
+\label{sec:resetpass}
+El documento HTML mostrado en la figura~\ref{fig:resetpass} es la p\'agina de modificaci\'on de contrase\~na. La p\'agina es servida 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de resetear contrase\~na: 
+\texttt{/planetablogs/tutores/resetear\_password/}}. La vista asociada a ese recurso es \texttt{resetear\_password}, la cual devuelve la plantilla 
+\texttt{resetear\_password.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como profesor. 
+
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con tres enlaces. \texttt{Resetear contrase\~na} hace referencia a la misma 
+url de la p\'agina servida, por lo que la recargar\'a, \texttt{Mis hilos} hace referencia a la url del perfil del tutor y \texttt{Desconectar} para 
+el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
+
+En el cuerpo del documento existe un formulario en el que el alumno que haya perdido u olvidado su contrase\~na, puede introducir su nick de usuario y una
+nueva contrase\~na que sustituir\'a a la anterior.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/ResetPass}
+  \caption{\textit{Modificar una contrase\~na desde el perfil de un tutor.}}
+  \label{fig:resetpass}
+\end{figure}
+
+
+
+
 \subsubsection{Hilos} 
 \label{sec:hilos}
 En la figura~\ref{fig:hilos} se muestran dos documentos HTML que recogen el contenido de un hilo. En la figura~\ref{fig:hilos}(a) se visualiza el interior
@@ -895,8 +922,10 @@ todas las plantillas con la siguiente url: {\scriptsize \texttt{/planetablogs/al
   \item {\bfseries \textit{Asignatura}}: Enlace que hace referencia a la misma url de la p\'agina servida, por lo que la recargar\'a (en este caso, 
   la asignatura se llama \texttt{DAT}).
   \item {\bfseries \textit{Buscar}}: Es un enlace que hace referencia a la url de b\'usqueda (Secci\'on~\ref{sec:buscar}).
-  \item {\bfseries \textit{Puntuaciones}}: Es una lista desplegable compuesta por dos enlaces. \textit{Ranking} hace referencia a la url donde se muestran 
-  todas las puntuaciones de los usuarios de un determinado hilo e \textit{Informaci\'on} hace referencia a la url que recoge las bases de esas puntuaciones.
+  \item {\bfseries \textit{Puntuaciones}}: Es una lista desplegable compuesta por tres enlaces. \textit{Ranking} hace referencia a la url donde se muestran 
+  todas las puntuaciones de los usuarios de un determinado hilo. \textit{Estad\'isticas} hace referencia a la url donde se muestran las estad\'isticas de 
+  cada usuario de un determinado hilo, tanto individuales como generales. \textit{Informaci\'on} hace referencia a la url que recoge las bases de esas 
+  puntuaciones.
   \item {\bfseries \textit{Desconectar}}: Enlace que hace referencia a la url servida para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
 \end{itemize}
 Tambi\'en se expone, debajo de la barra de navegaci\'on, una imagen correspondiente al logo de la aplicaci\'on con su t\'itulo. Y en la parte derecha un 
@@ -928,9 +957,11 @@ usuarios suscritos a este hilo. Cabe destacar que la lista de entradas dentro de
 p\'agina dentro del hilo mostrar\'a en su contenedor cinco entradas como m\'aximo. El orden de la lista de entradas est\'a colocado de menor a mayor por 
 antiguedad, siendo las primeras entradas visibles las m\'as recientes.
 
-La respuesta de la vista tambi\'en contiene tres estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
-todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}) y todos los alumnos del modelo \texttt{Alumno} 
-(\textit{json\_alumnos}).
+La respuesta de la vista tambi\'en contiene cinco estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
+todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}), todos los alumnos del modelo \texttt{Alumno} 
+(\textit{json\_alumnos}), todas las asignaturas del modelo \texttt{Asignatura} (\textit{json\_asignaturas}), todos los profesores del modelo \texttt{Profesor} 
+(\textit{json\_profesores}).
+
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradas}
@@ -956,13 +987,14 @@ usuarios suscritos a este hilo. Cabe destacar que la lista de entradas dentro de
 p\'agina dentro del hilo mostrar\'a en su contenedor cinco entradas como m\'aximo. El orden de la lista de entradas est\'a colocado de menor a mayor por 
 antiguedad, siendo las primeras entradas visibles las m\'as recientes.
 
-La respuesta de la vista tambi\'en contiene tres estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
-todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}) y todos los alumnos del modelo \texttt{Alumno} 
-(\textit{json\_alumnos}).
+La respuesta de la vista tambi\'en contiene cinco estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
+todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}), todos los alumnos del modelo \texttt{Alumno} 
+(\textit{json\_alumnos}), todas las asignaturas del modelo \texttt{Asignatura} (\textit{json\_asignaturas}), todos los profesores del modelo \texttt{Profesor} 
+(\textit{json\_profesores}).
 
 La principal diferencia con las p\'aginas de los hilos mostrados por parte de los alumnos, es que los tutores tienen el permiso de eliminar entradas de la 
-lista de entradas o usuarios de la lista de usuarios.
-En la figura~\ref{fig:hilotutor}
+lista de entradas o usuarios de la lista de usuarios, y adem\'as pueden puntuar de forma cuantitativa cada entrada.
+
 \begin{figure}
   \centering
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}
@@ -1016,6 +1048,39 @@ Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa t
   \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoRanking}
   \caption{\textit{P\'agina de ranking.}}
   \label{fig:ranking}
+\end{figure}
+
+
+\subsubsection{Estad\'isticas} 
+\label{sec:estadisticas}
+El documento HTML mostrado en la figura~\ref{fig:estadisticas} corresponde con la p\'agina de estad\'isticas de un determinado hilo. 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/estadisticas/}}. La vista asociada a ese recurso es \texttt{estadisticas}, la cual 
+devuelve la plantilla \texttt{estadisticas.html} que crea el documento HTML de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la
+correspondiente asignatura de inter\'es.
+
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}. 
+
+La vista \texttt{estadisticas} recibe como par\'ametro el Id del hilo, y mediante ese Id procesa la petici\'on obteniendo la asignatura, la lista 
+de entradas asociadas a esa asignatura y una lista de listas que recoge informaci\'on de cada alumno (datos personales, total de entradas, total de up 
+recibidos, total de down recibidos, total up enviados, total down enviados, total comentarios recibidos y total comentarios enviados).
+
+Toda esa informaci\'on es enviada como respuesta a la solicitud en la plantilla \texttt{estadisticas.html}. 
+
+Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa todos los usuarioS de una asignatura en un acorde\'on (elemento 
+\textit{jQuery-ui}). Cada secci\'on del acorde\'on pertenece a un usuario y muestra dos tablas (elemento \texttt{<table>}): \textit{Estad\'isticas 
+generales del alumno} y \textit{Entradas del alumno}, con informaci\'on recopilada y organizada. 
+
+En la parte superior del cuerpo de la p\'agina, mediante \textit{radiobuttons} se da la opci\'on de elegir lo que queremos mostrar: S\'olo estad\'isticas 
+generales, s\'olo resumen de entradas o ambas.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEstadisticas}
+  \caption{\textit{P\'agina de ranking.}}
+  \label{fig:estadisticas}
 \end{figure}
 
 
@@ -1475,9 +1540,10 @@ redirigir\'a a la p\'agina de inicio de sesi\'on.
 \label{app:presentaciontutor}
 Despu\'es de haber realizado el registro de usuario como tutor y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
 comienza con la presentaci\'on de tutor o perfil de tutor (figura~\ref{figura:tutor}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on (a la derecha, pulsando el 
-enlace ''Desconectar'' en rojo). S\'olo aparece una pesta\~na ''Mis hilos'', a la izquierda, la cual tiene la funci\'on de actualizar la p\'agina de perfil 
-de tutor. Tambi\'en se exhibe una foto del usuario y un t\'itulo con la expresi\'on \textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el
-perfil.
+enlace ''Desconectar'' en rojo). Aparece una pesta\~na ''Mis hilos'' la cual tiene la funci\'on de actualizar la p\'agina de perfil 
+de tutor y tambi\'en otra pesta\~na ''Resetear contrase\~na'' la cual se encargar\'a de redirigir a una p\'agina formulario con la posibilidad de
+modificar la contrase\~na de cualquier usuario. Adem\'as se exhibe una foto del usuario y un t\'itulo con la expresi\'on 
+\textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el perfil.
 
 \begin{figure}[htbp] 
   \centering
@@ -1618,6 +1684,18 @@ El usuario puede interactuar con una entrada (\ref{figura:hiloalumno1}) de diver
   \end{figure}
   
   Si ese comentario es eliminado, el usuario obtendr\'a una penalizaci\'on de tres \textit{planets}.
+  
+  \item {\bfseries Puntuaci\'on del tutor}: La valoraci\'on del tutor se muestra a la derecha de los botones verde y rojo. En caso de que el tutor haya
+  calificado la entrada se podr\'a ver la puntuaci\'on dada en naranja (\ref{figura:hiloalumno7}(a)). En caso contrario, se obtendr\'a una calificaci\'on de 
+  ''Sin Calificar'' en azul (\ref{figura:hiloalumno7}(b)).
+  \begin{figure}
+    \centering
+    \subfigure[Entrada valorada por el tutor.]{\includegraphics[width=11cm]{imagenes/ValoracionTutorCalificada}}
+    \subfigure[Entrada no valorada por el tutor.]{\includegraphics[width=11cm]{imagenes/ValoracionTutorNoCalificada}}
+    \caption{\textit{Valoraciones del tutor en entradas.}}
+    \label{figura:hiloalumno7}
+  \end{figure}
+  
   \item {\bfseries Ojear blog}: En una entrada existen dos enlaces que redirigir\'an directamente al blog del alumno donde se ubican todas sus entradas 
   fuera de la aplicaci\'on. Los dos enlaces aparecen en forma de ''Nombre y apellidos'' y ''Nick'' (al lado de la fecha, en negrita).
   
@@ -1653,8 +1731,8 @@ cada valoraci\'on negativa. Se calcula el total de la suma y se plasman las diez
 
 En la figura~\ref{figura:hiloalumno3} se muestra la secci\'on donde encajan las diez entradas seleccionadas. Cada una se rellena con el n\'umero de 
 posici\'on que ocupa, su identificador, su t\'itulo, la persona que lo escribi\'o, su fecha, las valoraciones positivas y negativas (en color verde y rojo,
-respectivamente), y por \'ultimo su n\'umero total de \textit{planets}. Para obtener el n\'umero total de planets es necesario pinchar encima de cada 
-entrada (al mantener el rat\'on encima un instante sale un mensaje informativo).
+respectivamente), y por \'ultimo su n\'umero total de \textit{planets}. Son enlaces que al pinchar encima de cada entrada te lleva a la p\'agina del post 
+correspondiente.
 \begin{figure}[htbp] 
   \centering
   \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradasValoradas}}
@@ -1691,7 +1769,7 @@ determinada altura. Si se pulsa sobre ella, el scroll asciende autom\'aticamente
 \section{Hilo de profesor}
 Se conservan las mismas funciones que en la secci\'on~\ref{app:hiloalumno} (hilo de alumno) con algunos cambios en ''Entradas'' y en ''Usuarios 
 suscritos''. En la figura~\ref{figura:hiloprofesor} se observa como estos cambios se reducen simplemente a que un tutor tiene el permiso de eliminar 
-cualquier entrada y cualquier alumno de un determinado hilo.
+cualquier entrada, eliminar cualquier alumno de un determinado hilo y valorar cualquier entrada de forma cuantitativa.
 \begin{figure}[htbp] 
   \centering
   \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}}
@@ -1710,6 +1788,16 @@ usuario de ese hilo o no. Ver figura~\ref{figura:hiloprofesor1}(b).
   \subfigure[Eliminar alumno.]{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarAlumno}}
   \caption{\textit{Eliminaciones en hilo de tutor.}}
   \label{figura:hiloprofesor1}
+\end{figure}
+
+La valoraci\'on del tutor se realiza a trav\'es de la parte de la entrada vista en la figura~\ref{figura:hiloprofesor2}. Los posibles valores est\'an dentro
+de un rango con un l\'imite m\'aximo que es superior al valor de un ''UP'' y con un l\'imite m\'inimo que es inferior al valor de un ''DOWN''. El intervalo de
+\textit{planets} es [-2, -1, 1, 2, 3, 4]. Una vez seleccionado el valor, se env\'ia al pulsar sobre el bot\'on ''Enviar'' azul.
+\begin{figure}[htbp] 
+  \centering
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorValoracionEntradas}}
+  \caption{Valoraci\'on de tutor en una determinada entrada.}
+  \label{figura:hiloprofesor2}
 \end{figure}
 
 \section{Opciones de men\'u en cabecera}
@@ -1750,6 +1838,27 @@ Si se despliega el men\'u ''Puntuaci\'on'' emergen dos opciones:
     \caption{\textit{Interacciones de usuario en la p\'agina de Ranking.}}
     \label{figura:ranking}
   \end{figure}
+  \item {\bfseries Estad\'isticas}: La figura~\ref{fig:estadisticas} de la secci\'on~\ref{sec:estadisticas} muestra la p\'agina al pulsar sobre el enlace de la pesta\~na 
+  ''Estad\'isticas''. La p\'agina es informativa. Da la opci\'on al usuario de elegir las estad\'isticas que quiere visualizar (\ref{figura:estadisticas}).
+  
+  \begin{figure}
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEstadisticasRB}}
+    \caption{Opciones de estad\'isticas.}
+    \label{figura:estadisticas}
+  \end{figure}
+  Cada pesta\~na del acorde\'on refleja la informaci\'on de un usuario. La informaci\'on que se visualice depende de las opciones que el usuario haya elegido.
+  En la figura~\ref{figura:estadisticas1} se puede observar las tres opciones posibles: S\'olo estad\'isticas generales (a), s\'olo resumen de entradas (b) o 
+  ambas (c).
+  \begin{figure}
+  \centering
+  \subfigure[Estad\'isticas generales.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasGenerales}}
+  \subfigure[Resumen de entradas.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasEntradas}}
+  \subfigure[Ambas opciones anteriores.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasAmbas}}
+  \caption{\textit{Visualizaci\'on de opciones estad\'isticas.}}
+  \label{figura:estadisticas1}
+\end{figure}
+
   \item {\bfseries Informaci\'on}: La figura~\ref{fig:informacionpuntuaciones} de la secci\'on~\ref{sec:informacionpuntuaciones} muestra la p\'agina al 
   presionar el enlace de la pesta\~na ''Informaci\'on''. La p\'agina es plenamente informativa. Crea unas bases de juego muy importantes para que el usuario
   tenga noci\'on del sistema de puntuaciones. Tambi\'en se muestra una tabla con el rango de puntuaciones que pertenece a cada nivel. Si se pasa el rat\'on
