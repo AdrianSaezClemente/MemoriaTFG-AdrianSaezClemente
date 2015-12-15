@@ -436,8 +436,62 @@ herramientas de terceros.
 
 \section{Crontab}
 \label{sec:crontab}
-https://www.open6hosting.com/crontab/
-
+Crontab es una herramienta especializada en la automatizaci\'on de tareas y su principal pilar es el cron. 
+En el sistema operativo Unix, cron es un administrador regular de procesos en segundo plano (demonio) que ejecuta procesos o guiones a intervalos 
+regulares (por ejemplo, cada minuto, d\'ia, semana o mes). Los procesos que deben ejecutarse y la hora en la que deben hacerlo se especifican en el fichero 
+crontab.
+El demonio cron inicia de /etc/rc.d/ o /etc/init.d dependiendo de la distribuci\'on. Cron se ejecuta en el background, revisa cada minuto la tabla de tareas
+crontab /etc/crontab o en /var/spool/cron en b\'usqueda de tareas que se deban cumplir. Como usuario podemos agregar comandos o scripts con tareas a cron 
+para automatizar algunos procesos. Esto es \'util por ejemplo para automatizar la actualizaci\'on de un sistema, ejecutar un script que tenemos para 
+contabilizar cualquier asunto o bien para avisarnos peri\'odicamente del estado de alg\'un servicio en nuestro servidor Linux.
+Para automatizar una tarea necesitamos un script hechos por nosotros, el cual queremos ejecutar. En este caso bastar\'a con escribir nuestro script y 
+luego darle permisos de ejecuci\'on: 
+  \begin{verbatim} #chmod +x miscript.py \end{verbatim}
+Para a\~nadir el cron, ejecutamos la edici\'on del crontab con \begin{verbatim} crontab -e \end{verbatim}, en algunas distros (como debian) nos da la opcion 
+de elegir el editor de textos que deseemos, los dem\'as nos quedamos con \textit{vi}. El archivo crontab lucir\'a algo asi. 
+  \begin{verbatim} # m h dom mon dow user command \end{verbatim}, donde:
+\begin{itemize}
+  \item {\bfseries m}: Corresponde al minuto en que se va a ejecutar el script, el valor va de 0 a 59.
+  \item {\bfseries h}: La hora exacta, se maneja el formato de 24 horas, los valores van de 0 a 23, siendo 0 las 12:00 de la medianoche.
+  \item {\bfseries dom}: Hace referencia al d\'ia del mes. Por ejemplo, se puede especificar 15 si se quiere ejecutar cada d\'ia 15.
+  \item {\bfseries mon}: Hace referencia al mes. Por ejemplo, se puede especificar 11 si se quiere ejecutar cada mes de Noviembre.
+  \item {\bfseries dow}: Significa el d\'ia de la semana, puede ser num\'erico (0 a 7, donde 0 y 7 son domingo) o las 3 primeras letras del d\'ia en 
+  ingl\'es: mon, tue, wed, thu, fri, sat, sun.
+  \item {\bfseries user}: Define el usuario que va a ejecutar el comando, puede ser root, u otro usuario diferente siempre y cuando tenga permisos de 
+  ejecuci\'on del script.
+  \item {\bfseries command}: Refiere al comando o a la ruta absoluta del script a ejecutar. Por ejemplo: /home/usuario/scripts/actualizar.sh. Si acaso 
+  llama a un script, \'este debe ser ejecutable.
+\end{itemize}
+Dentro del c\'odigo de la aplicaci\'on, existe un script llamado \texttt{actualizar.py}. Es el encargado de guardar las entradas autom\'aticamente en base
+de datos. Para su automatizaci\'on se cre\'o un cron que lo ejecuta cada minuto. Para ello, el fichero crontab fue modificado a\~nadiendo las dos \'ultimas 
+l\'ineas: 
+{\footnotesize\begin{verbatim} 
+      # Edit this file to introduce tasks to be run by cron.
+      # 
+      # Each task to run has to be defined through a single line
+      # indicating with different fields when the task will be run
+      # and what command to run for the task
+      # 
+      # To define the time you can provide concrete values for
+      # minute (m), hour (h), day of month (dom), month (mon),
+      # and day of week (dow) or use '*' in these fields (for 'any').# 
+      # Notice that tasks will be started based on the cron's system
+      # daemon's notion of time and timezones.
+      # 
+      # Output of the crontab jobs (including errors) is sent through
+      # email to the user the crontab file belongs to (unless redirected).
+      # 
+      # For example, you can run a backup of all your user accounts
+      # at 5 a.m every week with:
+      # 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+      # 
+      # For more information see the manual pages of crontab(5) and cron(8)
+      # 
+      # m h  dom mon dow   command
+      
+      */1 * * * * cd /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG;
+      python actualizar.py; 
+\end{verbatim}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -454,7 +508,8 @@ subdirectorios con sus respectivos archivos que hacen posible el funcionamiento 
 En dicha estructura cabe destacar los siguientes bloques:
 \begin{itemize}
   \item {\bfseries actualizar.py}: Es un script Python que realiza la funci\'on de actualizaci\'on autom\'atica de entradas. Cada vez que un alumno ingresa
-  una nueva entrada en su blog, este script es el encargado de detectar esos nuevos cambios a trav\'es de los RSS guardados en base de datos.
+  una nueva entrada en su blog, este script es el encargado de detectar esos nuevos cambios a trav\'es de los RSS guardados en base de datos. Se ejecutar\'a
+  cada minuto.
   \item {\bfseries bbdd.sqlite}: Es la base de datos del proyecto donde se van a guardar todos los datos estructurados a partir de los modelos definidos en 
   \texttt{models.py}
   \item {\bfseries planetablogs}: Contiene la parte fundamental de la funcionalidad del proyecto. Dentro de este directorio se encuentran distintos ficheros
@@ -465,8 +520,8 @@ En dicha estructura cabe destacar los siguientes bloques:
   Por \'ultimo, \texttt{views.py} es un fichero donde se implementa toda la l\'ogica del proyecto llevando a cabo todas las peticiones de los usuarios.
   \item {\bfseries plantillas}: En este directorio se encuentran todas las plantillas de los documentos \textit{HTML} que ser\'an enviados al usuario y 
   mostrados por el navegador para dar una interfaz gr\'afica a la aplicaci\'on.
-  \item {\bfseries static}: Esta carpeta contiene las librer\'ias \textit{BootStrap}, \textit{jQuery} y \textit{jQuery-ui}. Tambi\'en incluye un subdirectorios
-  donde se guardan tanto las im\'agenes propias del proyecto como las im\'agenes de perfil introducidas por los usuarios como informaci\'on de registro. 
+  \item {\bfseries static}: Esta carpeta contiene las librer\'ias \textit{BootStrap}, \textit{jQuery} y \textit{jQuery-ui}. Tambi\'en incluye un subdirectorio
+  donde se guardan tanto las im\'agenes propias del proyecto como las im\'agenes de perfil introducidas por los usuarios en el campo de registro. 
   Y adem\'as, se localizan todos los ficheros \textit{.js} y \textit{.css} que a\~nadir\'an funcionalidad y definir\'an el dise\~no a su respectivo 
   documento \textit{HTML} o p\'agina web.
   \item {\bfseries TFG}: Contiene ficheros b\'asicos para el correcto funcionamiento de la aplicaci\'on.\\ \texttt{settings.py} es un fichero de 
@@ -533,7 +588,7 @@ El dise\~no de la base de datos se resume visualizando la gr\'afica~\ref{fig:dis
 \texttt{models.py} dentro del bloque ''planetablogs'' del sistema de directorios y se manifiestan todos los elementos de todos los modelos con las
 respectivas relaciones entre ellos. 
 
-La gr\'afica sido obtenida mediante una extensi\'on de \textit{Django} denominada 
+La gr\'afica ha sido obtenida mediante una extensi\'on de \textit{Django} denominada 
 \href{https://code.djangoproject.com/wiki/DjangoGraphviz}{\textit{Graphviz}}.
 
 \subsubsection{\textit{Models}} 
@@ -542,7 +597,8 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
 
 \begin{itemize}
   \item {\bfseries User}: Este modelo es creado por \textit{Django} y simboliza un usuario gen\'erico que se registra a la aplicaci\'on introduciendo sus 
-  atributos: Nombre de usuario \textit{Username}, nombre de pila \textit{Firstname}, segundo apellido \textit{Lastname}, primer apellido \textit{Password} 
+  atributos: Nombre de usuario \textit{Username}, nombre de pila \textit{Firstname}, primer apellido y segundo apellido \textit{Lastname}, contrase\~na 
+  \textit{Password} 
   y direcci\'on de correo electr\'onico \textit{Email}. Dentro del fichero \texttt{models.py} se a\~nade un nuevo atributo \textit{Imagen} 
   \rule[1mm]{4mm}{0.1mm}se agrega con la funci\'on \texttt{addtoclass}\rule[1mm]{4mm}{0.1mm} que una vez introducida mediante un formulario de registro 
   junto con el resto de campos, ser\'a guardada en la carpeta ''perfiles'' dentro del sistema de directorios del proyecto. 
@@ -555,8 +611,9 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   atributo \textit{AlumnoId} que coincide con el id que ocupa en la tabla del modelo \texttt{User}.
   \item {\bfseries Asignatura}: Este modelo representa una asignatura. Cada asignatura es creada como un hilo de aplicaci\'on con su propia tem\'atica
   identificativa. Los atributos de este modelo son: \textit{Titulo} guarda un string de m\'aximo 35 caracteres y define el t\'itulo de la asignatura, 
-  \textit{Descripcion} guarda un texto de m\'aximo 150 caracteres y da una descripci\'on breve y concisa sobre la tem\'atica del hilo y \textit{Entradas} 
-  es un n\'umero entero que indica el n\'umero total de entradas que tiene esa asignatura.
+  \textit{Descripcion} guarda un texto de m\'aximo 150 caracteres y da una descripci\'on breve y concisa sobre la tem\'atica del hilo, \textit{Entradas} 
+  es un n\'umero entero que indica el n\'umero total de entradas que tiene esa asignatura y \textit{Creador} es el identificador del tutor que cre\'o la
+  asignatura.
   \item {\bfseries Rss}: El modelo \texttt{Rss} representa al blog o blogs de los usuarios. Cada usuario necesita un blog nuevo para cada asignatura en la
   que se suscriba. Tiene como campos: \textit{Rss} que es la url del RSS del blog y \textit{UltimaFecha} que guarda la fecha de la entrada de ese blog 
   que se guard\'o por \'ultima vez en base de datos.
@@ -566,11 +623,13 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   el t\'itulo de la entrada, \textit{Descripcion} guarda un texto sin longitud m\'axima de caracteres y da una descripci\'on detallada de la entrada,
   \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{link} salva la url donde se ubica la propia entrada dentro del blog de usuario, 
   \textit{UrlBlog} guarda la url del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
-  \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada y \textit{Total} guarda la puntuaci\'on que lleva hasta el
+  \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada, \textit{Total} guarda la puntuaci\'on que lleva hasta el
   momento la entrada teniendo en cuenta valoraciones positivas y valoraciones negativas \rule[1mm]{4mm}{0.1mm}esta puntuaci\'on se usa para imprimir en 
-  la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm}
+  la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm} y \textit{TotalComentarios} cuenta el total de comentarios que contiene la entrada 
+  \rule[1mm]{4mm}{0.1mm}este entero se mostrar\'a entre par\'entesis al lado de ''Mostrar comentarios''\rule[1mm]{4mm}{0.1mm}.
   \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripcion}
-  guarda el contenido del comentario y \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario.
+  guarda el contenido del comentario, \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario y \textit{Username} salva el nick del 
+  usuario que realiz\'o el comentario.
   \item {\bfseries Up}: El modelo \texttt{Up} representa una valoraci\'on positiva de una entrada determinada.
   \item {\bfseries Down}: El modelo \texttt{Down} representa una valoraci\'on negativa de una entrada determinada.
   \item {\bfseries Valoracion}: \texttt{Valoracion} representa la valoraci\'on total de cada usuario. Tiene como atributos: \textit{Puntos} guarda el total
@@ -638,9 +697,8 @@ una de las p\'aginas:
   \item {\bfseries Cabecera}: Dependiendo de la plantilla que se cargue en el cliente, la cabecera puede variar desde un mensaje de bienvenida a una barra
   de navegaci\'on.
   \item {\bfseries Contenedor}: En esta parte se muestra toda la informaci\'on con la que el usuario final podr\'a interactuar.
-  \item {\bfseries Pie de p\'agina}: En todos los pies de p\'agina se muestra un enlace a la p\'agina de inicio de la aplicaci\'on para que cualquier 
-  usuario pueda compartirla, ya que es el \'unico documento \textit{HTML} al que se puede acceder sin tener ning\'un perfil creado. La \'unica p\'agina 
-  en la que no existe pie de p\'agina es \texttt{inicio.html}.
+  \item {\bfseries Pie de p\'agina}: En todos los pies de p\'agina se muestra un correo electr\'onico como contacto y el nombre de la aplicaci\'on. 
+  Las \'unicas p\'aginas que tienen pie de p\'agina son \texttt{index.html}, \texttt{ayuda.html} y las p\'aginas de registro.
 \end{itemize}
 
 \subsection{Dise\~no de las vistas y urls} 
@@ -1256,7 +1314,82 @@ registro.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSTALACION Y USO %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Instalaci\'on y uso}
+\label{app:instalacionuso}
 
+\section{Instalaci\'on del entorno en el servidor}
+Para el uso de la aplicaci\'on web es necesario montar un entorno desde cero en una m\'aquina \textit{Linux} que har\'a de servidor. Y adem\'as, tener 
+instalado una serie de herramientas antes de su ejecuci\'on desde un terminal \textit{Linux}.
+\begin{enumerate}
+  \item Instalaci\'on \textit{Pip}: Es necesario este instalador y administrador de paquetes escritos en\\ \textit{Python}.
+    {\footnotesize\begin{verbatim} 
+    sudo apt-get install python-pip\end{verbatim}}
+  \item Instalaci\'on \textit{Django}: Para el desarrollo de la aplicaci\'on cabe destacar que se utiliz\'o la versi\'on \textit{Django 1.6.6}.
+    {\footnotesize\begin{verbatim} 
+    sudo pip install Django==1.6.6
+    sudo pip install django-extensions #Extensiones de django \end{verbatim}}
+  \item Instalaci\'on de utilidades de \textit{Python}: Para el desarrollo de la aplicaci\'on cabe destacar que se utiliz\'o la versi\'on 
+  \textit{Python 2.7.6}.
+    {\footnotesize\begin{verbatim} 
+    sudo pip install python-dateutil \end{verbatim}}
+  \item Instalaci\'on \textit{Git}: Permitir\'a descargar el proyecto ubicado en el cliente \textit{GitHub} a la m\'aquina servidor.
+    {\footnotesize\begin{verbatim} 
+    sudo apt-get install git \end{verbatim}}
+  Antes de clonar el repositorio de \textit{GitHub}, hay que crear un directorio donde se guardar\'a el c\'odigo del proyecto e inicializar el repositorio.
+    {\footnotesize\begin{verbatim} 
+    mkdir directorioGitProyecto 
+    cd directorioGitProyecto 
+    git init 
+    git clone https://github.com/AdrianSaezClemente/PlanetaBlogs.git \end{verbatim}}
+  Una vez clonado el repositorio donde se ubica el proyecto, hay que modificar unas rutas en el fichero \texttt{settings.py}: 
+  La ruta de las plantillas ''TEMPLATE\_DIRS'', la ruta del path del fichero de configuraci\'on ''SETTINGS\_PATH'', la ruta con los ficheros est\'aticos 
+  ''STATICFILES\_DIRS'' y la ruta de los ficheros multimedia ''MEDIA\_ROOT''. Cambiar la ra\'iz por la ruta:
+    {\footnotesize\begin{verbatim} 
+    /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG \end{verbatim}}
+  \item Instalaci\'on \textit{Crontab}:
+    {\footnotesize\begin{verbatim} 
+    sudo apt-get install cron \end{verbatim}}
+  Una vez instalado \textit{Crontab}, editar una tarea desde el propio terminal con el comando:
+    {\footnotesize\begin{verbatim} 
+    cd /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG
+    chmod a+x actualizar.py
+    crontab -e 	#Para editar cron\end{verbatim}}
+  Poner los dos comandos siguientes para lanzar la actualizacion de entradas cada minuto:
+    {\footnotesize\begin{verbatim} 
+    */1 * * * * cd /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG; 
+    python actualizar.py; \end{verbatim}}
+  Posteriormente, se puede comprobar si se ha inclu\'ido la tarea correctamente:
+    {\footnotesize\begin{verbatim} 
+    crontab -l 	#Para ver cron \end{verbatim}}
+  \item Instalaci\'on \textit{PIL}: Esta librer\'ia de \textit{Python} agrega soporte para abrir, manipular y guardar im\'agenes de gran variedad de 
+  diferentes formatos.
+    {\footnotesize\begin{verbatim} 
+    sudo apt-get install python-pil \end{verbatim}}
+  \item Instalaci\'on \textit{Feedparser}: Esta librer\'ia permite parsear etiquetas \textit{XML}.
+    {\footnotesize\begin{verbatim} 
+    sudo pip install feedparser \end{verbatim}}
+\end{enumerate}
+Por \'ultimo, hay que poner en marcha el servidor con \textit{nohup}:
+  {\footnotesize\begin{verbatim} 
+  nohup python manage.py runserver 0.0.0.0:8080\end{verbatim}}
+\textit{Nohup} mantendr\'a la ejecuci\'on del comando en segundo plano, por lo que seguir\'a dando servicio de la aplicaci\'on a\'un cerrando el terminal. 
+Con la direcci\'on 0.0.0.0 se puede acceder desde cualquier navegador con la IP p\'ublica o el dominio de la m\'aquina servidor.
+
+\section{Uso de la aplicaci\'on}
+Para comenzar su uso, abrir un navegador con una de las dos url: 
+  {\footnotesize\begin{verbatim} 
+  http://IPpublica:8080/planetablogs/login/
+  http://Dominio:8080/planetablogs/login/\end{verbatim}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MANUAL DE USUARIO %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage
 \appendix
 \chapter{Manual de usuario}
@@ -1647,14 +1780,6 @@ hilo (nombre y apellidos, y correo ~\ref{figura:infocreador})
   \caption{Informaci\'on del creador del hilo.}
   \label{figura:infocreador}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INSTALACION Y USO %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cleardoublepage
-\chapter{Instalaci\'on y uso}
-\label{app:instalacionuso}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
