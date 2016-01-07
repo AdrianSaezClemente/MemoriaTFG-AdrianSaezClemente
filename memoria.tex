@@ -80,6 +80,7 @@ Trabajo Fin de Grado
 \LARGE
 DESARROLLO Y DESPLIEGUE DE APLICACIONES EN EL \'AMBITO EDUCATIVO
 
+\textit{Dise\~no y despliegue de un planeta de blogs}
 \vspace{4cm}
 
 \large
@@ -109,7 +110,10 @@ Tutor : Gregorio Robles Mart\'inez
 \chapter*{Agradecimientos}
 \addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el ndice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
+Quiero agradecer a mis padres, por haber hecho posible que este largo camino haya dado sus frutos de una manera satisfactoria y exitosa. 
+Gracias por vuestro apoyo constante. Sin vosotros, nada de esto pod\'ia haber sucedido.\\
 
+\textit{``El que da, no debe volver a acordarse; pero el que recibe nunca debe olvidar''}\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -117,7 +121,17 @@ Tutor : Gregorio Robles Mart\'inez
 \chapter*{Resumen}
 \addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el ndice
 \markboth{RESUMEN}{RESUMEN} % encabezado
+\begin{itemize}
+  \item \texttt{Objetivos}: En este proyecto se realiza el desarrollo de una aplicaci\'on web que se basa en la creaci\'on de un planeta de 
+  blogs donde sus principales objetivos son la formaci\'on y el aprendizaje de los usuarios.
 
+  \item \texttt{Tecnolog\'ias}: El proyecto ha sido realizado en un entorno Linux, usando Python como lenguaje de programaci\'on y Django como 
+  framework. Destacar el uso de tecnolog\'ias modernas como HTML5, CSS3, AJAX y dise\~no responsive con BootStrap que han dado dinamismo, rapidez, adaptabilidad y 
+  est\'etica a la aplicaci\'on.
+
+  \item \texttt{Contexto}: El proyecto est\'a pensado e implementado para un entorno de \'ambito educativo. Concretamente para c\'irculos con un n\'umero variable de 
+  usuarios, como aulas de universidad o de instituto, aulas online, cursos en academias, etc,...
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,7 +140,16 @@ Tutor : Gregorio Robles Mart\'inez
 \chapter*{Summary}
 \addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el ndice
 \markboth{SUMMARY}{SUMMARY} % encabezado
+\begin{itemize}
+  \item \texttt{Objetives}: This project develops a web application that is based on creating a planet blogs where its main objectives are the formation and learning
+  of its members.
+  
+  \item \texttt{Technologies}: The project was carried out in a Linux environment, using programming language Python and Django as framework. Emphasize the use of modern 
+  technologies like HTML5, CSS3, AJAX and responsive design (BootStrap) given dynamism, speed, adaptability and aesthetics to the application.
 
+  \item \texttt{Context}: The project is designed and implemented for environment education. Specifically for circles with a variable number of users, such as university 
+  classrooms or school, online classes, courses in academies, etc ...
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,7 +189,7 @@ Tutor : Gregorio Robles Mart\'inez
 En este proyecto se implementa una aplicaci\'on web que consiste en el desarrollo de un planeta de blogs. Est\'a enfocado al \'ambito educativo y puede
 ser usado en cualquier entorno que simule un aula, ya sea en universidades, institutos, colegios, academias, cursos online, etc,...
 
-El contenido de la aplicaci\'on recoge autom\'aticamente mensajes o entradas de un conjunto de blogs que comparten una tem\'atica com\'un.
+El contenido de la aplicaci\'on recoge autom\'aticamente mensajes o entradas de un conjunto de blogs externos que comparten una tem\'atica com\'un.
 
 El tutor ser\'a el responsable de crear hilos donde los alumnos podr\'an suscribirse y formar parte de la tem\'atica de inter\'es. Dentro de cada hilo,
 los alumnos podr\'an visualizar las entradas del conjunto de blogs que est\'an suscritos a ese hilo.
@@ -176,11 +199,28 @@ gamificaci\'on. En este proceso los participantes de cada hilo podr\'an luchar p
 puntos (llamados planets) y subiendo de nivel seg\'un el compromiso y la capacidad de interacci\'on de cada alumno.
 
 Existe una secci\'on de b\'usqueda para poder encontrar entradas introduciendo nick de usuario y/o identificador de entrada. Y adem\'as, dentro de la
-aplicaci\'on se puede encontrar otra secci\'on con las bases de las puntuaciones.
+aplicaci\'on se puede encontrar dos secciones con las bases de las puntuaciones y las estad\'isticas generales de cada usuario.
 
 \section{Contexto tecnol\'ogico}
 \label{sec:contexto}
+Actualmente, la sociedad se encuentra en un proceso de evoluci\'on enorme en la era de la tecnolog\'ia. Esta evoluci\'on llama a la mayor\'ia 
+de los usuarios del mundo que usan internet a aprender a manejar nuevas aplicaciones, herramientas o tecnolog\'ias para poder obtener 
+conocimientos nuevos y compartirlos.
+Todo esto contrasta con un proceso de asimilaci\'on y descubrimiento por otra parte de usuarios con una cierta edad que nunca convivieron con 
+el mundo de ''los aparatos e internet''.
 
+En la actualidad tecnol\'ogica, se est\'a produciendo una gran crecimiento y progresi\'on en el \'ambito m\'ovil, con la aparici\'on de los 
+denominados smartphones o tel\'efonos inteligentes, aportando una herramienta para conectarse a internet desde cualquier sitio.
+
+El principal problema es la gran diversidad de smartphones y de computadoras modernas, referido tanto a la diversidad hardware 
+\rule[1mm]{4mm}{0.1mm}diferentes tama\~nos de pantalla\rule[1mm]{4mm}{0.1mm} como a la variedad de sistemas operativos, e incluso entre ellos, 
+diferentes versiones. En este proyecto se ha fijado 
+como fuente de test y desarrollo, un sistema operativo Linux Ubuntu 14.04 con un navegador Firefox, que es uno de los navegadores de internet m\'as 
+utilizados en la actualidad. El desarrollo de aplicaciones utilizando tecnolog\'ias libres y abiertas, en concreto CSS, HTML y 
+JavaScript, tiene como ventaja la creaci\'on de un programa compatible con casi cualquier dispositivo, teniendo que preocuparse exclusivamente 
+de peque\~nas variaciones debidas a las diferencias entre navegadores de internet (ya que se cambia
+la idea de adaptarse a diferentes sistemas operativos por diferentes navegadores de internet) y a los diferentes tama\~nos de pantalla y m\'etodos
+de control (pantallas t\'actiles en m\'oviles y tablets o rat\'on y teclado en ordenadores)
 
 
 
@@ -199,16 +239,37 @@ aplicaci\'on se puede encontrar otra secci\'on con las bases de las puntuaciones
 
 \section{Objetivo general}
 \label{sec:objetivo-general}
-El objetivo principal del proyecto es el desarrollo de una aplicaci\'on educativa que englobe y unifique multitud de temas. De esta forma, los usuarios 
-podr\'an interactuar para su correcta formaci\'on y \'optimo aprendizaje.
+El objetivo principal del proyecto es el desarrollo de una aplicaci\'on educativa que englobe y unifique multitud de temas para que a trav\'es de ellos los usuarios 
+puedan interactuar, formarse correctamente y optimizar su aprendizaje.
 
 \section{Objetivos espec\'ificos}
 \label{sec:objetivos-especificos}
-
-
-
-
-
+\begin{itemize}
+  \item \textit {Usabilidad sencilla:} Cuanta m\'as sencillez de uso, mayor n\'umero de personas podr\'an manejar la aplicaci\'on. 
+  Fue implementada para personas que no est\'an muy familiarizadas con las nuevas tecnolog\'ias, de esta forma se conseguir\'ia 
+  abarcar mayor variedad de usuarios.
+  \item \textit {Integraci\'on de elementos sociales:} Estamos en un contexto en el que se muestra un gran inter\'es en los elementos sociales. La aplicaci\'on
+  integra funciones sociales para la atracci\'on de usuarios. Estas funciones son muy importantes para demostrar la capacidad del usuario 
+  de interactuar dentro de un mundo digital. Con un simple comentario, un ''Me gusta'', un ''No me gusta'' o una valoraci\'on por parte del 
+  tutor, se crean v\'inculos digitales capaces de mover diferentes sentimientos y pensamientos en las personas como son la curiosidad o el 
+  af\'an de superaci\'on.
+  \item \textit {Inclusi\'on de gamificaci\'on:} Otro punto importante de la aplicaci\'on es su moneda de cambio, el \textit{planet}. A 
+  partir de la creaci\'on de esta moneda se inicia un proceso de gamificaci\'on que alienta la participaci\'on y el compromiso, y mejora la 
+  experiencia del usuario. 
+  Se obtiene una motivaci\'on y una recompensaci\'on extra con la realizaci\'on de tareas a cambio de estas monedas. As\'i mismo se incita a una 
+  mayor colaboraci\'on de los usuarios mediante la retroalimentaci\'on continua sobre el progreso en el ranking. Mejor posici\'on en el ranking 
+  significar\'ia el logro de un determinado objetivo personal.\\
+  En resumen, volvemos a una de las primeras actividades que realizamos en la vida, jugar. Una actividad que es la principal fuente de 
+  aprendizaje cuando somos ni\~nos y el principal motivo de diversi\'on cuando somos adolescentes e, incluso, adultos.
+  \item \textit {Adaptabilidad:} La aplicaci\'on ha sido implementada con un dise\~no responsive mediante BootStrap. El fin de este dise\~no 
+  es mejorar la experiencia del usuario con una adaptabilidad de todos los elementos del contenido de una p\'agina web. Con este fin se logra 
+  reducir el uso constante del zoom sobre las webs, de modo que el ancho de pantalla se adapta al dispositivo. Adem\'as se simplifica el 
+  acceso a los men\'us y contenidos, y se elimina la ejecuci\'on de aplicaciones secundarias que no funcionan en dispositivos m\'oviles.
+  \item \textit {Dinamismo y rapidez:} Otro de los objetivos primordiales es la obtenci\'on de una aplicaci\'on din\'amica. En el momento en que un 
+  usuario interactua de alguna manera en cualquier documento \textit{HTML}, tiene la sensaci\'on de que los cambios se producen instant\'aneamente. Esto se ha logrado 
+  gracias a la tecnolog\'ia \textit{AJAX}. Esta tecnolog\'ia permite realizar funciones din\'amicas sin necesidad de recargar la p\'agina web, por lo que proporciona 
+  m\'as ligereza y velocidad, reduciento el tiempo implicado en cada transacci\'on.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -262,7 +323,7 @@ entre los objetos.
 
 En este proyecto, Python se usa principalmente para el desarrollo de las vistas en el lado del servidor, donde mediante 
 peticiones de los usuarios, recoge y procesa la informaci\'on y devuelve los datos a la presentaci\'on correspondiente. Tambi\'en se usa para recoger el 
-modelo de datos y las urls necesarias para enlazar con las vistas.
+modelo de datos y las URL's necesarias para enlazar con las vistas.
 
 
 \section{HTML5}
@@ -403,8 +464,8 @@ iguales, utilizar\'ias la clase .col-xs-4 (el 4 indica que cada columna ocupa 4 
 \begin{figure}[htbp] 
   \label{figura:bootstrap1}
   \centering
-  \subfigure[Dispositivo mediano]{\includegraphics[width=11cm]{img/BootStrapMD}}
-  \subfigure[Dispositivo peque\~no]{\includegraphics[width=11cm]{img/BootStrapXS}}
+  \subfigure[Dispositivo mediano]{\shadowbox{\includegraphics[width=11cm]{img/BootStrapMD}}}
+  \subfigure[Dispositivo peque\~no]{\shadowbox{\includegraphics[width=11cm]{img/BootStrapXS}}}
   \caption{Ejemplo para dispositivos medianos (clase col-md-x) y peque\~nos (clase col-xs-x)}
 \end{figure}
 
@@ -525,14 +586,14 @@ En dicha estructura cabe destacar los siguientes bloques:
   Y adem\'as, se localizan todos los ficheros \textit{.js} y \textit{.css} que a\~nadir\'an funcionalidad y definir\'an el dise\~no a su respectivo 
   documento \textit{HTML} o p\'agina web.
   \item {\bfseries TFG}: Contiene ficheros b\'asicos para el correcto funcionamiento de la aplicaci\'on.\\ \texttt{settings.py} es un fichero de 
-  configuraci\'on que contiene todas las rutas relativas o directorios necesarios. \texttt{urls.py} define todas las urls y las asocia a una vista en
+  configuraci\'on que contiene todas las rutas relativas o directorios necesarios. \texttt{urls.py} define todas las URL's y las asocia a una vista en
   \texttt{views.py} que se encargar\'a de procesar las peticiones de los clientes.\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \end{itemize}
 
 
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/tree}
+  \shadowbox{\includegraphics[width=9cm, keepaspectratio]{img/tree}}
   \caption{Estructura de directorios. Utilizando la herramienta \href{http://www.computerhope.com/unix/tree.htm}{\textit{tree}}.}
   \label{fig:arquitectura}
 \end{figure}
@@ -549,15 +610,15 @@ o esqueleto del sistema \textit{Django} y termina con una explicaci\'on m\'as es
 En la figura~\ref{fig:introestructura} se muestra un boceto de c\'omo funciona \textit{Django} internamente. Hay dos partes diferenciadas que separan al
 cliente del servidor. El cliente es el navegador y el servidor \textit{Django}. El cliente tiene las funciones de enviar peticiones al servidor y de 
 mostrar la presentaci\'on o interfaz al usuario final. Las peticiones las lleva a cabo el cliente a trav\'es del usuario en el momento en que \'este 
-pulsa sobre un enlace o pide una url en concreto en la barra del navegador mientras que el servidor se encarga de procesar dichas peticiones y de 
+pulsa sobre un enlace o pide una URL en concreto en la barra del navegador mientras que el servidor se encarga de procesar dichas peticiones y de 
 transferir los datos necesarios al cliente para que puedan ser visualizados por el usuario.
 
 El proceso del sistema \textit{Django} comienza con una solicitud por parte del usuario. Esta solicitud puede ser de tipo \texttt{GET} para conseguir 
 informaci\'on de la base de datos o de tipo \texttt{POST} para guardar o modificar informaci\'on de la base de datos. La petici\'on es enviada por el 
-cliente o navegador mediante una url. \textit{Django} atrapar\'a esa url y comprobar\'a en su fichero \texttt{urls.py} si la url existe o no 
-\rule[1mm]{4mm}{0.1mm}en el caso de que la url no exista \textit{Django} devolver\'a al cliente una plantilla \textit{HTML} de error\rule[1mm]{4mm}{0.1mm}.
-En caso de que la petici\'on sea correcta, \textit{Django} mediante el \textit{URLConf} interpretar\'a dicha url y se dirigir\'a a la vista apropiada 
-\rule[1mm]{4mm}{0.1mm}en el fichero \texttt{urls.py} cada url est\'a asociada a una vista\rule[1mm]{4mm}{0.1mm}. Dentro del fichero \texttt{views.py} se
+cliente o navegador mediante una URL. \textit{Django} atrapar\'a esa URL y comprobar\'a en su fichero \texttt{urls.py} si la URL existe o no 
+\rule[1mm]{4mm}{0.1mm}en el caso de que la URL no exista \textit{Django} devolver\'a al cliente una plantilla \textit{HTML} de error\rule[1mm]{4mm}{0.1mm}.
+En caso de que la petici\'on sea correcta, \textit{Django} mediante el \textit{URLConf} interpretar\'a dicha URL y se dirigir\'a a la vista apropiada 
+\rule[1mm]{4mm}{0.1mm}en el fichero \texttt{urls.py} cada URL est\'a asociada a una vista\rule[1mm]{4mm}{0.1mm}. Dentro del fichero \texttt{views.py} se
 ubicar\'a la vista que se necesita, la cual se encargar\'a de interactuar con el modelo, bien para obtener datos \rule[1mm]{4mm}{0.1mm}en caso de 
 petici\'on \texttt{GET}\rule[1mm]{4mm}{0.1mm} o bien para guardar o modificar alg\'un elemento del modelo de datos \rule[1mm]{4mm}{0.1mm}en caso de 
 petici\'on \texttt{POST}\rule[1mm]{4mm}{0.1mm}. La vista se redirigir\'a al fichero \texttt{forms.py} en caso de que la petici\'on se hubiera dado a trav\'es
@@ -576,7 +637,7 @@ modo que cuando env\'ie una petici\'on \textit{AJAX} a trav\'es del fichero \tex
 el servidor contestar\'a enviando los datos que pide sin necesidad de recargar esa p\'agina desde la cual se realiz\'o dicha petici\'on \textit{AJAX}.
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{img/diagrama}
+  \shadowbox{\includegraphics[width=17cm, keepaspectratio]{img/diagrama}}
   \caption{\textit{Estructura general del sistema \textit{Django}.}}
   \label{fig:introestructura}
 \end{figure}
@@ -615,14 +676,14 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   es un n\'umero entero que indica el n\'umero total de entradas que tiene esa asignatura y \textit{Creador} es el identificador del tutor que cre\'o la
   asignatura.
   \item {\bfseries Rss}: El modelo \texttt{Rss} representa al blog o blogs de los usuarios. Cada usuario necesita un blog nuevo para cada asignatura en la
-  que se suscriba. Tiene como campos: \textit{Rss} que es la url del RSS del blog y \textit{UltimaFecha} que guarda la fecha de la entrada de ese blog 
+  que se suscriba. Tiene como campos: \textit{Rss} que es la URL del RSS del blog y \textit{UltimaFecha} que guarda la fecha de la entrada de ese blog 
   que se guard\'o por \'ultima vez en base de datos.
   \item {\bfseries Entrada}: Este modelo representa una entrada de blog. Sus propiedades o comportamientos son los siguientes: \textit{Entrada} es un campo 
   entero que guarda el identificador de la entrada \rule[1mm]{4mm}{0.1mm}no es el campo pk de la tabla, sino un contador que se incrementa para diferenciar
   entradas con mismo identificador pero de distintas asignaturas\rule[1mm]{4mm}{0.1mm}, \textit{Titulo} guarda un string de m\'aximo 10 caracteres y define 
   el t\'itulo de la entrada, \textit{Descripcion} guarda un texto sin longitud m\'axima de caracteres y da una descripci\'on detallada de la entrada,
-  \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{link} salva la url donde se ubica la propia entrada dentro del blog de usuario, 
-  \textit{UrlBlog} guarda la url del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
+  \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{link} salva la URL donde se ubica la propia entrada dentro del blog de usuario, 
+  \textit{UrlBlog} guarda la URL del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
   \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada, \textit{Total} guarda la puntuaci\'on que lleva hasta el
   momento la entrada teniendo en cuenta valoraciones positivas y valoraciones negativas \rule[1mm]{4mm}{0.1mm}esta puntuaci\'on se usa para imprimir en 
   la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm}, \textit{TotalComentarios} cuenta el total de comentarios que contiene la entrada 
@@ -657,7 +718,7 @@ Las relaciones entre modelos que tienen lugar en el proyecto son:
   intermediario se utilizar\'a para regular esta relaci\'on por lo que se pueden colocar campos adicionales en \texttt{Rss} para que \texttt{Asignatura}
   pueda acceder a m\'as datos relevantes de \texttt{Alumno}.
   \item {\bfseries Rss}: El modelo \texttt{Rss} tendr\'a dos relaciones \textit{ForeignKey} con \texttt{Alumno} y \texttt{Asignatura} debido
-  a que un rss s\'olo puede pertenecer a un alumno y a una asignatura. Los alumnos se suscriben a las asignaturas por medio de un rss que adem\'as de 
+  a que un RSS s\'olo puede pertenecer a un alumno y a una asignatura. Los alumnos se suscriben a las asignaturas por medio de un RSS que adem\'as de 
   ser v\'alido, no debe estar repetido en base de datos, sino se muestra un error de validaci\'on.
   \item {\bfseries Entrada}: \texttt{Entrada} se relaciona con los modelos \texttt{Alumno} y \texttt{Asignatura}. Una entrada debe ser \'unica para un 
   alumno y en una asignatura. Mediante el proceso de actualizaci\'on autom\'atica de entradas, las entradas ser\'an guardadas en este modelo asociadas
@@ -677,7 +738,7 @@ Las relaciones entre modelos que tienen lugar en el proyecto son:
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{img/mis_modelos}
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{img/mis_modelos}}
   \caption{\textit{Estructura gr\'afica de la base de datos.}}
   \label{fig:disenobbdd}
 \end{figure}
@@ -702,11 +763,11 @@ una de las p\'aginas:
   Las \'unicas p\'aginas que tienen pie de p\'agina son \texttt{index.html}, \texttt{ayuda.html} y las p\'aginas de registro.
 \end{itemize}
 
-\subsection{Dise\~no de las vistas y urls} 
+\subsection{Dise\~no de las vistas y URL's} 
 \label{sec:vistasurls}
 Por la parte del servidor de un proyecto \textit{Django} existe una parte importante que se encarga de procesar las solicitudes del cliente. Esta parte se
 almacena en un fichero llamado \texttt{views.py}. Est\'a compuesto por vistas o funciones a las que \textit{Django} accede despu\'es de que el usuario 
-realice una petici\'on mediante una url. El fichero \texttt{urls.py} define todas las urls a las que se asociar\'a una vista distinta. A continuaci\'on
+realice una petici\'on mediante una URL. El fichero \texttt{urls.py} define todas las URL's a las que se asociar\'a una vista distinta. A continuaci\'on
 la vista procesa la solicitud y devuelve al cliente la informaci\'on pedida en forma de documento \textit{HTML} o \textit{JSON}.
 
 Cada una de esas vistas se explican en las siguientes subsecciones:
@@ -714,7 +775,7 @@ Cada una de esas vistas se explican en las siguientes subsecciones:
 \subsubsection{P\'agina de inicio} 
 \label{sec:paginainicio}
 El documento HTML mostrado en la figura~\ref{fig:paginainicio} es la p\'agina de inicio. La p\'agina es servida tras una previa petici\'on GET del cliente 
-mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de inicio: \texttt{/planetablogs/login/}}. La vista asociada a ese recurso 
+mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de inicio: \texttt{/planetablogs/login/}}. La vista asociada a ese recurso 
 es \texttt{inicio}, la cual devuelve la plantilla \texttt{inicio.html} que crea el documento HTML de la respuesta.
 
 A esta p\'agina puede entrar cualquier usuario externo que pretenda crearse un perfil en la aplicaci\'on o quiera acceder a su perfil una vez creado.
@@ -728,7 +789,7 @@ En la cabecera se visualiza un mensaje de bienvenida animando a un ingreso en la
   \item {\bfseries \textit{Identif\'icate}}: En el formulario, una vez creado un usuario de aplicaci\'on, el usuario puede introducir sus datos 
   (\texttt{usuario} y \texttt{contrase\~na}) para identificarse y poder entrar a su perfil de usuario dentro de la aplicaci\'on. 
   
-  Una vez se introducen los datos y el usuario pulsa en el bot\'on \textit{Aceptar}, el cliente realiza una petici\'on \texttt{POST} sobre la misma url 
+  Una vez se introducen los datos y el usuario pulsa en el bot\'on \textit{Aceptar}, el cliente realiza una petici\'on \texttt{POST} sobre la misma URL 
   por lo que ser\'a procesada por la misma vista \texttt{inicio}. Esta vista identifica la petici\'on como \texttt{POST}, almacena la informaci\'on enviada
   mediante el formulario, y la autentifica a trav\'es del proceso de autentificaci\'on de \textit{Django} (\texttt{.authenticate}). Si el usuario est\'a 
   guardado en el modelo \texttt{User}, se ejecuta el proceso de login de \textit{Django} (\texttt{.login}). A continuaci\'on se comprueba el tipo de usuario
@@ -739,7 +800,7 @@ En la cabecera se visualiza un mensaje de bienvenida animando a un ingreso en la
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/PaginaInicio}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PaginaInicio}}
   \caption{\textit{P\'agina de inicio.}}
   \label{fig:paginainicio}
 \end{figure}
@@ -748,7 +809,7 @@ En la cabecera se visualiza un mensaje de bienvenida animando a un ingreso en la
 \subsubsection{Registro de alumno} 
 \label{sec:registroalumno}
 El documento HTML mostrado en la figura~\ref{fig:registroalumno} es la p\'agina de registro realizado por parte de un alumno. La p\'agina es servida 
-tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/nuevoalumno/}}. La vista asociada a ese recurso es \texttt{nuevo\_alumno}, la cual devuelve la plantilla \texttt{nuevoalumno.html} 
 que crea el documento HTML de la respuesta.
 
@@ -770,7 +831,7 @@ En caso de error de registro, te indicar\'a que puedes pasar el rat\'on por enci
 de informaci\'on que se encontraba previamente oculto.
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumno}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroAlumno}}
   \caption{\textit{P\'agina de registro de un alumno.}}
   \label{fig:registroalumno}
 \end{figure}
@@ -779,7 +840,7 @@ de informaci\'on que se encontraba previamente oculto.
 \subsubsection{Registro de tutor} 
 \label{sec:registrotutor}
 El documento HTML mostrado en la figura~\ref{fig:registrotutor} es la p\'agina de registro realizado por parte de un tutor. La p\'agina es servida 
-tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/nuevoprofesor/}}. La vista asociada a ese recurso es \texttt{nuevo\_profesor}, la cual devuelve la plantilla 
 \texttt{nuevoprofesor.html} que crea el documento HTML de la respuesta.
 
@@ -790,7 +851,7 @@ formulario con la mayor\'ia de los campos del modelo \texttt{User} (\textit{Imag
 \textit{Contrase\~na}).
 
 Una vez relleno, el formulario se env\'ia pulsando sobre el bot\'on \texttt{Guardar} coloreado en verde. En ese momento, se realiza una petici\'on 
-\texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{nuevo\_profesor}. Esta vista identifica la petici\'on como 
+\texttt{POST} sobre la misma URL por lo que ser\'a procesada por la misma vista \texttt{nuevo\_profesor}. Esta vista identifica la petici\'on como 
 \texttt{POST}. La informaci\'on es enviada mediante un formulario de registro definido en \texttt{formularios.py}, y si este formulario es v\'alido, dicha
 informaci\'on se almacena. La vista crea dos objetos, uno \texttt{User} y otro \texttt{Profesor}, y ambos los guarda en la base de datos. Y posteriormente, 
 env\'ia una respuesta \textit{HTTP} redireccionando a la p\'agina de inicio de la aplicaci\'on. En caso de que el formulario sea inv\'alido, la vista 
@@ -801,7 +862,7 @@ En caso de error de registro, te indicar\'a que puedes pasar el rat\'on por enci
 de informaci\'on que se encontraba previamente oculto.
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroTutor}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/RegistroTutor}}
   \caption{\textit{P\'agina de registro de un tutor.}}
   \label{fig:registrotutor}
 \end{figure}
@@ -810,26 +871,26 @@ de informaci\'on que se encontraba previamente oculto.
 \subsubsection{Presentaci\'on de alumno} 
 \label{sec:presentacionalumno}
 El documento HTML mostrado en la figura~\ref{fig:presentacionalumno} es la p\'agina de presentaci\'on del perfil de un alumno. La p\'agina es servida 
-tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/alumnos/}}. La vista asociada a ese recurso es \texttt{presentacionalumno}, la cual devuelve la plantilla 
 \texttt{presentacionalum.html} que crea el documento HTML de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como alumno.
 
-En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma url de la 
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma URL de la 
 p\'agina servida, por lo que la recargar\'a, y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
 de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
 
 Dentro del contenedor hay que destacar dos partes importantes:
 \begin{itemize}
   \item {\bfseries \texttt{Hilos disponibles}}: Aparecen todas las asignaturas disponibles a las que se puede suscribir el alumno. Cada formulario 
-  corresponde con una asignatura de la cual se muestra su t\'itulo y su descripci\'on. El campo del formulario se debe rellenar con un Rss v\'alido antes 
+  corresponde con una asignatura de la cual se muestra su t\'itulo y su descripci\'on. El campo del formulario se debe rellenar con un RSS v\'alido antes 
   de enviarlo pulsando sobre el bot\'on \texttt{Guardar y a\~nadir} coloreado en naranja. En ese instante, se realiza una petici\'on 
-  \texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{presentacionalumno}. Esta vista identifica la petici\'on como 
+  \texttt{POST} sobre la misma URL por lo que ser\'a procesada por la misma vista \texttt{presentacionalumno}. Esta vista identifica la petici\'on como 
   \texttt{POST}. La informaci\'on es enviada mediante un formulario (\textit{FormularioAgregarRSS}) definido en \texttt{formularios.py}. La vista valida 
-  el formulario de tal forma que cumpla que la url del Rss tiene que ser correcta y no estar ocupada por ninguna asignatura de ning\'un alumno registrado 
+  el formulario de tal forma que cumpla que la URL del RSS tiene que ser correcta y no estar ocupada por ninguna asignatura de ning\'un alumno registrado 
   en la aplicaci\'on. La vista crea un objeto en la tabla del modelo \texttt{Rss} en base de datos con el dato introducido en el formulario y una fecha que 
-  marca el inicio de la actividad de ese Rss. Adem\'as, la vista crea otro objeto en el modelo \texttt{Valoracion} para inicializar la puntuaci\'n y el 
+  marca el inicio de la actividad de ese RSS. Adem\'as, la vista crea otro objeto en el modelo \texttt{Valoracion} para inicializar la puntuaci\'n y el 
   nivel de ese alumno en esa asignatura. Por \'ultimo, se env\'ia una respuesta \textit{HTTP} redireccionando a la p\'agina de presentaci\'on del alumno. 
   En caso de que el formulario sea inv\'alido, la vista renderizar\'a la plantilla \texttt{presentacionalum.html} con un mensaje de error de dato 
   introducido.
@@ -839,7 +900,7 @@ Dentro del contenedor hay que destacar dos partes importantes:
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}}
   \caption{\textit{Presentaci\'on del perfil de un alumno.}}
   \label{fig:presentacionalumno}
 \end{figure}
@@ -848,21 +909,21 @@ Dentro del contenedor hay que destacar dos partes importantes:
 \subsubsection{Presentaci\'on de tutor}
 \label{sec:presentaciontutor}
 El documento HTML mostrado en la figura~\ref{fig:presentaciontutor} es la p\'agina de presentaci\'on del perfil de un tutor. La p\'agina es servida 
-tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de registro de un alumno: 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/tutores/}}. La vista asociada a ese recurso es \texttt{presentacionprofesor}, la cual devuelve la plantilla 
 \texttt{presentacionprof.html} que crea el documento HTML de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como profesor.
 
-En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma url de la 
-p\'agina servida, por lo que la recargar\'a, \texttt{Resetear contrase\~na} hace referencia a la url de cambio de contrase\~na y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma URL de la 
+p\'agina servida, por lo que la recargar\'a, \texttt{Resetear contrase\~na} hace referencia a la URL de cambio de contrase\~na y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
 de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
 
 Dentro del contenedor hay que destacar tres partes importantes:
 \begin{itemize}
   \item {\bfseries \texttt{Crear hilo}}: Es un bot\'on que despliega un formulario a trav\'es de un efecto \texttt{toggle} de \textit{jQuery-ui}. Este 
   formulario introduce dos campos, t\'itulo y descripci\'on, que definen un objeto del modelo \texttt{Asignatura}. Se env\'ia pulsando sobre el bot\'on
-  \texttt{Enviar} y se realiza una petici\'on \texttt{POST} sobre la misma url por lo que ser\'a procesada por la misma vista \texttt{presentacionprofesor}.
+  \texttt{Enviar} y se realiza una petici\'on \texttt{POST} sobre la misma URL por lo que ser\'a procesada por la misma vista \texttt{presentacionprofesor}.
   Esta vista identifica la petici\'on como \texttt{POST}. La informaci\'on es enviada mediante un formulario (\textit{FormularioHilo}) definido en 
   \texttt{formularios.py}. La vista valida el formulario y crea un objeto en la tabla del modelo \texttt{Asignatura} en base de datos con los dos datos 
   introducidos en el formulario y un campo \texttt{entradas} que inicializa el n\'umero de entradas totales existentes en ese hilo. Se renderiza 
@@ -875,7 +936,7 @@ Dentro del contenedor hay que destacar tres partes importantes:
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutor}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutor}}
   \caption{\textit{Presentaci\'on del perfil de un tutor.}}
   \label{fig:presentaciontutor}
 \end{figure}
@@ -884,14 +945,14 @@ Dentro del contenedor hay que destacar tres partes importantes:
 \subsubsection{Resetear contrase\~na} 
 \label{sec:resetpass}
 El documento HTML mostrado en la figura~\ref{fig:resetpass} es la p\'agina de modificaci\'on de contrase\~na. La p\'agina es servida 
-tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de resetear contrase\~na: 
+tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de resetear contrase\~na: 
 \texttt{/planetablogs/tutores/resetear\_password/}}. La vista asociada a ese recurso es \texttt{resetear\_password}, la cual devuelve la plantilla 
 \texttt{resetear\_password.html} que crea el documento HTML de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como profesor. 
 
 En la parte superior de la cabecera se encuentra la barra de navegaci\'on con tres enlaces. \texttt{Resetear contrase\~na} hace referencia a la misma 
-url de la p\'agina servida, por lo que la recargar\'a, \texttt{Mis hilos} hace referencia a la url del perfil del tutor y \texttt{Desconectar} para 
+URL de la p\'agina servida, por lo que la recargar\'a, \texttt{Mis hilos} hace referencia a la URL del perfil del tutor y \texttt{Desconectar} para 
 el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
 
 En el cuerpo del documento existe un formulario en el que el alumno que haya perdido u olvidado su contrase\~na, puede introducir su nick de usuario y una
@@ -899,7 +960,7 @@ nueva contrase\~na que sustituir\'a a la anterior.
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/ResetPass}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/ResetPass}}
   \caption{\textit{Modificar una contrase\~na desde el perfil de un tutor.}}
   \label{fig:resetpass}
 \end{figure}
@@ -914,27 +975,27 @@ de un hilo limpio, sin entradas, en la parte del alumno. En la figura~\ref{fig:h
 tutor. La diferencia entre ambas im\'agenes se explicar\'a en las dos pr\'oximas subsecciones.
 
 La cabecera de ambas im\'agenes se pueden observar los distintos \'items de la barra de navegaci\'on. La barra de navegaci\'on ser\'a la misma dentro de
-todas las plantillas con la siguiente url: {\scriptsize \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/[\textit(buscar),\textit(puntuaciones),
+todas las plantillas con la siguiente URL: {\scriptsize \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/[\textit(buscar),\textit(puntuaciones),
 \textit(infopuntuaciones)]}}
 \begin{itemize}
-  \item {\bfseries \textit{Mis hilos}}: Es un enlace que hace referencia a la url de la presentaci\'on del perfil de usuario 
+  \item {\bfseries \textit{Mis hilos}}: Es un enlace que hace referencia a la URL de la presentaci\'on del perfil de usuario 
   (Secci\'on~\ref{sec:presentacionalumno}).
-  \item {\bfseries \textit{Asignatura}}: Enlace que hace referencia a la misma url de la p\'agina servida, por lo que la recargar\'a (en este caso, 
+  \item {\bfseries \textit{Asignatura}}: Enlace que hace referencia a la misma URL de la p\'agina servida, por lo que la recargar\'a (en este caso, 
   la asignatura se llama \texttt{DAT}).
-  \item {\bfseries \textit{Buscar}}: Es un enlace que hace referencia a la url de b\'usqueda (Secci\'on~\ref{sec:buscar}).
-  \item {\bfseries \textit{Puntuaciones}}: Es una lista desplegable compuesta por tres enlaces. \textit{Ranking} hace referencia a la url donde se muestran 
-  todas las puntuaciones de los usuarios de un determinado hilo. \textit{Estad\'isticas} hace referencia a la url donde se muestran las estad\'isticas de 
-  cada usuario de un determinado hilo, tanto individuales como generales. \textit{Informaci\'on} hace referencia a la url que recoge las bases de esas 
-  puntuaciones.
-  \item {\bfseries \textit{Desconectar}}: Enlace que hace referencia a la url servida para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
+  \item {\bfseries \textit{Buscar}}: Es un enlace que hace referencia a la URL de b\'usqueda (Secci\'on~\ref{sec:buscar}).
+  \item {\bfseries \textit{Puntuaciones}}: Es una lista desplegable compuesta por tres enlaces. \textit{Ranking} hace referencia a la URL donde se muestran 
+  todas las puntuaciones de los usuarios de un determinado hilo. \textit{Estad\'isticas} hace referencia a la URL donde se muestran las estad\'isticas de 
+  cada usuario de un determinado hilo, tanto estad\'isticas generales como resumen de entradas. \textit{Informaci\'on} hace referencia a la URL que 
+  recoge las bases de esas puntuaciones.
+  \item {\bfseries \textit{Desconectar}}: Enlace que hace referencia a la URL servida para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
 \end{itemize}
 Tambi\'en se expone, debajo de la barra de navegaci\'on, una imagen correspondiente al logo de la aplicaci\'on con su t\'itulo. Y en la parte derecha un 
 apartado que agrupa las entradas m\'as valoradas del hilo.
 
 \begin{figure}
   \centering
-  \subfigure[Hilo limpio en alumno]{\includegraphics[width=7cm]{imagenes/HiloAlumno}}
-  \subfigure[Hilo limpio en tutor]{\includegraphics[width=7cm]{imagenes/HiloTutor}}
+  \subfigure[Hilo limpio en alumno]{\doublebox{\includegraphics[width=7cm]{imagenes/HiloAlumno}}}
+  \subfigure[Hilo limpio en tutor]{\doublebox{\includegraphics[width=7cm]{imagenes/HiloTutor}}}
   \caption{\textit{P\'agina principal de un hilo limpio.}}
   \label{fig:hilos}
 \end{figure}
@@ -943,7 +1004,7 @@ apartado que agrupa las entradas m\'as valoradas del hilo.
 \subsubsection{Hilo de alumno} 
 \label{sec:hiloalumno}
 El documento HTML mostrado en la figura~\ref{fig:hiloalumno} es el contenedor de la p\'agina de un determinado hilo al que est\'a suscrito un alumno. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente al hilo al que est\'a
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente al hilo al que est\'a
 suscrito un alumno: \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)}}. La vista asociada a ese recurso es \texttt{mostrarhiloalumno}, la cual 
 devuelve la plantilla \texttt{index.html} que crea el documento HTML de la respuesta.
 
@@ -964,7 +1025,7 @@ todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo 
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradas}
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradas}}
   \caption{\textit{P\'agina principal de un hilo de un alumno.}}
   \label{fig:hiloalumno}
 \end{figure}
@@ -973,7 +1034,7 @@ todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo 
 \subsubsection{Hilo de tutor} 
 \label{sec:hilotutor}
 El documento HTML mostrado en la figura~\ref{fig:hilotutor} es el contenedor de la p\'agina de un determinado hilo al que est\'a suscrito un tutor. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente al hilo al que est\'a
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente al hilo al que est\'a
 suscrito un tutor: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)}}. La vista asociada a ese recurso es \texttt{mostrarhiloprofesor}, la cual 
 devuelve la plantilla \texttt{index\_tutor.html} que crea el documento HTML de la respuesta.
 
@@ -997,7 +1058,7 @@ lista de entradas o usuarios de la lista de usuarios, y adem\'as pueden puntuar 
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}
+  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloTutorEntradas}}
   \caption{\textit{P\'agina principal de un hilo de un tutor.}}
   \label{fig:hilotutor}
 \end{figure}
@@ -1006,7 +1067,7 @@ lista de entradas o usuarios de la lista de usuarios, y adem\'as pueden puntuar 
 \subsubsection{B\'usqueda avanzada} 
 \label{sec:buscar}
 El documento HTML mostrado en la figura~\ref{fig:buscar} pertenece la p\'agina de b\'usqueda avanzada de entradas. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
 b\'usqueda: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/buscar/}}. La vista asociada a ese recurso es \texttt{buscar}, la cual 
 devuelve la plantilla \texttt{buscar.html} que crea el documento HTML de la respuesta.
 
@@ -1018,7 +1079,7 @@ La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en l
 y por \textit{Id de entrada}.
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoBuscar}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoBuscar}}
   \caption{\textit{P\'agina de b\'usqueda avanzada de entradas.}}
   \label{fig:buscar}
 \end{figure}
@@ -1027,7 +1088,7 @@ y por \textit{Id de entrada}.
 \subsubsection{Ranking} 
 \label{sec:ranking}
 El documento HTML mostrado en la figura~\ref{fig:ranking} corresponde con la p\'agina de ranking de un determinado hilo. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
 ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/puntuaciones/}}. La vista asociada a ese recurso es \texttt{puntuaciones}, la cual 
 devuelve la plantilla \texttt{puntuaciones.html} que crea el documento HTML de la respuesta.
 
@@ -1045,7 +1106,7 @@ Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa t
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoRanking}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoRanking}}
   \caption{\textit{P\'agina de ranking.}}
   \label{fig:ranking}
 \end{figure}
@@ -1054,7 +1115,7 @@ Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa t
 \subsubsection{Estad\'isticas} 
 \label{sec:estadisticas}
 El documento HTML mostrado en la figura~\ref{fig:estadisticas} corresponde con la p\'agina de estad\'isticas de un determinado hilo. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
 ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/estadisticas/}}. La vista asociada a ese recurso es \texttt{estadisticas}, la cual 
 devuelve la plantilla \texttt{estadisticas.html} que crea el documento HTML de la respuesta.
 
@@ -1073,12 +1134,13 @@ Por lo que, la parte del documento HTML de la clase \textit{.container} agrupa t
 \textit{jQuery-ui}). Cada secci\'on del acorde\'on pertenece a un usuario y muestra dos tablas (elemento \texttt{<table>}): \textit{Estad\'isticas 
 generales del alumno} y \textit{Entradas del alumno}, con informaci\'on recopilada y organizada. 
 
-En la parte superior del cuerpo de la p\'agina, mediante \textit{radiobuttons} se da la opci\'on de elegir lo que queremos mostrar: S\'olo estad\'isticas 
-generales, s\'olo resumen de entradas o ambas.
+En la parte superior del cuerpo de la p\'agina, mediante \textit{radiobuttons} se da la opci\'on de elegir lo que queremos mostrar. Al clicar sobre cada 
+radiobutton, mediante los eventos \textit{jQuery}, \textit{hide()} y \textit{show()}, 
+escritos en el fichero estadisticas.js, se oculta o se muestra la tabla de estad\'isticas de usuario, la tabla de resumen de entradas o ambas tablas.
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEstadisticas}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEstadisticas}}
   \caption{\textit{P\'agina de ranking.}}
   \label{fig:estadisticas}
 \end{figure}
@@ -1087,7 +1149,7 @@ generales, s\'olo resumen de entradas o ambas.
 \subsubsection{Informaci\'on de las puntuaciones} 
 \label{sec:informacionpuntuaciones}
 El documento HTML mostrado en la figura~\ref{fig:informacionpuntuaciones} muestra informaci\'on sobre las condiciones o bases de las puntuaciones. 
-La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{Url correspondiente a la p\'agina de 
+La p\'agina es servida tras una previa petici\'on GET del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
 bases de las puntuaciones:\\ \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/infopuntuaciones/}}. La vista asociada a ese recurso es 
 \texttt{infopuntuaciones}, la cual devuelve la plantilla \texttt{infopuntuaciones.html} que crea el documento HTML de la respuesta.
 
@@ -1103,7 +1165,7 @@ de un nivel, y mediante los eventos \textit{JavaScript}, \texttt{mouseover} y \t
 
 \begin{figure}
   \centering
-  \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoInfoPuntuaciones}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoInfoPuntuaciones}}
   \caption{\textit{P\'agina con las bases de las puntuaciones.}}
   \label{fig:informacionpuntuaciones}
 \end{figure}
@@ -1131,7 +1193,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumnoEliminarHilo}}
     \caption{\textit{Eliminar hilo en una presentaci\'on de alumno.}}
     \label{fig:eliminarhiloalumno}
   \end{figure}
@@ -1159,7 +1221,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorEliminarHilo}
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionTutorEliminarHilo}}
     \caption{\textit{Eliminar hilo en una presentaci\'on de tutor.}}
     \label{fig:eliminarhilotutor}
   \end{figure}
@@ -1178,7 +1240,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentario}
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentario}}
     \caption{\textit{Comentario agregado en una entrada.}}
     \label{fig:agregarcomentario}
   \end{figure}
@@ -1196,7 +1258,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentarioBorrado}
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoEntradaComentarioBorrado}}
     \caption{\textit{Comentario eliminado en una entrada.}}
     \label{fig:eliminarcomentario}
   \end{figure}
@@ -1205,7 +1267,7 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   valoraciones positivas y de color rojo para valoraciones negativas (figura~\ref{fig:hilos}(a)). Son enlaces \textit{hyperlink} que mediante el evento \textit{onClick} llaman a las 
   funciones \textit{JavaScript} \texttt{Up} o \texttt{Down} respectivamente. Estas funciones se definen en el fichero \texttt{index.js}. 
   
-  Ambas funciones env\'ian una petici\'on \textit{AJAX} de tipo \texttt{GET} a su correspondiente vista mediante su recurso o url. La petici\'on es enviada 
+  Ambas funciones env\'ian una petici\'on \textit{AJAX} de tipo \texttt{GET} a su correspondiente vista mediante su recurso o URL. La petici\'on es enviada 
   desde el fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura, el Id del alumno, el Id de la entrada y el entero 
   Up o Down (valor del bot\'on antes de enviar la petici\'on).
   
@@ -1226,16 +1288,17 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Botones sin valoraci\'on]{\includegraphics[width=7cm]{imagenes/SinValoracion}}
-    \subfigure[Botones con valoraci\'on]{\includegraphics[width=7cm]{imagenes/ConValoracion}}
+    \subfigure[Botones sin valoraci\'on]{\Ovalbox{\includegraphics[width=7cm]{imagenes/SinValoracion}}}
+    \subfigure[Botones con valoraci\'on]{\Ovalbox{\includegraphics[width=7cm]{imagenes/ConValoracion}}}
     \caption{\textit{Valoraci\'on de una entrada.}}
     \label{fig:hilos}
   \end{figure}
 
   \item {\bfseries \textit{Eliminar entrada en hilo de tutor}}: Un tutor puede eliminar las entradas de un hilo escritas por un alumno a trav\'es del 
-  bot\'on \texttt{Eliminar entrada} (figura~\ref{fig:eliminarentrada}(a)). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
+  bot\'on \texttt{Eliminar entrada}, tanto entradas ya valoradas (figura~\ref{fig:eliminarentrada}(a)) como entradas no valoradas 
+  (figura~\ref{fig:eliminarentrada}(b)). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
   \textit{JavaScript} \texttt{EliminarEntradaPopUp} del fichero \texttt{index\_tutor.js}. Esta funci\'on lanza un di\'alogo definido por \textit{BootStrap} 
-  que da la opci\'on de eliminar la entrada o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminarentrada}(b). 
+  que da la opci\'on de eliminar la entrada o cancelar dicha acci\'on tal y como se muestra en la figura~\ref{fig:eliminarentrada}(c). 
   
   Al hacer click sobre el bot\'on \texttt{Eliminar} del cuadro de di\'alogo, se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
   \texttt{eliminarentrada}. La petici\'on es enviada desde el fichero \texttt{index\_tutor.js} usando \textit{jQuery} e incluye como datos el 
@@ -1247,8 +1310,9 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Entrada en hilo de tutor.]{\includegraphics[width=10cm]{imagenes/EntradaTutor}}
-    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarEntrada}}
+    \subfigure[Entrada en hilo de tutor con valoraci\'on.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorConValoracion}}}
+    \subfigure[Entrada en hilo de tutor sin valoraci\'on.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorSinValoracion}}}
+    \subfigure[Cuadro de di\'alogo de borrado.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarEntrada}}}
     \caption{\textit{Eliminaci\'on de una entrada en el hilo de un tutor.}}
     \label{fig:eliminarentrada}
   \end{figure}
@@ -1269,8 +1333,8 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Tabla de suscriptores en hilo de tutor.]{\includegraphics[width=8cm]{imagenes/HiloTutorAlumnos}}
-    \subfigure[Cuadro de di\'alogo de borrado.]{\includegraphics[width=8cm]{imagenes/HiloTutorEliminarAlumno}}
+    \subfigure[Tabla de suscriptores en hilo de tutor.]{\Ovalbox{\includegraphics[width=8cm]{imagenes/HiloTutorAlumnos}}}
+    \subfigure[Cuadro de di\'alogo de borrado.]{\Ovalbox{\includegraphics[width=8cm]{imagenes/HiloTutorEliminarAlumno}}}
     \caption{\textit{Eliminaci\'on de un alumno en el hilo de un tutor.}}
     \label{fig:eliminaralumno}
   \end{figure}
@@ -1283,13 +1347,13 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   Ambas acciones ejecutan una petici\'on \textit{AJAX} de tipo \texttt{GET}. La petici\'on es enviada desde el fichero \texttt{buscar.js} usando 
   \textit{jQuery} e incluye como datos el Id de la opci\'on y el texto escrito.
 
-  En la figura~\ref{fig:buscarajax}(a) se procede a buscar por \textit{Nick de usuario}. La solicitud \textit{AJAX} vincula su recurso \textit{url} a la 
+  En la figura~\ref{fig:buscarajax}(a) se procede a buscar por \textit{Nick de usuario}. La solicitud \textit{AJAX} vincula su recurso \textit{URL} a la 
   vista \texttt{buscarNickUsuario}. Comprueba que el texto enviado en la petici\'on no est\'a vac\'io y si existe un \texttt{username} que coincide con lo
   introducido. Una vez validado correctamente se crean dos listas \textit{JSON} de usuario (\texttt{list\_usuario}) y de entradas (\texttt{list\_entradas}) 
   filtradas por el Id del alumno. Estos datos \textit{JSON} son inclu\'idas como respuesta HTTP al cliente. En caso de que la validaci\'on sea incorrecta 
   se enviar\'a como respuesta HTTP un \textit{JSON} vac\'io que saltar\'a en la plantilla renderizada como un mensaje de aviso.
 
-  En la figura~\ref{fig:buscarajax}(b) se procede a buscar por \textit{Id de entrada}. La solicitud \textit{AJAX} vincula su recurso \textit{url} a la 
+  En la figura~\ref{fig:buscarajax}(b) se procede a buscar por \textit{Id de entrada}. La solicitud \textit{AJAX} vincula su recurso \textit{URL} a la 
   vista \texttt{buscarIdEntrada}. Comprueba que el texto enviado en la petici\'on no est\'a vac\'io y si existe un Id de entrada que coincide con lo
   introducido. Una vez validado correctamente se crean dos listas \textit{JSON} de usuario (\texttt{list\_usuario}) y de entrada (\texttt{list\_entrada}). 
   Estos datos \textit{JSON} son inclu\'idas como respuesta HTTP al cliente. En caso de que la validaci\'on sea incorrecta se enviar\'a como respuesta HTTP 
@@ -1300,8 +1364,8 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Buscar entradas por Nick de usuario.]{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorNick}}
-    \subfigure[Buscar entrada por Id de entrada.]{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorId}}
+    \subfigure[Buscar entradas por Nick de usuario.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorNick}}}
+    \subfigure[Buscar entrada por Id de entrada.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/HiloAlumnoBuscarPorId}}}
     \caption{\textit{Ejecuci\'on de una b\'usqueda.}}
     \label{fig:buscarajax}
   \end{figure}
@@ -1322,7 +1386,7 @@ Este enlace se sit\'ua en la parte derecha de la barra de navegaci\'on de cualqu
 registro.
 \begin{figure}
   \centering
-  \includegraphics[width=10cm, keepaspectratio]{imagenes/CierreSesion}
+  \Ovalbox{\includegraphics[width=10cm, keepaspectratio]{imagenes/CierreSesion}}
   \caption{\textit{Enlace de cierre de sesi\'on.}}
   \label{fig:cierresesion}
 \end{figure}
@@ -1351,26 +1415,82 @@ registro.
 
 \section{Consecuci\'on de objetivos}
 \label{sec:consecucion-objetivos}
-
+\begin{itemize}
+  \item \textit {Usabilidad sencilla:} La aplicaci\'on cuenta con botones con una etiqueta totalmente descriptiva, al 
+  igual que los enlaces muestran t\'itulos emergentes descriptivos, todo ello para facilitar su usabilidad. Adem\'as se cuenta con dos 
+  secciones de ayuda e informaci\'on de uso. El resultado es una aplicaci\'on bastante sencilla de usar. El \'unico punto m\'as complicado se puede dar a la hora de 
+  ingresar el \textit{RSS} en un determinado hilo disponible.
+  \item \textit {Integraci\'on de elementos sociales:} Objetivo logrado gracias a la secci\'on de escribir comentarios en cada una de las entradas, la puntuaci\'on del tutor, los 
+  botones ''Me gusta'' y ''No me gusta'', el elemento popup con la informaci\'on de cada usuario (foto, nombre y apellidos, correo, puntos y nivel),..
+  \item \textit {Inclusi\'on de gamificaci\'on:} En la pesta\~na ''Informaci\'on de puntuaciones'' se muestran todas las bases para la obtenci\'on de premio o 
+  penalizaci\'on de \textit{planets}, en resumen:\\
+  -El usuario que blogee una entrada recibir\'a una bonificaci\'on de 8 \textit{planets}. Si la entrada es eliminada, se penalizar\'a con 10 \textit{planets}.\\
+  -Cada valoraci\'on positiva que reciba una entrada corresponde con una bonificaci\'on de 2 \textit{planets} para el usuario que escribi\'o dicha entrada. Cada valoraci\'on 
+  negativa corresponde con una penalizaci\'on de 1 \textit{planets}.\\
+  -Cada comentario realizado se premiar\'a con una bonificaci\'on de 3 \textit{planets} para el usuario que escribi\'o dicho comentario. Si el comentario es eliminado se 
+  penalizar\'a con 3 \textit{planets}.\\
+  -La puntuaci\'on del tutor premiar\'a o penalizar\'a al usuario de una entrada con la misma cantidad que valore el tutor en dicha entrada.\\
+  -Tabla para la consecuci\'on de niveles.\\
+  \item \textit {Adaptabilidad:} Este objetivo ha sido logrado en cualquier navegador y a cualquier anchura de pantalla en port\'atiles u ordenadores de mesa. 
+  La adaptabilidad en dispositivos m\'oviles tiene problemas con solapamiento de distintos elementos, como botones, enlaces o el men\'u.
+  \item \textit {Dinamismo y rapidez:} \textit{AJAX}, \textit{jQuery} y \textit{jQuery-ui} han logrado este objetivo. Sin necesidad de recargar la p\'agina y con la ayuda 
+  de \textit{jQuery}, la aplicaci\'on es capaz de:\\
+  -Eliminar hilos, entradas y alumnos.\\
+  -Agregar hilos disponibles a ''Mis hilos''.\\
+  -Mostrar popup con informaci\'on de usuario y popup con informaci\'on del creador del hilo.\\
+  -Mostrar comentarios y ocultarlos.\\
+  -Pulsar ''Me gusta'' y ''No me gusta''\\
+  -Escribir comentarios y saltar popup con informaci\'on de ganancia de 3 \textit{planets}.\\
+  -Zoom en fotos de usuarios.\\
+  -B\'usqueda de entradas por id de entrada o por nick de usuario.\\
+  Con la ayuda de \textit{jQuery-ui} se ha creado un acorde\'on que ha hecho de la secci\'on de estad\'isticas, una secci\'on din\'amica y con mucha informaci\'on recogida y 
+  ordenada.
+\end{itemize}
 
 \section{Aplicaci\'on de lo aprendido}
 \label{sec:aplicacion}
-
+A lo largo de la carrera he cursado asignaturas de las cuales he aprendido diferentes pr\'acticas, conocimientos y habilidades que he aplicado en este proyecto:
+\begin{enumerate}
+  \item \textit{Servicios y aplicaciones telem\'aticas:}\\
+  - Intercambio de datos mediante XML y JSON.\\
+  - Relaci\'on con la interfaz de usuario: Gesti\'on de HTML en el navegador, motor DOM y tecnolog\'ias AJAX.\\
+  - Marcos de desarrollo Django: Esquema t\'ipico de la aplicaci\'on, bibliotecas y m\'odulos habituales.
+  \item \textit{Desarrollo de aplicaciones telem\'aticas:}\\
+  - HTML5: Nuevos elementos, canvas, LocalStorage, navegaci\'on off-line, etc...\\
+  - CSS3: Conceptos b\'asicos, est\'andares, reglas, CSS3, dinamicidad e interactividad.\\
+  - JavaScript: Conceptos b\'asicos, interacci\'on con el \'arbol DOM, AJAX.\\
+  - jQuery: Interacci\'on con el \'arbol DOM, funcionalidades a\~nadidas con jQuery-ui.\\
+  - GitHub: Uso del cliente de GIT. Creaci\'on y manejo de repositorio (clone, merge, push, pull,...).\\
+  - Pivotal tracker: Gesti\'on y administraci\'on de tareas.\\
+\end{enumerate}
 
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
-
+Enumero los puntos aprendidos en este Trabajo de Fin de Grado:
+\begin{enumerate}
+  \item Crear una aplicaci\'on web completa desde cero usando Django y Python.
+  \item Instalaci\'on y puesta a punto de servidor de aplicaci\'on para prueba en un entorno real.
+\end{enumerate}
 
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
-
-
-
-\section{Valoraci\'on personal}
-\label{sec:valoracion}
-
+Distintas ideas y funcionalidades a implementar para mejorar considerablemente la aplicaci\'on:
+\begin{enumerate}
+  \item Adaptabilidad completa en dispositivos m\'oviles: Mejorar la adaptabilidad en diferentes elementos que se salen de sus elementos padres y producen solapamiento en
+  dispositivos m\'oviles.
+  \item	Pesta\~na de mensajes privados: Chats para comunicar o contactar con otros usuarios.
+  \item Notificaciones: Comentarios recibidos, ''Me gusta/No me gusta'' recibidos y mensajes privados recibidos.
+  \item Contrase\~na olvidada en la parte del alumno. Formulario con correo y nueva contrase\~na para poder reestablecerla.
+  \item Iconos ''Le\'ido'' y ''Favorito'': En cada post, cada alumno podr\'a visualizar si ya lo ha le\'ido, e incluso marcarlo como favorito.
+  \item Eliminaciones: Posibilidad de eliminar hilos y eliminar cuentas de usuario.
+  \item Paginador: Mejorar el paginador para obtener mejor accesibilidad a cualquier post.
+  \item Actividades: Creaci\'on de distintas actividades dentro de un hilo.
+  \item Buscador: B\'usqueda de entradas por calendario, indicando intervalo, mes o d\'ia.
+  \item Listas: Pesta\~na o secci\'on que de opci\'on de crear listas personalizadas para guardar entradas.
+  \item Optimizaci\'on de c\'odigo: Eliminar repetici\'on de c\'odigo. Usar plantilla.
+\end{enumerate}
 
 
 
@@ -1405,7 +1525,7 @@ instalado una serie de herramientas antes de su ejecuci\'on desde un terminal \t
   \item Instalaci\'on \textit{Git}: Permitir\'a descargar el proyecto ubicado en el cliente \textit{GitHub} a la m\'aquina servidor.
     {\footnotesize\begin{verbatim} 
     sudo apt-get install git \end{verbatim}}
-  Antes de clonar el repositorio de \textit{GitHub}, hay que crear un directorio donde se guardar\'a el c\'odigo del proyecto e inicializar el repositorio.
+  Antes de clonar el repositorio de \textit{GitHub}, hay que crear un directorio donde se guardar\'a el c\'odigo del proyecto e inicializar\'a el repositorio.
     {\footnotesize\begin{verbatim} 
     mkdir directorioGitProyecto 
     cd directorioGitProyecto 
@@ -1415,7 +1535,7 @@ instalado una serie de herramientas antes de su ejecuci\'on desde un terminal \t
   La ruta de las plantillas ''TEMPLATE\_DIRS'', la ruta del path del fichero de configuraci\'on ''SETTINGS\_PATH'', la ruta con los ficheros est\'aticos 
   ''STATICFILES\_DIRS'' y la ruta de los ficheros multimedia ''MEDIA\_ROOT''. Cambiar la ra\'iz por la ruta:
     {\footnotesize\begin{verbatim} 
-    /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG \end{verbatim}}
+    /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG/(.....) \end{verbatim}}
   \item Instalaci\'on \textit{Crontab}:
     {\footnotesize\begin{verbatim} 
     sudo apt-get install cron \end{verbatim}}
@@ -1424,7 +1544,7 @@ instalado una serie de herramientas antes de su ejecuci\'on desde un terminal \t
     cd /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG
     chmod a+x actualizar.py
     crontab -e 	#Para editar cron\end{verbatim}}
-  Poner los dos comandos siguientes para lanzar la actualizacion de entradas cada minuto:
+  Se edita el cron con los dos comandos siguientes para lanzar la actualizaci\'on de entradas cada minuto y se guarda:
     {\footnotesize\begin{verbatim} 
     */1 * * * * cd /home/nombreMaquina/directorioGitProyecto/PlanetaBlogs/TFG; 
     python actualizar.py; \end{verbatim}}
@@ -1432,7 +1552,7 @@ instalado una serie de herramientas antes de su ejecuci\'on desde un terminal \t
     {\footnotesize\begin{verbatim} 
     crontab -l 	#Para ver cron \end{verbatim}}
   \item Instalaci\'on \textit{PIL}: Esta librer\'ia de \textit{Python} agrega soporte para abrir, manipular y guardar im\'agenes de gran variedad de 
-  diferentes formatos.
+  formatos.
     {\footnotesize\begin{verbatim} 
     sudo apt-get install python-pil \end{verbatim}}
   \item Instalaci\'on \textit{Feedparser}: Esta librer\'ia permite parsear etiquetas \textit{XML}.
@@ -1446,7 +1566,7 @@ Por \'ultimo, hay que poner en marcha el servidor con \textit{nohup}:
 Con la direcci\'on 0.0.0.0 se puede acceder desde cualquier navegador con la IP p\'ublica o el dominio de la m\'aquina servidor.
 
 \section{Uso de la aplicaci\'on}
-Para comenzar su uso, abrir un navegador con una de las dos url: 
+Para comenzar su uso, abrir un navegador con una de las dos URL's: 
   {\footnotesize\begin{verbatim} 
   http://IPpublica:8080/planetablogs/login/
   http://Dominio:8080/planetablogs/login/\end{verbatim}}
@@ -1608,8 +1728,8 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
 \begin{itemize}
   \item {\bfseries Hilos disponibles}: Se presentan todos los hilos creados anteriormente a los que el alumno no est\'a suscrito. Como se ve en la 
   figura~\ref{figura:alumno1} cada hilo expone un bot\'on ''Guardar y a\~nadir'' para que cuando sea presionado, el hilo correspondiente pase a la 
-  secci\'on de ''Mis hilos''. Pero antes se debe haber introducido un enlace \textit{Rss} v\'alido en el formulario proporcionado para ello. En ese 
-  \textit{Rss} (blog) ser\'a donde el alumno escribir\'a sus entradas para que se publiquen autom\'aticamente dentro de la aplicaci\'on, concretamente
+  secci\'on de ''Mis hilos''. Pero antes se debe haber introducido un enlace \textit{RSS} v\'alido en el formulario proporcionado para ello. En ese 
+  \textit{RSS} (blog) ser\'a donde el alumno escribir\'a sus entradas para que se publiquen autom\'aticamente dentro de la aplicaci\'on, concretamente
   en el hilo al que pertenecen.
   \begin{figure}[htbp] 
     \centering
@@ -1618,12 +1738,12 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
     \label{figura:alumno1}
   \end{figure}
   
-  En caso de que el \textit{Rss} no sea v\'alido se recargar\'a la p\'agina de presentaci\'on de alumno indicando un error en un panel de alerta marr\'on 
+  En caso de que el \textit{RSS} no sea v\'alido se recargar\'a la p\'agina de presentaci\'on de alumno indicando un error en un panel de alerta marr\'on 
   (figura~\ref{figura:alumno2}).
   \begin{figure}[htbp] 
     \centering
     \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoErrorRss}}
-    \caption{Error al introducir \textit{Rss} en una presentaci\'on de alumno.}
+    \caption{Error al introducir \textit{RSS} en una presentaci\'on de alumno.}
     \label{figura:alumno2}
   \end{figure}
   
@@ -1647,7 +1767,7 @@ La p\'agina de una asignatura concreta por parte de un alumno se visualiza despu
 figura~\ref{figura:hiloalumno} se muestra un hilo vac\'io en sus inicios, sin entradas.
 \begin{figure}[htbp] 
   \centering
-  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumno}}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumno}}
   \caption{Hilo vac\'io de un alumno.}
   \label{figura:hiloalumno}
 \end{figure}
@@ -1658,7 +1778,7 @@ hilo. Cada vez que un usuario suscrito escriba un mensaje en su blog, este mensa
 se puede pulsar sobre la pesta\~na que est\'a activa en cabecera, y que expone el t\'itulo del hilo.
 \begin{figure}[htbp] 
   \centering
-  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoLleno}}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/HiloAlumnoLleno}}
   \caption{Hilo con entradas de un alumno.}
   \label{figura:hiloalumno1}
 \end{figure}
@@ -1690,8 +1810,8 @@ El usuario puede interactuar con una entrada (\ref{figura:hiloalumno1}) de diver
   ''Sin Calificar'' en azul (\ref{figura:hiloalumno7}(b)).
   \begin{figure}
     \centering
-    \subfigure[Entrada valorada por el tutor.]{\includegraphics[width=11cm]{imagenes/ValoracionTutorCalificada}}
-    \subfigure[Entrada no valorada por el tutor.]{\includegraphics[width=11cm]{imagenes/ValoracionTutorNoCalificada}}
+    \subfigure[Entrada valorada por el tutor.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/ValoracionTutorCalificada}}}
+    \subfigure[Entrada no valorada por el tutor.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/ValoracionTutorNoCalificada}}}
     \caption{\textit{Valoraciones del tutor en entradas.}}
     \label{figura:hiloalumno7}
   \end{figure}
@@ -1742,7 +1862,7 @@ correspondiente.
 
 \subsection{Usuarios suscritos}
 En la columna situada a la derecha se re\'unen en una tabla todos los alumnos suscritos en el hilo. Esta tabla se compone de tres columnas correspondientes
-al nick de usuario, nombre y apellidos de usuario, y un enlace que redirecciona al Rss del blog del alumno. 
+al nick de usuario, nombre y apellidos de usuario, y un enlace que redirecciona al RSS del blog del alumno. 
 (~\ref{figura:hiloalumno4}).
 \begin{figure}[htbp] 
   \centering
@@ -1784,8 +1904,8 @@ Al pulsar el bot\'on ''Eliminar'' se abrir\'a otra alerta de aviso con unos punt
 usuario de ese hilo o no. Ver figura~\ref{figura:hiloprofesor1}(b).
 \begin{figure}
   \centering
-  \subfigure[Eliminar entrada.]{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarEntrada}}
-  \subfigure[Eliminar alumno.]{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarAlumno}}
+  \subfigure[Eliminar entrada.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarEntrada}}}
+  \subfigure[Eliminar alumno.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloTutorEliminarAlumno}}}
   \caption{\textit{Eliminaciones en hilo de tutor.}}
   \label{figura:hiloprofesor1}
 \end{figure}
@@ -1833,8 +1953,8 @@ Si se despliega el men\'u ''Puntuaci\'on'' emergen dos opciones:
   est\'a asociado (\ref{figura:ranking}).
   \begin{figure}
     \centering
-    \subfigure[Color asociado al nivel.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingColor}}
-    \subfigure[Foto de perfil ampliada.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingFoto}}
+    \subfigure[Color asociado al nivel.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingColor}}}
+    \subfigure[Foto de perfil ampliada.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloAlumnoRankingFoto}}}
     \caption{\textit{Interacciones de usuario en la p\'agina de Ranking.}}
     \label{figura:ranking}
   \end{figure}
@@ -1852,9 +1972,9 @@ Si se despliega el men\'u ''Puntuaci\'on'' emergen dos opciones:
   ambas (c).
   \begin{figure}
   \centering
-  \subfigure[Estad\'isticas generales.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasGenerales}}
-  \subfigure[Resumen de entradas.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasEntradas}}
-  \subfigure[Ambas opciones anteriores.]{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasAmbas}}
+  \subfigure[Estad\'isticas generales.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasGenerales}}}
+  \subfigure[Resumen de entradas.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasEntradas}}}
+  \subfigure[Ambas opciones anteriores.]{\Ovalbox{\includegraphics[width=11cm]{imagenes/HiloAlumnoEstadisticasAmbas}}}
   \caption{\textit{Visualizaci\'on de opciones estad\'isticas.}}
   \label{figura:estadisticas1}
 \end{figure}
@@ -1869,10 +1989,10 @@ Si se despliega el men\'u ''Puntuaci\'on'' emergen dos opciones:
 \subsection{Ayuda}
 La pesta\~na ''Ayuda'' muestra una serie de informaci\'on y consejos de uso meramente informativos sobre la aplicaci\'on. Adem\'as, se aconseja enviar a un 
 correo electr\'onico espec\'ifico con sugerencias para futuras mejoras o con planteamientos de diversos problemas que se encuentren los usuarios 
-(figura~\ref{fig:informacionpuntuaciones}).
+(figura~\ref{figura:ayuda}).
 \begin{figure}[htbp] 
   \centering
-  \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/Ayuda}}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/Ayuda}}
   \caption{Ayuda.}
   \label{figura:ayuda}
 \end{figure}
