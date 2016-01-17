@@ -32,6 +32,7 @@
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de ndice
 \usepackage{latexsym}  %% Logo LaTeX
+\usepackage{framed, color}
 
 \title{Memoria del Proyecto}
 \author{Adri\'an S\'aez Clemente}
@@ -42,7 +43,7 @@
 
 %\renewcommand{\refname}{Bibliografa}  %% Renombrando
 \renewcommand{\appendixname}{Ap\'endice}
-
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PORTADA
 
@@ -373,9 +374,12 @@ y el c\'odigo ser\'a siempre m\'as limpio y sencillo.
 
 \subsection{jQuery-ui}
 \label{subsec:jqueryui}
-\textit{jQuery-ui} es una biblioteca de componentes para la librer\'ia \textit{jQuery} que le a\~naden un conjunto de plug-ins, widgets y efectos visuales para la 
-creaci\'on de aplicaciones web.
+\textit{jQuery-ui} es una biblioteca de componentes para la librer\'ia \textit{jQuery} que le a\~naden un conjunto de plug-ins (drag, drop, sorting, 
+resizing, etc.), widgets (accordion, date picker, dialog, slider y tabs) y efectos visuales (show, hide, toggle, color animation, class manipulation, etc.)
+para la creaci\'on de aplicaciones web.
 
+El ``accordion'' es el widget que se usa en la pesta\~na de estad\'isticas y sirve para mostrar la informaci\'on detallada de un solo usuario. Si clicas en 
+otro nombre del acorde\'on, se oculta el usuario seleccionado anteriormente y se expande la informaci\'on del usuario actual.
 
 \subsection{AJAX}
 \label{subsec:ajax}
@@ -388,7 +392,11 @@ no hay interrupciones. \textit{AJAX} tiene la capacidad de comprimir las funcion
 ser necesario.
 
 Algunos de los inconvenientes de \textit{AJAX} son el aumento de la complejidad en el desarrollo de aplicaciones, problemas con restricciones de seguridad 
-relacionados con su uso, y aumento de la dificultad en la indexaci\'on para los motores de b\'usqueda ya que el contenido deja de ser est\'atico.
+relacionados con su uso, y aumento de la dificultad en la indexaci\'on para los motores de b\'usqueda ya que el contenido deja de ser est\'atico.\\
+
+Dentro de la aplicaci\'on, la mayor\'ia de las acciones que ocurren sin recargar la p\'agina se produce por el intercambio de datos entre cliente y servidor 
+mediante \textit{AJAX}, con peticiones \texttt{GET} y \texttt{POST}. Como por ejemplo, agregar una asignatura a ``Mis hilos'', enviar y eliminar un 
+comentario, o clicar en los botones de ``Me gusta/No me gusta''.
 
 
 \subsection{JSON}
@@ -397,6 +405,11 @@ JSON es un formato de fichero de texto ligero utilizado para el intercambios de 
 que se usa para identificar y gestionar los datos. Este formato es simple, directo, ligero y muy importante para el desarrollo de aplicaciones basadas 
 en lenguajes Web y para dispositivos m\'oviles. Cada dato es un par nombre/valor.
 
+En las vistas del proyecto, JSON es un formato que se usa para enviar datos de determinados modelos a la p\'agina \textit{HTML}. Las funciones del fichero 
+\textit{JavaScript} captan los modelos en este formato para despu\'es recopilar dicha informaci\'on y manejarla seg\'un la l\'ogica de cada funci\'on. Por 
+ejemplo, para poder mostrar un popup con la informaci\'on de un usuario al pasar el rat\'on por encima de su nombre, la funci\'on \textit{JavaScript} 
+recolect\'o el modelo de datos \texttt{User} para poder elegir la informaci\'on del usuario de inter\'es y manejarla de tal forma que en la p\'agina se 
+contemple un popup con dicha informaci\'on.
 
 \section{CSS3}
 \label{sec:css3}
@@ -413,22 +426,30 @@ se utilizan escribiendo el nombre de la etiqueta a la que se aplicar\'a el estil
 empiezan por ``\#'' seguido del id de la etiqueta a la que queremos darle los atributos. Y por \'ultimo, selectores de clase que se escriben en el 
 documento \textit{CSS} comenzando por ``.'' y va seguido del nombre de la clase de la etiqueta.
 
-Los atributos son efectos o estilos que aplicaremos a las etiquetas \textit{HTML}. Se aplican sobre texto, enlaces, im\'agenes, listas, tablas, formularios, 
-etc. Tambi\'en incluye la posibilidad de realizar animaciones con porcentajes de tiempo.
+Los atributos son efectos o estilos que aplicaremos a las etiquetas \textit{HTML}. Una vez definidos los selectores y los atributos, se les da un valor a 
+los atributos. Se aplican sobre texto, enlaces, im\'agenes, listas, tablas, formularios, etc. Tambi\'en incluye la posibilidad de realizar animaciones con 
+porcentajes de tiempo.
 
-Una vez definidos los selectores y los atributos, se les da un valor a los atributos. 
+En el proyecto, cada documento \textit{HTML} lleva consigo su fichero \textit{CSS}. Gracias a \'el, cada p\'agina muestra los colores apropiados, los distintos
+tipos de bordes para los diferentes elementos o los distintos tipos de letras con sus efectos en cursiva, negrita, etc.
+
+Con el uso de \textit{CSS3}, lo m\'as destacado son algunas de las animaciones que se encuentran por toda la aplicaci\'on. Por ejemplo, en la p\'agina de 
+registro, mientras el usuario est\'a escribiendo su nick de usuario en el formulario, justo debajo aparece una rueda giratoria y cuando deja de escribir 
+ense\~na una l\'inea informativa que aclara si es ``nick correcto'' o ``nick ocupado''.
 
 
 \section{BootStrap}
 \label{sec:bootstrap}
-\textit{BootStrap} es un framework originalmente creado por Twitter, que permite crear interfaces web con \textit{CSS} y \textit{JavaScript} y cuya particularidad es la de adaptar 
-la interfaz del sitio web al tama\~no del dispositivo en que se visualice, ya sea pantalla de PC, port\'atil, tablet, Smartphone,.. 
-Esta t\'ecnica de dise\~no y desarrollo se conoce como dise\~no adaptativo o `responsive design'.
+\textit{BootStrap} es un framework originalmente creado por Twitter, que permite crear interfaces web con \textit{CSS} y \textit{JavaScript} y cuya 
+particularidad es la de adaptar la interfaz del sitio web al tama\~no del dispositivo en que se visualice, ya sea pantalla de PC, port\'atil, tablet, 
+Smartphone,.. Esta t\'ecnica de dise\~no y desarrollo se conoce como dise\~no adaptativo o `responsive design'.
+
 El beneficio de usar dise\'no adaptativo en un sitio web, es principalmente que el sitio web se adapta autom\'aticamente al dispositivo desde donde 
 se acceda. Aun ofreciendo todas las posibilidades que ofrece \textit{BootStrap} a la hora de crear interfaces web, los dise\'nos creados con \textit{BootStrap} son 
 simples, limpios e intuitivos, esto les da agilidad a la hora de cargar y adaptarse a otros dispositivos. El framework trae varios elementos con 
 estilos predefinidos f\'aciles de configurar como botones, men\'us desplegables, formularios incluyendo todos sus elementos, y \textit{jQuery} integrado para 
 ofrecer ventanas y tooltips din\'amicos.
+
 El uso de \textit{BootStrap} ofrece una serie de ventajas:
 \begin{itemize}
   \item Permite tener un mismo lenguaje para la comunicaci\'on entre dise\~nadores y equipo de desarrollo.
@@ -472,6 +493,15 @@ iguales, utilizar\'ias la clase .col-xs-4 (el 4 indica que cada columna ocupa 4 
 Por \'ultimo, hay que decir que \textit{BootStrap} permite el anidamiento, el reordenamiento y el desplazamiento de las columnas 
 (tanto por la izquierda como por la derecha).
 
+En la aplicaci\'on se usa un plugin de ventanas modales de \textit{BootStrap} que cabe mencionar. El plugin se llama \textit{BootStrapDialog} y es una 
+ventana de cuadro de di\'alogo / emergente 
+que aparece en la parte superior de la p\'agina actual. Esta ventana es un cuadro de di\'alogo con cabecera, cuerpo y footer, y adem\'as tiene a\~nadidos 
+botones para realizar la acci\'on que se desee. 
+
+En la p\'agina principal de un hilo en la parte del tutor, puede saltar dicha ventana si el tutor intenta 
+eliminar una entrada o un alumno suscrito.
+
+
 \section{Git}
 \label{sec:git}
 \textit{Git} es un sistema de control de versiones distribuido de c\'odigo abierto relativamente nuevo que nos ofrece las mejores caracter\'isticas en la 
@@ -487,6 +517,10 @@ repositorios de software gestionados por el sistema de control de versiones \tex
 el estado de un desarrollo a lo largo del tiempo, mientras que \textit{GitHub} es un sitio web que usa \textit{Git} para ofrecer a la comunidad de desarrolladores 
 repositorios de software. En definitiva, \textit{GitHub} es un sitio web pensado para hacer posible el compartir el c\'odigo de una manera m\'as f\'acil.
 
+Una de sus caracter\'isticas m\'as importantes es la posibilidad de crear ramificaciones y trabajar en cada una de ellas sin afectar al resto, permitiendo 
+estar trabajando con varios aspectos complejos de un programa de forma simult\'anea y completamente aislada, o dando la posibilidad de dividir un proyecto 
+para desarrollar partes espec\'ificas para un determinado servicio o un determinado cliente, e incluso facilitar el desarrollo de proyectos en los que 
+trabajen varias personas.
 
 \section{Pivotal tracker}
 \label{sec:pivotal}
@@ -494,6 +528,27 @@ Pivotal Tracker es un servicio para la gesti\'on \'agil de proyectos y colaborac
 para el intercambio de archivos y gesti\'on de tareas, as\'i como para la planificaci\'on de las iteraciones. Adem\'as posee una API para extensiones y 
 herramientas de terceros.
 
+Las ventajas de usar Pivotal Tracker son:
+\begin{itemize}
+  \item Es gratis y no tiene ning\'un tipo de limitaci\'on. Es decir no hay licencia ``community'' y otra ``enterprise'', ni nada parecido.
+  \item Esta en la nube. Con lo que no tenemos que instalar nada en nuestros ordenadores, todo lo haremos a trav\'es del navegador.
+  \item Se centra en algo muy interesante que es la gesti\'on de la pila de producto, y m\'etricas como la velocidad.
+  \item Se puede usar para trabajo con equipos descentralizados, puesto que est\'a en internet. Adem\'as se puede crear varios perfiles de acceso por 
+  lo que podr\'ia haber usuarios que, por ejemplo, s\'olo tienen permiso para ver las cosas, pero no para modificarlas.
+  \item Guarda hist\'orico de nuestras acciones.
+\end{itemize}
+
+Al logarse en la p\'agina web se muestra un ``Dashboard'' que es el panel de control donde se incluyen todos los proyectos creados.
+
+Al crearse un nuevo proyecto, todas las historias de usuario se ordenan en varias pilas que podemos ver en la zona principal del proyecto.
+\begin{itemize}
+  \item {\bfseries Current}: Son las historias de usuario que tenemos planificadas para el sprint en el que estamos.
+  \item {\bfseries Backlog}: Son las historias de usuario que tenemos planificadas para sprints futuros. Pivotal Tracker nos va marcando 
+  donde empiezan los sprints. Esto lo hace de forma autom\'atica en funci\'on de nuestra velocidad media.
+  \item {\bfseries Icebox}: Son historias de usuario que todav\'ia no tenemos planificadas.
+  \item {\bfseries Done}: Esta pila por defecto no se muestra, pero si la activamos nos ense\~nar\'ia los sprint que ya han pasado. Aqu\'i podemos ver cu\'ando se 
+  hizo qu\'e. 
+\end{itemize}
 
 \section{Crontab}
 \label{sec:crontab}
@@ -1398,8 +1453,251 @@ registro.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Resultados}
-\label{chap:resultados}
+\chapter{Prueba en entorno real}
+\label{chap:prueba}
+En las secciones de este cap\'itulo se va a detallar todo lo involucrado en la prueba de la aplicaci\'on web que se realiz\'o en un entorno real. Este 
+entorno se situa en una clase de $2^\circ$ de Ciclos Formativos de Grado Superior de Administraci\'on de Sistemas Inform\'aticos y Redes. Los usuarios 
+comprometidos son el tutor, Don Jos\'e Ignacio Huertas, y los doce alumnos que conformaban la clase.
+
+\section{Preparaci\'on de la prueba}
+\label{seccion:preparacionprueba}
+Antes de emprender con la prueba, se organiz\'o un proceso para asignar dicha prueba a un tutor que estuviera dispuesto a promoverla.
+
+A trav\'es del profesor, Don Gregorio Robles Mart\'inez y la colaboraci\'on de Don Jes\'us Moreno, se lleg\'o a un acuerdo con Don Jos\'e 
+Ignacio Huertas, profesor de $2^\circ$ de Ciclos Formativos de Grado Superior de Administraci\'on de Sistemas Inform\'aticos y Redes:
+
+\begin{shaded}
+\noindent\textbf{\textsf{
+From: Jes\'us Moreno\\
+To: Jos\'e Ignacio Huertas, Gregorio Robles, Adri\'an S\'aez\\
+Fecha: 19 de octubre de 2015\\
+}}
+\emph{
+Hola, Adri\'an,\\
+He hablado con Jos\'e Ignacio Huertas, que est\'a en copia, sobre la nueva implementaci\'on del planeta de blogs que has realizado y la ha 
+encantado la idea. \\
+Jos\'e Ignacio da clases en un ciclo superior de inform\'atica y promueve el uso de los blogs entre sus alumnos. Adem\'as ya conoc\'ia la 
+antigua versi\'on del planeta, FAVS, que ya us\'o con sus estudiantes hace unos a\~nos, as\'i que est\'a con ganas de probar esta nueva 
+implementaci\'on de la herramienta.\\
+Si os parece, os dejo para que pod\'ais acordar c\'omo comenzar con las pruebas.\\
+Saludos!
+}
+\end{shaded}
+
+\begin{shaded}
+\noindent\textbf{\textsf{
+From: Gregorio Robles\\
+To: Jos\'e Ignacio Huertas, Jes\'us Moreno, Adri\'an S\'aez\\
+Fecha: 19 de octubre de 2015\\
+}}
+\emph{
+Gracias, Jes\'us. !`Y estupendo poder contar contigo Jos\'e Ignacio!\\
+Adri\'an, ?`cu\'ando crees que estar\'ia listo todo para probarlo?\\
+saludos, Gregorio
+}
+\end{shaded}
+
+\begin{shaded}
+\noindent\textbf{\textsf{
+From: Adri\'an S\'aez\\
+To: Jos\'e Ignacio Huertas, Jes\'us Moreno, Gregorio Robles\\
+Fecha: 20 de octubre de 2015\\
+}}
+\emph{
+Buenos d\'ias,\\
+antes de nada, much\'simas gracias a todos por promover el nuevo planeta de blogs y que se pueda probar en un entorno real antes de su defensa.\\
+Respecto a la fecha que estar\'ia listo, ahora estoy trabajando duro para arreglar unas cosillas y calculo que a mediados de la semana que viene estar\'a listo para 
+ultimar detalles y poder probarlo, ?`Qu\'e os parece?\\
+Un saludo, Adri\'an.
+}
+\end{shaded}
+
+\begin{shaded}
+\noindent\textbf{\textsf{
+From: Jos\'e Ignacio Huertas\\
+To: Gregorio Robles, Jes\'us Moreno, Adri\'an S\'aez\\
+Fecha: 21 de octubre de 2015\\
+}}
+\emph{
+Hola Adri\'an,\\
+un placer conocerte y tener la oportunidad de usar la nueva versi\'on del planeta de blogs.\\
+Espero tus noticias.\\
+Un saludo,\\
+JI
+}\newline
+\end{shaded}
+
+\subsection{Pasos iniciales}
+\label{subseccion:correosypasos}
+
+\texttt{Primer paso}: Se facilit\'o un tutorial para tutor y alumnos, en \'el se indicaban unos pasos iniciales a seguir para el correcto uso de la aplicaci\'on. Estos 
+pasos fueron los siguientes:
+\begin{itemize}
+	\item Pasos iniciales del tutor:
+	\begin{enumerate}
+		\item \textit{URL}: Para comenzar a usar la aplicaci\'on, pegar en el navegador: \\
+		\href{http://tfg-asaez.libresoft.es:8080/planetablogs/login/}{http://tfg-asaez.libresoft.es:8080/planetablogs/login/}
+		\item \textit{Crear perfil de tutor}: Pulsar sobre el bot\'on verde TUTOR, rellenar todos los campos del formulario (inclu\'ida foto), guardar e 
+		identificarse en la p\'agina de inicio.
+		\item \textit{Presentaci\'on de tutor}: Es el perfil de cada usuario. S\'olo el usuario registrado como tutor podr\'a crear hilos. Una vez creado, hay 
+		que a\~nadirlo a ``Mis hilos'' (solamente puede agregar el hilo a ``Mis hilos'' el tutor que lo crea).
+		\item \textit{Dentro del hilo}: La primera vez que se visite el hilo estar\'a vac\'io. Cuando los alumnos se registren y se animen a escribir entradas 
+		en el blog asociado al hilo, se mostrar\'an dichas entradas. El tutor har\'a un papel de observador aunque tendr\'a el poder de eliminar entradas, 
+		comentarios y alumnos. Con las correspondientes penalizaciones que sufrir\'an los alumnos y que est\'an escritas en la pesta\~na 
+		Puntuaciones/Informaci\'on.
+		\item \textit{Ayuda}: En la pesta\~na Ayuda en el interior de cada hilo, se mostrar\'a tanto informaci\'on general como consejos de uso, y una secci\'on 
+		de sugerencias.
+		\item \textit{Buscar}: En la pesta\~na Buscar se podr\'a realizar una b\'usqueda avanzada por nick de usuario o por Id de entrada. En las entradas que se 
+		muestren, el tutor podr\'a borrar los comentarios que desee pero no eliminar entradas.\\
+	\end{enumerate}
+	\item Pasos iniciales del alumno:
+	\begin{enumerate}
+		\item \textit{URL}: Para comenzar a usar la aplicaci\'on, pegar en el navegador: \\
+		\href{http://tfg-asaez.libresoft.es:8080/planetablogs/login/}{http://tfg-asaez.libresoft.es:8080/planetablogs/login/}
+		\item \textit{Crear perfil de alumno}: Pulsar sobre el bot\'on verde ALUMNO, rellenar todos los campos del formulario (incluida foto), guardar e 
+		identificarse en la p\'agina de inicio.
+		\item \textit{Presentaci\'on de alumno}: Es el perfil de cada usuario. El alumno se encontrar\'a con los hilos previamente creados por el tutor. Para que 
+		un usuario se suscriba a un hilo, debe introducir en su correspondiente formulario el RSS de su blog.
+		\item \textit{Dentro del hilo}: La primera vez que se visite el hilo estar\'a vac\'io. Cuando los alumnos se registren y se animen a escribir entradas en 
+		el blog asociado al hilo, se mostrar\'an dichas entradas. El alumno tendr\'a la opci\'on de interactuar comentando y valorando entradas de cualquiera de 
+		los alumnos suscritos al hilo. El alumno podr\'a comentar las veces que desee pero s\'olo podr\'a borrar comentarios escritos por el mismo. Y por 
+		\'ultimo, s\'olo podr\'a valorar una vez por entrada (Un positivo o un negativo).
+		\item \textit{Ayuda}: En la pesta\~na Ayuda en el interior de cada hilo, se mostrar\'a tanto informaci\'on general como consejos de uso, y una secci\'on 
+		de sugerencias.
+		\item \textit{Buscar}: En la pesta\~na Buscar se podr\'a realizar una b\'usqueda avanzada por nick de usuario o por Id de entrada. En las entradas que 
+		se muestren, el alumno podr\'a escribir los comentarios que desee pero s\'olo podr\'a borrarlos si no recarga la p\'agina una vez hecha la b\'usqueda. 
+		No tiene la opci\'on de valorar entradas.
+	\end{enumerate}
+\end{itemize}
+
+\texttt{Segundo paso}: Fue la creaci\'on del hilo por parte del tutor. En este caso, Don Jos\'e Ignacio Huertas asoci\'o el nombre de ``$2^\circ$ ASIR'' a su hilo 
+(Figura~\ref{figura:pasohilo}).\\
+\begin{figure}[htbp] 
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{ImagenesPrueba/Hilo}}
+  \caption{Hilo de la prueba.}
+  \label{figura:pasohilo}
+\end{figure}
+Una vez fundado el hilo, se crearon doce perfiles correspondientes a los doce alumnos de la clase, adem\'as de un perfil de administrador que fue manejado 
+por Adri\'an S\'aez. Los doce alumnos se suscribieron al hilo introduciendo el RSS de su blog personal de blogdiario.com 
+(Figura~\ref{figura:suscriptoreshilo}).
+\begin{figure}[htbp] 
+  \centering
+  \doublebox{\includegraphics[width=8cm, keepaspectratio]{ImagenesPrueba/Suscriptores}}
+  \caption{Suscriptores de la prueba.}
+  \label{figura:suscriptoreshilo}
+\end{figure}
+
+\texttt{Tercer paso}: Comienzo de uso del planeta. El administrador escribi\'o una entrada en su blog con un mensaje de bienvenida para informar a los usuarios sobre la 
+funci\'on de administrador, cooperador en la resoluci\'on de dudas y problemas, y encargado de dar soporte.
+
+Por \'ultimo, los alumnos comenzaron a escribir sus post en sus blogs y una vez plasmados en el planeta, interactuaron con los dem\'as usuarios mediante las funciones 
+que dispone la aplicaci\'on. La tem\'atica hablada en el hilo fue de seguridad inform\'atica y administraci\'on de servidores.
+
+
+\subsection{Archivo \textit{nohup.out}}
+\label{subseccion:archivonohup}
+El servidor Django de la prueba se lanz\'o con el comando ``nohup''. Este comando permite mantener en ejecuci\'on un comando, pese a salir del terminal, ya que hace que 
+se ejecute de forma independiente a la sesi\'on, en segundo plano.
+
+La salida por defecto que saldr\'ia en el terminal, ser\'a procesada a un fichero llamado \texttt{nohup.out} gracias a la ejecuci\'on de dicho comando. Este fichero 
+aparecer\'a en la ruta donde nos encontremos ejecutando el programa. 
+
+
+\subsection{Control estad\'istico}
+\label{subseccion:controlestadistico}
+Dentro del c\'odigo del proyecto, en el fichero \texttt{views.py}, cada vista se encarga de gestionar y realizar una acci\'on pero adem\'as incluye una l\'inea 
+informativa que saca por la salida est\'andar (fichero \texttt{nohup.out}).
+
+Las l\'ineas informativas de todas las vistas siguen el siguiente protocolo:
+    {\footnotesize\begin{verbatim}
+    [**INICIALESACCION**] Descripci\'on de la funci\'on de la vista.
+    \end{verbatim}}
+
+donde INICIALESACCION son letras que identifican la funci\'on de dicha vista, por ejemplo:
+    {\footnotesize\begin{verbatim}
+    [**AI**] Alumno Identificado en la aplicaci\'on como Pepe.
+    \end{verbatim}}
+En base al contenido del fichero \texttt{nohup.out} se implement\'o un script para llevar un control estad\'istico de las acciones que realizaron los alumnos durante el 
+periodo que dur\'o la prueba. Este script se encarga de parsear el archivo \texttt{nohup.out}. Este fichero se compone de multitud de l\'ineas con la nomenclatura indicada
+anteriormente. Cada una de estas l\'ineas se parsea, sacando la informaci\'on necesaria (acci\'on, usuario y/o entrada) y se guarda en una lista. A trav\'es de esta 
+lista se crean contadores para cada acci\'on, tanto para las estad\'isticas individuales (se necesitaba la acci\'on y el usuario) como para las estad\'isticas generales 
+(se necesita la acci\'on \'unicamente). 
+
+Gracias a este script se pudo contabilizar el n\'umero de veces que cada usuario acced\'ia a una pesta\~na o ejecutaba una operaci\'on de la aplicaci\'on.
+
+
+\section{Resultados de la prueba}
+\label{seccion:preparacionprueba}
+A continuaci\'on se hace una valoraci\'on de los resultados obtenidos en la prueba realizada con el fin de estudiar y comprobar el funcionamiento de la 
+aplicaci\'on en un entorno real.
+
+\begin{itemize}
+	\item \textit{Conclusiones de la clase}: Durante el uso de la prueba surgieron una serie de problemas que se solucionaron sobre la marcha, haciendo 
+	efectiva la funci\'on del administrador de proporcionar apoyo y soporte. El tutor facilit\'o la siguiente lista y el administrador propuso e 
+	implement\'o una soluci\'on para cada punto:
+	\begin{enumerate}
+		\item Una alumna se olvid\'o de la contrase\~na y no ha podido recuperarla (no hemos visto la opci\'on). La opci\'on restablecer 
+		contrase\~na ser\'ia necesaria.\\
+		\texttt{SOLUCI\'ON}: Se ha creado una pesta\~na en el perfil del tutor. El alumno que haya olvidado la contrase\~na puede introducir 
+		su nick de usuario y su nueva contrase\~na.
+		\item Podr\'ia existir alg\'un mecanismo que controle a aquellos que penalizan al resto y no reciben votos positivos de nadie. Quiz\'as 
+		se podr\'ia limitar el n\'umero de ``Me gusta'' y ``No me gusta'' de alguna forma. Por ejemplo, para poder marcar alguna entrada con un 
+		``no me gusta'' debes haber recibido un n\'umero de ``me gusta'' antes. O incluso limitarlo a un n\'umero m\'aximo semanal. En cualquier 
+		caso, sacar una estad\'istica de esto y que se pueda visualizar por todos ser\'ia bueno: 
+		Participante  --  Entradas blog -- $N^\circ$ me gusta (recibidos y dados) -- $N^\circ$ no me gusta (recibidos y dados) -- Comentarios 
+		(recibidos y dados)\\
+		\texttt{SOLUCI\'ON}: Dentro de cada hilo, en la secci\'on de puntuaciones, se ha a\~nadido otra pesta\~na de estad\'isticas en la que se 
+		podr\'a ver estad\'isticas generales con lo recomendado [Participante  --  Entradas blog -- $N^\circ$ me gusta (recibidos y dados) -- 
+		$N^\circ$ no me gusta (recibidos y dados) -- Comentarios (recibidos y dados)].
+		Tambi\'en se muestra un resumen de las entradas de cada uno de los alumnos.
+		Respecto al mecanismo de penalizaci\'on o limitaci\'on de ``Me gusta'', se pensar\'a para futuras implementaciones.
+		\item Veo que el tutor solo puede eliminar mensajes o entradas (y penaliza al hacerlo, quitando puntos). En algunas ocasiones podr\'ia ser 
+		bueno que el tutor tambi\'en pueda intervenir, de forma que un ``me gusta'' pueda dar puntos (no tengo claro si puntuando igual que si fuera 
+		un alumno o algo m\'as).\\
+		\texttt{SOLUCI\'ON}: En la parte del tutor, en cada entrada se ha agregado un puntuador con distintas opciones/valores de puntuaci\'on para 
+		evaluar a los alumnos en cada entrada [-2, -1, 1, 2, 3 \'o 4 planets]. Son puntuaciones con m\'as poder que los simples 
+		``Me gusta/No me gusta'' de los alumnos, ya que puede restar m\'as que un ``No me gusta'' y sumar m\'as que un ``Me gusta''.
+		\item En los post que se muestran no se ven v\'ideos o im\'agenes. Esto ha supuesto para mis alumnos un inconveniente grave, dado que eran 
+		necesarias para entender algunos posts. Al final se han dado cuenta de que al dar en el nombre se abre el post en el blog correspondiente.\\
+		\texttt{SOLUCI\'ON}: Se identificaron las etiquetas de imagen y v\'ideo para el parseo correcto de la descripci\'on de las entradas. Ya se 
+		muestran im\'agenes y v\'ideos en las descripciones plasmadas en el planeta.
+		\item El cuadro de ``Entradas m\'as valoradas'' me parece muy interesante, aunque no me sale enlazada para que pueda abrirlas directamente 
+		al hacer clic en ellas.\\
+		\texttt{SOLUCI\'ON}: La secci\'on de ``Entradas m\'as valoradas'' ha sido modificada con links para que se pueda clicar sobre cada entrada 
+		y te redirija al post del blog personal.
+		\item Quiz\'as ser\'ia interesante, dentro de un hilo, poder crear distintas actividades. Por ejemplo, en mi hilo de $2^\circ$ ASIR se me 
+		ocurre que podr\'ia existir una actividad en la que todos tuvieran que escribir una \'unica entrada en el blog referida a alg\'un tema 
+		concreto y tener un ranking solo de esa actividad.\\
+		\texttt{SOLUCI\'ON}: No se plante\'o ninguna soluci\'on. No obstante, se tuvo en cuenta para futuros trabajos.\\\\
+	\end{enumerate}
+
+	\item \textit{Resultados del control estad\'istico}: El script extrajo los siguientes resultados estad\'isticos:
+	\begin{enumerate}
+		\item En la figura~\ref{figura:estadgener} se muestra los resultados de estad\'isticas generales sobre las acciones totales que se 
+		efectuaron.
+		\begin{figure}[htbp] 
+		  \centering
+		  \doublebox{\includegraphics[width=8cm, keepaspectratio]{ImagenesPrueba/EstadGener}}
+		  \caption{Estad\'isticas generales de la prueba.}
+		  \label{figura:estadgener}
+		\end{figure}
+		\item En la figura~\ref{figura:estadindiv} se puede visualizar los resultados de estad\'isticas individuales de dos de los doce usuarios 
+		suscritos al hilo (por simplicidad).
+		\begin{figure}[htbp] 
+		  \centering
+		  \doublebox{\includegraphics[width=8cm, keepaspectratio]{ImagenesPrueba/EstadIndiv}}
+		  \caption{Estad\'isticas individuales de dos usuarios de la prueba.}
+		  \label{figura:estadindiv}
+		\end{figure}
+	\end{enumerate}
+\end{itemize}
+
+
+
+
+
+
 
 
 
