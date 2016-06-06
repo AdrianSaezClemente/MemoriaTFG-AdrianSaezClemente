@@ -221,7 +221,7 @@ utilizados en la actualidad. El desarrollo de aplicaciones utilizando tecnolog\'
 \textit{JavaScript}, tiene como ventaja la creaci\'on de un programa compatible con casi cualquier dispositivo, teniendo que preocuparse exclusivamente 
 de peque\~nas variaciones debidas a las diferencias entre navegadores de internet (ya que se cambia
 la idea de adaptarse a diferentes sistemas operativos por diferentes navegadores de internet) y a los diferentes tama\~nos de pantalla y m\'etodos
-de control (pantallas t\'actiles en m\'oviles y tablets o rat\'on y teclado en ordenadores)
+de control (pantallas t\'actiles en m\'oviles y tablets o rat\'on y teclado en ordenadores).
 
 
 
@@ -715,10 +715,12 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   \item {\bfseries User}: Este modelo es creado por \textit{Django} y simboliza un usuario gen\'erico que se registra a la aplicaci\'on introduciendo sus 
   atributos: Nombre de usuario \textit{Username}, nombre de pila \textit{Firstname}, primer apellido y segundo apellido \textit{Lastname}, contrase\~na 
   \textit{Password} 
-  y direcci\'on de correo electr\'onico \textit{Email}. Dentro del fichero \texttt{models.py} se a\~nade un nuevo atributo \textit{Imagen} 
-  \rule[1mm]{4mm}{0.1mm}se agrega con la funci\'on \texttt{addtoclass}\rule[1mm]{4mm}{0.1mm} que una vez introducida mediante un formulario de registro 
-  junto con el resto de campos, ser\'a guardada en la carpeta ``perfiles'' dentro del sistema de directorios del proyecto. 
-  
+  %[[{\bfseries MODIFICADO}]]
+  y direcci\'on de correo electr\'onico \textit{Email}. Dentro del fichero \texttt{models.py} se a\~naden dos nuevos atributos \textit{Imagen} y \textit{Estilo}
+  \rule[1mm]{4mm}{0.1mm}se agrega con la funci\'on \texttt{addtoclass}\rule[1mm]{4mm}{0.1mm}. El atributo \textit{Imagen} recoger\'a la ruta de un archivo de imagen,
+  que una vez introducida mediante un formulario de registro junto con el resto de campos, ser\'a guardada en la carpeta ``perfiles'' dentro del sistema de directorios 
+  del proyecto. El atributo \textit{Estilo} recoger\'a el nombre del estilo que el usuario personaliz\'o previamente (en el momento del registro de usuario, este 
+  atributo guarda una cadena vac\'ia).
   \texttt{User} contendr\'a todos los usuarios de aplicaci\'on previamente registrados, y ninguno de \'estos podr\'a coincidir con otro en nombre de usuario
   puesto que en la p\'agina de registro se aplica un filtro al introducir el dato \textit{Username}.
   \item {\bfseries Profesor}: El modelo \texttt{Profesor} hereda todas las propiedades del model \texttt{User} mediante un \textit{ForeignKey}. Se crea un
@@ -735,15 +737,17 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   que se guard\'o por \'ultima vez en base de datos.
   \item {\bfseries Entrada}: Este modelo representa una entrada de blog. Sus propiedades o comportamientos son los siguientes: \textit{Entrada} es un campo 
   entero que guarda el identificador de la entrada \rule[1mm]{4mm}{0.1mm}no es el campo pk de la tabla, sino un contador que se incrementa para diferenciar
-  entradas con mismo identificador pero de distintas asignaturas\rule[1mm]{4mm}{0.1mm}, \textit{Titulo} guarda un string de m\'aximo 10 caracteres y define 
+  entradas con mismo valor pero de distintas asignaturas\rule[1mm]{4mm}{0.1mm}, \textit{Titulo} guarda un string de m\'aximo 10 caracteres y define 
   el t\'itulo de la entrada, \textit{Descripcion} guarda un texto sin longitud m\'axima de caracteres y da una descripci\'on detallada de la entrada,
-  \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{link} salva la URL donde se ubica la propia entrada dentro del blog de usuario, 
+  \textit{Fecha} guarda la fecha en la que se cre\'o la entrada, \textit{Link} salva la URL donde se ubica la propia entrada dentro del blog de usuario, 
   \textit{UrlBlog} guarda la URL del blog de usuario, \textit{TotalUp} guarda el n\'umero total de valoraciones positivas que recopila la entrada, 
   \textit{TotalDown} guarda el n\'umero total de valoraciones negativas que recopila la entrada, \textit{Total} guarda la puntuaci\'on que lleva hasta el
   momento la entrada teniendo en cuenta valoraciones positivas y valoraciones negativas \rule[1mm]{4mm}{0.1mm}esta puntuaci\'on se usa para imprimir en 
   la secci\'on de entradas m\'as valoradas\rule[1mm]{4mm}{0.1mm}, \textit{TotalComentarios} cuenta el total de comentarios que contiene la entrada 
-  \rule[1mm]{4mm}{0.1mm}este entero se mostrar\'a entre par\'entesis al lado de ``Mostrar comentarios''\rule[1mm]{4mm}{0.1mm} y \textit{PuntuacionTutor}
-  guarda la puntuaci\'on de la entrada recibida por el tutor.
+  \rule[1mm]{4mm}{0.1mm}este entero se mostrar\'a entre par\'entesis al lado de ``Mostrar comentarios''\rule[1mm]{4mm}{0.1mm}, \textit{PuntuacionTutor}
+  guarda la puntuaci\'on de la entrada recibida por el tutor, \textit{Visitantes} recoge en un array de cadenas con los ids de los alumnos que han visitado 
+  una determinada entrada (se define visitar a la acci\'on de hacer click sobre el enlace del t\'itulo de cada entrada, click sobre el campo \textit{Link}) y 
+  \textit{Visitas} es un entero que guarda el n\'umero de visitas totales de la entrada y que corresponde con la cantidad de visitantes.
   \item {\bfseries Comentario}: El modelo \texttt{Comentario} simula un comentario correspondiente a una entrada. Sus atributos son: \textit{Descripci\'on}
   guarda el contenido del comentario, \textit{Fecha} se queda con la fecha en la que fue enviado dicho comentario y \textit{Username} salva el nick del 
   usuario que realiz\'o el comentario.
@@ -751,6 +755,10 @@ Cada modelo se convierte en una tabla en la base de datos. Los modelos definidos
   \item {\bfseries Down}: El modelo \texttt{Down} representa una valoraci\'on negativa de una entrada determinada.
   \item {\bfseries Valoracion}: \texttt{Valoracion} representa la valoraci\'on total de cada usuario. Tiene como atributos: \textit{Puntos} guarda el total
   de puntos obtenidos y \textit{Nivel} guarda el nivel en el que se situa con respecto a los puntos obtenidos.
+  \item {\bfseries Extra}: El modelo \texttt{Extra} define, como su propio nombre indica, extras de una entrada. \textit{Leido} recoge en un array de 
+  cadenas los ids de los alumnos que han leido una determinada entrada.
+  \item {\bfseries Dise\~no}: El modelo \texttt{Diseno} define los diferentes dise\~nos de la aplicaci\'on creados por todos los usuarios. \textit{Estilo} 
+  guarda el valor del nombre del dise\~no y \textit{Imagen} recoge la cadena de la ruta donde se encuentra la imagen de fondo para la aplicaci\'on.
 \end{itemize}
 
 \subsubsection{\textit{Relaciones}} 
@@ -788,6 +796,11 @@ Las relaciones entre modelos que tienen lugar en el proyecto son:
   basa en la obtenci\'on de puntos al interactuar con la aplicaci\'on mediante entradas, comentarios, valoraciones positivas o valoraciones negativas.
   Una valoraci\'on de un alumno tiene que pertenecer a un hilo en concreto para poder diferenciar valoraciones en el caso de que un alumno est\'e suscrito
   a varias asignaturas.
+  \item {\bfseries Extra}: \texttt{Extra} se relaciona con los modelos \texttt{Asignatura} y \texttt{Entrada}. Un extra debe ser \'unico para una 
+  entrada y una asignatura. Cada registro en el modelo \texttt{Extra} esconder\'a el array de ids de los alumnos que hayan visitado una entrada en una 
+  asignatura.
+  \item {\bfseries Dise\~no}: \texttt{Diseno} se relaciona con el modelo \texttt{User}. Un registro de la tabla debe ser \'unico para un usuario. 
+  Cada registro en el modelo \texttt{Diseno} esconder\'a el nombre del dise\~no creado por el usuario con su respectiva imagen de fondo.
 \end{itemize}
 
 
@@ -925,16 +938,18 @@ de informaci\'on que se encontraba previamente oculto.
 
 \subsubsection{Presentaci\'on de alumno} 
 \label{sec:presentacionalumno}
-El documento \textit{HTML} mostrado en la figura~\ref{fig:presentacionalumno} es la p\'agina de presentaci\'on del perfil de un alumno. La p\'agina es servida 
+El documento \textit{HTML} mostrado en la figura~\ref{fig:presentalumno} es la p\'agina de presentaci\'on del perfil de un alumno. La p\'agina es servida 
 tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de registro de un alumno: 
 \texttt{/planetablogs/alumnos/}}. La vista asociada a ese recurso es \texttt{presentacionalumno}, la cual devuelve la plantilla 
 \texttt{presentacionalum.html} que crea el documento \textit{HTML} de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como alumno.
 
-En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces. \texttt{Mis hilos} hace referencia a la misma URL de la 
-p\'agina servida, por lo que la recargar\'a, y \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). En la parte inferior 
-de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece el espacio de la sesi\'on.
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces y un men\'u. \texttt{Mis hilos} hace referencia a la misma URL de la 
+p\'agina servida, por lo que la recargar\'a. \texttt{Desconectar} para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}). \texttt{Mis dise\~nos} es un men\'u 
+que muestra todos los estilos personalizados de cada alumno. En la \'ultima opci\'on de este men\'u hay un enlace que hace referencia a la URL de gesti\'on de dise\~nos. 
+En la parte inferior de la cabecera se muestra una foto de perfil y un mensaje que informa a quien pertenece 
+el espacio de la sesi\'on.
 
 Dentro del contenedor hay que destacar dos partes importantes:
 \begin{itemize}
@@ -957,7 +972,38 @@ Dentro del contenedor hay que destacar dos partes importantes:
   \centering
   \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}}
   \caption{\textit{Presentaci\'on del perfil de un alumno.}}
-  \label{fig:presentacionalumno}
+  \label{fig:presentalumno}
+\end{figure}
+
+
+\subsubsection{Personalizar dise\~no} 
+\label{sec:persdiseno}
+El documento \textit{HTML} mostrado en la figura~\ref{fig:persdiseno} es la p\'agina de gesti\'on de dise\~nos. La p\'agina es servida 
+tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de gestionar dise\~nos: 
+\texttt{/planetablogs/alumnos/agregardisenoalumno/}}. La vista asociada a ese recurso es \texttt{agregardisenoalumno}, la cual devuelve la plantilla 
+\texttt{diseno.html} que crea el documento \textit{HTML} de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on, y adem\'as lo haya hecho como alumno. 
+
+En la parte superior de la cabecera se encuentra la barra de navegaci\'on con dos enlaces: \texttt{Mis hilos} hace referencia a la URL del perfil del alumno y \texttt{Desconectar} 
+para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
+
+En el cuerpo del documento hay dos partes diferenciadas: 
+\begin{itemize}
+  \item {\bfseries Agregar dise\~no}: Es un formulario con dos campos a introducir por el alumno. Nombre del estilo y un recurso imagen. Aparecen unas recomendaciones sobre 
+  la especificaciones del recurso a subir. Una vez relleno, el formulario se env\'ia pulsando sobre el bot\'on ``Enviar''. En ese momento, se realiza una petici\'on \texttt{POST} sobre la 
+  misma URL por lo que ser\'a procesada por la misma vista \texttt{agregardisenoalumno}. Esta vista identifica la petici\'on como \texttt{POST}. La informaci\'on es enviada mediante un 
+  formulario de dise\~no definido en \texttt{formularios.py}, y si este formulario es v\'alido, dicha informaci\'on se almacena. La vista crea un objeto \texttt{Diseno} guard\'andolo
+  en la base de datos. Y posteriormente, env\'ia una respuesta \texttt{HTTP} redireccionando a la p\'agina de presentaci\'on de alumno de la aplicaci\'on. En caso de que el formulario 
+  sea inv\'alido, la vista renderizar\'a la plantilla \texttt{diseno.html}.
+  \item {\bfseries Eliminar dise\~no}: Es una lista de todos los dise\~nos creados. Los cuales se pueden borrar pulsando su bot\'on correspondiente.
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PersonalizarDiseno}}
+  \caption{\textit{Gestionar dise\~nos personalizados.}}
+  \label{fig:persdiseno}
 \end{figure}
 
 
@@ -1021,8 +1067,6 @@ nueva contrase\~na que sustituir\'a a la anterior.
 \end{figure}
 
 
-
-
 \subsubsection{Hilos} 
 \label{sec:hilos}
 En la figura~\ref{fig:hilos} se muestran dos documentos \textit{HTML} que recogen el contenido de un hilo. En la figura~\ref{fig:hilos}(a) se visualiza el interior
@@ -1030,8 +1074,9 @@ de un hilo limpio, sin entradas, en la parte del alumno. En la figura~\ref{fig:h
 tutor. La diferencia entre ambas im\'agenes se explicar\'a en las dos pr\'oximas subsecciones.
 
 La cabecera de ambas im\'agenes se pueden observar los distintos \'items de la barra de navegaci\'on. La barra de navegaci\'on ser\'a la misma dentro de
-todas las plantillas con la siguiente URL: {\scriptsize \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/[\textit(buscar),\textit(puntuaciones),
-\textit(infopuntuaciones)]}}
+todas las plantillas con la siguiente URL:\\
+{\scriptsize \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/[\textit(buscar),\textit(puntuaciones),\textit(infopuntuaciones),\textit(estadisticas),\textit(ayuda)]}}.
+
 \begin{itemize}
   \item {\bfseries \textit{Mis hilos}}: Es un enlace que hace referencia a la URL de la presentaci\'on del perfil de usuario 
   (Secci\'on~\ref{sec:presentacionalumno}).
@@ -1042,10 +1087,11 @@ todas las plantillas con la siguiente URL: {\scriptsize \texttt{/planetablogs/al
   todas las puntuaciones de los usuarios de un determinado hilo. \textit{Estad\'isticas} hace referencia a la URL donde se muestran las estad\'isticas de 
   cada usuario de un determinado hilo, tanto estad\'isticas generales como resumen de entradas. \textit{Informaci\'on} hace referencia a la URL que 
   recoge las bases de esas puntuaciones.
+  \item {\bfseries \textit{Ayuda}}: Es un enlace que hace referencia a la URL de ayuda (Secci\'on~\ref{sec:ayuda}).
   \item {\bfseries \textit{Desconectar}}: Enlace que hace referencia a la URL servida para el cierre de la sesi\'on (Secci\'on~\ref{sec:cierresesion}).
 \end{itemize}
-Tambi\'en se expone, debajo de la barra de navegaci\'on, una imagen correspondiente al logo de la aplicaci\'on con su t\'itulo. Y en la parte derecha un 
-apartado que agrupa las entradas m\'as valoradas del hilo.
+Tambi\'en se expone, debajo de la barra de navegaci\'on, una imagen correspondiente al logo de la aplicaci\'on con su t\'itulo y una frase aleatoria.
+Y en la parte derecha un  apartado que agrupa las entradas m\'as valoradas del hilo.
 
 \begin{figure}
   \centering
@@ -1073,10 +1119,11 @@ usuarios suscritos a este hilo. Cabe destacar que la lista de entradas dentro de
 p\'agina dentro del hilo mostrar\'a en su contenedor cinco entradas como m\'aximo. El orden de la lista de entradas est\'a colocado de menor a mayor por 
 antiguedad, siendo las primeras entradas visibles las m\'as recientes.
 
-La respuesta de la vista tambi\'en contiene cinco estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
+La respuesta de la vista tambi\'en contiene siete estructuras \textit{JSON}, todos los usuarios del modelo \texttt{User} (\textit{json\_usuarios}), 
 todas las valoraciones del modelo \texttt{Valoracion} pertenecientes a ese hilo (\textit{json\_valoracion}), todos los alumnos del modelo \texttt{Alumno} 
-(\textit{json\_alumnos}), todas las asignaturas del modelo \texttt{Asignatura} (\textit{json\_asignaturas}), todos los profesores del modelo \texttt{Profesor} 
-(\textit{json\_profesores}).
+(\textit{json\_alumnos}), todas las asignaturas del modelo \texttt{Asignatura} (\textit{json\_asignaturas}), todos los profesores del modelo 
+\texttt{Profesor} (\textit{json\_profesores}), todos los dise\~nos del modelo \texttt{Diseno} correspondientes al usuario de sesi\'on 
+(\textit{json\_disenos}) y a su vez el usuario de sesi\'on (\textit{json\_usuarios}).
 
 \begin{figure}
   \centering
@@ -1123,7 +1170,7 @@ lista de entradas o usuarios de la lista de usuarios, y adem\'as pueden puntuar 
 \label{sec:buscar}
 El documento \textit{HTML} mostrado en la figura~\ref{fig:buscar} pertenece la p\'agina de b\'usqueda avanzada de entradas. 
 La p\'agina es servida tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
-b\'usqueda: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/buscar/}}. La vista asociada a ese recurso es \texttt{buscar}, la cual 
+b\'usqueda: \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/buscar/}}. La vista asociada a ese recurso es \texttt{buscar}, la cual 
 devuelve la plantilla \texttt{buscar.html} que crea el documento \textit{HTML} de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la correspondiente 
@@ -1144,7 +1191,7 @@ y por \textit{Id de entrada}.
 \label{sec:ranking}
 El documento \textit{HTML} mostrado en la figura~\ref{fig:ranking} corresponde con la p\'agina de ranking de un determinado hilo. 
 La p\'agina es servida tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
-ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/puntuaciones/}}. La vista asociada a ese recurso es \texttt{puntuaciones}, la cual 
+ranking: \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/puntuaciones/}}. La vista asociada a ese recurso es \texttt{puntuaciones}, la cual 
 devuelve la plantilla \texttt{puntuaciones.html} que crea el documento \textit{HTML} de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la
@@ -1171,7 +1218,7 @@ Por lo que, la parte del documento \textit{HTML} de la clase \textit{.container}
 \label{sec:estadisticas}
 El documento \textit{HTML} mostrado en la figura~\ref{fig:estadisticas} corresponde con la p\'agina de estad\'isticas de un determinado hilo. 
 La p\'agina es servida tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
-ranking: \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/estadisticas/}}. La vista asociada a ese recurso es \texttt{estadisticas}, la cual 
+ranking: \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/estadisticas/}}. La vista asociada a ese recurso es \texttt{estadisticas}, la cual 
 devuelve la plantilla \texttt{estadisticas.html} que crea el documento \textit{HTML} de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on y que est\'e suscrito a la
@@ -1205,7 +1252,7 @@ escritos en el fichero estadisticas.js, se oculta o se muestra la tabla de estad
 \label{sec:informacionpuntuaciones}
 El documento \textit{HTML} mostrado en la figura~\ref{fig:informacionpuntuaciones} muestra informaci\'on sobre las condiciones o bases de las puntuaciones. 
 La p\'agina es servida tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
-bases de las puntuaciones:\\ \texttt{/planetablogs/tutores/hilo/\textit(IdAsignatura)/infopuntuaciones/}}. La vista asociada a ese recurso es 
+bases de las puntuaciones:\\ \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/infopuntuaciones/}}. La vista asociada a ese recurso es 
 \texttt{infopuntuaciones}, la cual devuelve la plantilla \texttt{infopuntuaciones.html} que crea el documento \textit{HTML} de la respuesta.
 
 A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on.
@@ -1225,6 +1272,27 @@ de un nivel, y mediante los eventos \textit{JavaScript}, \texttt{mouseover} y \t
   \label{fig:informacionpuntuaciones}
 \end{figure}
 
+\subsubsection{Ayuda} 
+\label{sec:ayuda}
+El documento \textit{HTML} mostrado en la figura~\ref{fig:ayuda} muestra informaci\'on adicional sobre el uso de la aplicaci\'on. 
+La p\'agina es servida tras una previa petici\'on \texttt{GET} del cliente mediante el correspondiente recurso \footnote{URL correspondiente a la p\'agina de 
+ayuda:\\ \texttt{/planetablogs/alumnos/hilo/\textit(IdAsignatura)/ayuda/}}. La vista asociada a ese recurso es 
+\texttt{ayuda}, la cual devuelve la plantilla \texttt{ayuda.html} que crea el documento \textit{HTML} de la respuesta.
+
+A esta p\'agina solamente puede acceder un usuario que se haya registrado previamente en la aplicaci\'on.
+
+La cabecera re\'une todos los \'items de la barra de navegaci\'on explicada en la secci\'on~\ref{sec:hilos}.
+
+La vista \texttt{ayuda} recibe como par\'ametro el Id del hilo, y mediante ese Id procesa la petici\'on obteniendo el objeto completo de dicha 
+asignatura. El contenedor de la plantilla re\'une una serie de informaci\'on y sugerencias de texto plano mediante dos listas num\'ericas 
+(etiqueta \texttt{<ol>}).
+
+\begin{figure}
+  \centering
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/Ayuda}}
+  \caption{\textit{P\'agina con las bases de las puntuaciones.}}
+  \label{fig:ayuda}
+\end{figure}
 
 \subsubsection{Vistas con AJAX} 
 \label{sec:vistasajax}
@@ -1234,6 +1302,11 @@ enviando como respuesta el cacho de \textit{HTML} que se necesita.
 
 Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de este proyecto son las siguientes:
 
+%   Cada uno de ellos tiene asociado un bot\'on que si se pulsa se realizar\'a una petici\'on \texttt{AJAX}
+%   de tipo \texttt{GET} que ser\'a procesada por la vista \texttt{eliminardiseno}. Esta vista identifica la petici\'on como \texttt{GET} y mediante el id del dise\~no pasado como dato en la 
+%   petici\'on, filtra en la tabla \texttt{Diseno} y borra el registro. Posteriormente, env\'ia una respuesta \texttt{HTTP} redireccionando a la misma p\'agina de dise\~nos de la aplicaci\'on, 
+%   por lo que la vista renderizar\'a la plantilla \texttt{diseno.html}.
+  
 \begin{itemize}
   \item {\bfseries \textit{Eliminar hilo en presentaci\'on de alumno}}: En la secci\'on donde se ubican \textit{Mis hilos}, cada hilo de la lista mostrada 
   tiene dos botones a su derecha. El bot\'on \texttt{Eliminar} mediante el evento \textit{onClick} llama a la funci\'on \textit{JavaScript} 
@@ -1349,6 +1422,53 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \label{fig:hilos}
   \end{figure}
 
+  \item {\bfseries \textit{Pulsar en bot\'on de entrada le\'ida o en link de t\'itulo de la entrada}}: A la derecha de cada id de entrada, 
+  hay un bot\'on con un icono que simboliza un ojo tachado, tal y como se puede ver en la figura~\ref{fig:LecturaEntrada}. Tanto si se presiona ese bot\'on o
+  si pulsa el link del t\'itulo de la entrada, se llamar\'a a la funci\'on \textit{JavaScript} \texttt{EntradaLeida} mediante el evento \textit{onClick}. 
+  Esta funci\'on se define en el fichero \texttt{index.js}. 
+  
+  Dicha funci\'on env\'ia una petici\'on \textit{AJAX} de tipo \texttt{GET} a su correspondiente vista mediante su recurso o URL. La petici\'on es enviada 
+  desde el fichero \texttt{index.js} usando \textit{jQuery} e incluye como datos el Id de la asignatura, el Id del usuario, el Id de la entrada y un
+  booleano (indica si la entrada ha sido visitada o no).
+  
+  La vista \texttt{entradaleida} crear\'a un objeto en el modelo \texttt{Extra} con los par\'ametros pasados en la solicitud. Guarda el objeto y modifica 
+  la entrada del modelo \texttt{Entrada} en la que se efectu\'o el click del bot\'on ``Leído''. En el objeto \texttt{Entrada} se cambia el campo \textit{visitantes} 
+  (en caso de que el booleano sea true, es decir, se haya visitado el post al acceder mediante el t\'itulo de la entrada) y el campo 
+  \textit{visitas} (indica el total de visitas que ha recibido esa entrada). Por \'ultimo, la vista modifica el objeto \texttt{Extra} 
+  buscando el registro correspondiente a esa entrada y esa asignatura, comprueba si el usuario se encuentra en la lista de ids del campo \texttt{Leido} y si no se encuentra, 
+  se a\~nade el id del usuario.
+  
+  La funci\'on \textit{AJAX} recibe una respuesta con c\'odigo \textit{HTML}. Mediante la funci\'on \textit{jQuery} \texttt{.html} en la entrada del documento \textit{HTML} 
+  se crea un bot\'on deshabilitado y se modifica la cantidad total de visitas que ha recibido.
+  
+  \begin{figure}
+    \centering
+    \subfigure[Entrada le\'ida.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/LecturaEntradaLeida}}}
+    \subfigure[Entrada no le\'ida.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/LecturaEntradaNoLeida}}}
+    \caption{\textit{Lectura de una entrada.}}
+    \label{fig:LecturaEntrada}
+  \end{figure}
+  
+  \item {\bfseries \textit{Mostrar visitantes}}: Al pulsar sobre el n\'umero subrayado de visitas totales de una entrada (figura~\ref{fig:mostrarvisitantes}), se llamar\'a a la 
+  funci\'on \textit{JavaScript} \texttt{MostrarVisitasUsuarios} mediante el evento \textit{click} de \textit{jQuery}. Esta funci\'on se define en el fichero \texttt{index.js}. 
+  
+  Dicha funci\'on env\'ia una petici\'on \textit{AJAX} de tipo \texttt{GET} a su correspondiente vista mediante su recurso o URL. La petici\'on es enviada 
+  desde el fichero \texttt{index.js} usando \textit{jQuery} e incluye como dato el Id de la entrada.
+  
+  La vista \texttt{mostrarvisitasusuarios} env\'ia como respuesta a la funci\'on \textit{AJAX} una lista de los nombres de los visitantes almacenados en el campo \texttt{visitantes} 
+  de la entrada. Mediante la funci\'on \textit{jQuery} \texttt{.html} en la entrada del documento \textit{HTML} se crea una tabla con los nombres de dichos visitantes y se visualizar\'an 
+  en un popup emergente. En caso de que la lista est\'e vac\'ia se mostrar\'a un mensaje ``Esta entrada no tiene visitantes''.
+  
+  Si se vuelve a pulsar sobre el n\'umero subrayado de visitas totales de dicha entrada, el popup se cerrar\'a.
+  
+  \begin{figure}
+    \centering
+    \subfigure[Lista de visitantes no vac\'ia.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/VisitantesLleno}}}
+    \subfigure[Lista de visitantes vac\'ia.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/VisitantesVacio}}}
+    \caption{\textit{Visitantes de una entrada.}}
+    \label{fig:mostrarvisitantes}
+  \end{figure}
+  
   \item {\bfseries \textit{Eliminar entrada en hilo de tutor}}: Un tutor puede eliminar las entradas de un hilo escritas por un alumno a trav\'es del 
   bot\'on \texttt{Eliminar entrada}, tanto entradas ya valoradas (figura~\ref{fig:eliminarentrada}(a)) como entradas no valoradas 
   (figura~\ref{fig:eliminarentrada}(b)). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
@@ -1365,8 +1485,8 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   
   \begin{figure}
     \centering
-    \subfigure[Entrada en hilo de tutor con valoraci\'on.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorConValoracion}}}
-    \subfigure[Entrada en hilo de tutor sin valoraci\'on.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorSinValoracion}}}
+    \subfigure[Entrada valorada en hilo de tutor.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorConValoracion}}}
+    \subfigure[Entrada sin valorar en hilo de tutor.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/EntradaTutorSinValoracion}}}
     \subfigure[Cuadro de di\'alogo de borrado.]{\Ovalbox{\includegraphics[width=10cm]{imagenes/HiloTutorEliminarEntrada}}}
     \caption{\textit{Eliminaci\'on de una entrada en el hilo de un tutor.}}
     \label{fig:eliminarentrada}
@@ -1394,6 +1514,24 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
     \label{fig:eliminaralumno}
   \end{figure}
   
+  \item {\bfseries \textit{Eliminar dise\~no en hilo de alumno}}: Un alumno puede eliminar los dise\~nos personalizados previamente creados a trav\'es del 
+  bot\'on ``\texttt{Eliminar (nombre estilo)}'' (figura~\ref{fig:elimdiseno}). Al pulsar sobre el bot\'on el evento \textit{onClick} llama a la funci\'on 
+  \textit{JavaScript} \texttt{EliminarDiseno} del fichero \texttt{diseno.js}. Esta funci\'on elimina un dise\~no determinado.
+  
+  Al hacer click sobre el bot\'on \texttt{Eliminar (nombre estilo)} se realiza una petici\'on \textit{AJAX} de tipo \texttt{GET} a la vista 
+  \texttt{eliminardiseno}. La petici\'on es enviada desde el fichero \texttt{diseno.js} usando \textit{jQuery} e incluye como dato el 
+  Id del dise\~no. La solicitud es aceptada en el servidor. La vista remueve el objeto \texttt{Diseno} mediante el m\'etodo 
+  \textit{.delete}. Adem\'as si el objeto eliminado se encontraba definido como estilo en el registro del usuario en el model \texttt{User}, este campo se 
+  inicializar\'a a una cadena vac\'ia.
+  
+  La funci\'on \textit{AJAX} no recibe ning\'un dato como respuesta.
+  
+  \begin{figure}
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/EliminarDiseno}}
+    \caption{\textit{Eliminaci\'on de un dise\~no en el hilo de un alumno.}}
+    \label{fig:elimdiseno}
+  \end{figure}
   
   \item {\bfseries \textit{B\'usqueda avanzada}}: Un alumno o un tutor tienen la opci\'on de buscar entradas por \textit{Nick de usuario} o 
   \textit{Id de entrada}. Cada opci\'on se selecciona con una etiqueta \texttt{<select>}. Al pulsar sobre el bot\'on \texttt{Buscar} el evento 
@@ -1426,9 +1564,6 @@ Las vistas implementadas con \textit{AJAX} en el fichero \texttt{views.py} de es
   \end{figure}
   
 \end{itemize}
-
-
-
 
 
 \subsubsection{Cierre de sesi\'on} 
@@ -1790,6 +1925,8 @@ Distintas ideas y funcionalidades a implementar para mejorar considerablemente l
   \item Buscador: B\'usqueda de entradas por calendario, indicando intervalo, mes o d\'ia.
   \item Listas: Pesta\~na o secci\'on que de opci\'on de crear listas personalizadas para guardar entradas.
   \item Optimizaci\'on de c\'odigo: Eliminar repetici\'on de c\'odigo. Usar plantilla.
+  \item Dise\~nos de aplicaci\'on: Dar la opci\'on a los usuarios de personalizar el dise\~no de su perfil de una forma m\'as completa.
+  \item Editar perfil: Dar la opci\'on a los usuarios de editar su propio perfil.
 \end{enumerate}
 
 
@@ -2009,18 +2146,31 @@ Las secciones que se incluyen en la presentaci\'on de un tutor son:
 \section{Presentaci\'on de alumno}
 \label{app:presentacionalumno}
 Despu\'es de haber realizado el registro de usuario como alumno y de introducir nombre de usuario y contrase\~na en la p\'agina de inicio, la sesi\'on 
-comienza con la presentaci\'on de alumno o perfil de alumno (figura~\ref{figura:alumno}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on 
+comienza con la presentaci\'on de alumno o perfil de alumno (figura~\ref{fig:presentacionalumno}). En la cabecera se ofrece la posibilidad de desconectar la sesi\'on 
 (a la derecha, pulsando el enlace ``Desconectar'' en rojo). S\'olo aparece una pesta\~na ``Mis hilos'', a la izquierda, la cual tiene la funci\'on de 
-actualizar la p\'agina de perfil de alumno. Tambi\'en se exhibe una foto del usuario y un t\'itulo con la expresi\'on 
-\textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el perfil.
+actualizar la p\'agina de perfil de alumno. 
+
+Aparece una pesta\~na ``Mis hilos'', a la izquierda, la cual tiene la funci\'on de actualizar la p\'agina de perfil de alumno. Y un men\'u con todos 
+los dise\~nos creados por el usuario (figura~\ref{fig:listadisenos}), al seleccionar uno de ellos se cambiar\'a la imagen de fondo de las p\'aginas 'Presentaci\'on de alumno', 'P\'agina principal del hilo' 
+y 'R\'anking'.
 
 \begin{figure}[htbp] 
   \centering
-  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/PresentacionAlumno}}
-  \caption{P\'agina de presentaci\'on de alumno.}
-  \label{figura:alumno}
+  \doublebox{\includegraphics[width=17cm, keepaspectratio]{imagenes/ListaPersonalizarDiseno}}
+  \caption{}
+  \label{fig:listadisenos}
 \end{figure}
 
+Tambi\'en se exhibe una foto del usuario y un t\'itulo con la expresi\'on \textit{Espacio de NOMBRE APELLIDO1 APELLIDO2} indicando de quien es el perfil.
+
+\begin{figure}
+  \centering
+  \subfigure[Sin dise\~no.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/PresentacionAlumno}}}
+  \subfigure[Con dise\~no.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/PresentacionAlumnoConDiseno}}}
+  \caption{\textit{P\'agina de presentaci\'on de alumno.}}
+  \label{fig:presentacionalumno}
+\end{figure}
+  
 Las secciones que se incluyen en la presentaci\'on de un alumno son:
 
 \begin{itemize}
@@ -2058,6 +2208,21 @@ Las secciones que se incluyen en la presentaci\'on de un alumno son:
   \end{figure}
 \end{itemize} 
 
+\section{Personalizar dise\~no}
+\label{app:presentacionalumno}
+A la p\'agina para gestionar dise\~nos se accede despu\'es de dar al enlace ``Agregar/Eliminar dise\~no'', al final de la lista de ``Mis dise\~nos'' en la 
+presentaci\'on del alumno (figura~\ref{fig:listadisenos}).
+
+Una vez dentro de la p\'agina (figura~\ref{fig:persondiseno}(a)), se podr\'a crear un nuevo dise\~no con la inserci\'on de un nombre de estilo y una imagen de fondo
+con unas caracter\'isticas espec\'ificas que asegurar\'an una buena calidad en la personalizaci\'on de la aplicaci\'on. Los dise\~nos
+creados se unen a la tabla de ``Mis dise\~nos'', desde donde se podr\'a pinchar sobre el bot\'on rojo que se quiera para eliminarlos (figura~\ref{fig:persondiseno}(b)).
+\begin{figure}
+  \centering
+  \subfigure[P\'agina completa de personalizaci\'on.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/PersonalizarDiseno}}}
+  \subfigure[Secci\'on para eliminar dise\~nos.]{\Ovalbox{\includegraphics[width=7cm]{imagenes/EliminarDiseno}}}
+  \caption{\textit{Gestionar dise\~nos personalizados.}}
+  \label{fig:persondiseno}
+\end{figure}
 
 \section{Hilo de alumno}
 \label{app:hiloalumno}
@@ -2084,6 +2249,18 @@ se puede pulsar sobre la pesta\~na que est\'a activa en cabecera, y que expone e
 \subsection{Entradas}
 El usuario puede interactuar con una entrada (\ref{figura:hiloalumno1}) de diversas maneras:
 \begin{itemize}
+  \item {\bfseries Mostrar visitantes}: Debajo de la fecha de cada entrada, hay un n\'umero subrayado que muestra el total de visitas al post. Si se pulsa, 
+  se mostrar\'a una lista de los usuarios que previamente han pulsado sobre el enlace del t\'itulo para acceder al post del blog externo. Y si se vuelve a 
+  pulsar, el popup desaparecer\'a.
+  \item {\bfseries Entrada le\'ida}: El bot\'on que se encuentra a la derecha del id de la entrada con un icono de un ojo tachado indicar\'a si la entrada 
+  ya ha sido le\'ida o no. Si se hace click sobre dicho bot\'on, este se deshabilitar\'a (desapareciendo el color azul gris\'aceo del bot\'on). Ver la 
+  figura~\ref{fig:LecturaEntradaLeidayNoLeida}.
+  \begin{figure}[htbp] 
+    \centering
+    \Ovalbox{\includegraphics[width=17cm, keepaspectratio]{imagenes/LecturaEntradaLeidayNoLeida}}
+    \caption{Lectura de entradas.}
+    \label{fig:LecturaEntradaLeidayNoLeida}
+  \end{figure}
   \item {\bfseries Valoraci\'on cuantitativa}: Los botones verde y rojo aportan una valoraci\'on cuantitativa. Si se decide por pulsar 
   la valoraci\'on positiva (bot\'on verde), el alumno que cre\'o la entrada recibir\'a una bonificaci\'on de dos \textit{planets} (el \textit{planet} es la 
   moneda de la aplicaci\'on). Si se decide por pulsar la valoraci\'on negativa (bot\'on rojo), el alumno que cre\'o la entrada recibir\'a una penalizaci\'on 
@@ -2117,7 +2294,8 @@ El usuario puede interactuar con una entrada (\ref{figura:hiloalumno1}) de diver
   \item {\bfseries Ojear blog}: En una entrada existen dos enlaces que redirigir\'an directamente al blog del alumno donde se ubican todas sus entradas 
   fuera de la aplicaci\'on. Los dos enlaces aparecen en forma de ``Nombre y apellidos'' y ``Nick'' (al lado de la fecha, en negrita).
   
-  Si se presiona sobre el enlace del t\'itulo, se abrir\'a otra pesta\~na con la ubicaci\'on de la propia entrada dentro del blog.
+  Si se presiona sobre el enlace del t\'itulo, se abrir\'a otra pesta\~na con la ubicaci\'on de la propia entrada dentro del blog. Y adem\'as, el bot\'on de
+  entrada le\'ida se deshabilitar\'a (si no ha sido previamente pulsado).
   \item {\bfseries Visualizar informaci\'on del usuario}: Al pasar el rat\'on por encima del enlace ``Nombre y apellidos'' brotar\'a un mensaje informativo 
   con datos del usuario: Foto de perfil, nombre, apellidos, puntuaci\'on total y nivel (\ref{figura:hiloalumno2}).
   \begin{figure}[htbp] 
@@ -2194,7 +2372,7 @@ cualquier entrada, eliminar cualquier alumno de un determinado hilo y valorar cu
   \caption{Hilo con entradas de un tutor.}
   \label{figura:hiloprofesor}
 \end{figure}
-
+%[[{\bfseries MODIFICAR} RELLENAR]]
 Al pulsar el bot\'on ``Eliminar entrada'' se abrir\'a una alerta de aviso con unos puntos que se podr\'an leer para confirmar si realmente se quiere esa 
 eliminaci\'on o no. Ver figura~\ref{figura:hiloprofesor1}(a).
 
