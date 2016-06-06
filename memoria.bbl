@@ -1,0 +1,38 @@
+\begin{thebibliography}{x}
+\bibitem{1}
+P\'agina oficial de \textit{jQuery.}\\
+\href{http://jquery.com/}{http://jquery.com/}
+\bibitem{2}
+P\'agina oficial de \textit{JSON.}\\
+\href{http://www.json.org/}{http://www.json.org/}
+\bibitem{3}
+P\'agina oficial de \textit{BootStrap.}\\
+\href{http://getbootstrap.com/}{http://getbootstrap.com/}
+\bibitem{4}
+P\'agina oficial de \textit{Python.}\\
+\href{https://www.python.org/}{https://www.python.org/}
+\bibitem{5}
+P\'agina oficial de \textit{Django.}\\
+\href{https://docs.djangoproject.com/}{https://docs.djangoproject.com/}
+\bibitem{6}
+P\'agina oficial de \textit{jQuery-ui.}\\
+\href{https://jqueryui.com/}{https://jqueryui.com/}
+\bibitem{7}
+Recurso de descarga de la aplicaci\'on desde \textit{GitHub.}\\
+\href{https://github.com/AdrianSaezClemente/PlanetaBlogs}{https://github.com/AdrianSaezClemente/PlanetaBlogs}
+\bibitem{8}
+P\'agina oficial de \textit{Pivotal Tracker.}\\
+\href{https://www.pivotaltracker.com/}{https://www.pivotaltracker.com/}
+\bibitem{9}
+P\'agina oficial de \textit{Git.}\\
+\href{http://git-scm.com/}{http://git-scm.com/}
+\bibitem{10}
+Tutorial de \textit{CronTab.}\\
+\href{http://www.linuxtotal.com.mx/?cont=info_admon_006}{\¿C\'omo usar cron?}
+\bibitem{11}
+Tutorial de \textit{CSS.}\\
+\href{http://www.w3schools.com/css/}{Manual web no oficial de CSS}
+\bibitem{12}
+Plugin \textit{BootStrapDialog.}\\
+\href{http://develoteca.com/plugin-bootstrapdialog-para-una-presentacion-especializada/}{Descarga y manual de plugin BootStrapDialog}
+\end{thebibliography}

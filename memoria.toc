@@ -1,0 +1,88 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{3}{chapter*.1}
+\contentsline {chapter}{Resumen}{5}{chapter*.2}
+\contentsline {chapter}{Summary}{7}{chapter*.3}
+\contentsline {chapter}{Lista de figuras}{13}{section*.5}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Descripci\'on del proyecto}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Contexto tecnol\'ogico}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}Objetivos}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Objetivo general}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Objetivos espec\'ificos}{3}{section.2.2}
+\contentsline {chapter}{\numberline {3}Tecnolog\'ias utilizadas}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Django y Python}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Django}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Python}{6}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}HTML5}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}JavaScript}{7}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}jQuery}{7}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}jQuery-ui}{8}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}AJAX}{8}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}JSON}{9}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}CSS3}{9}{section.3.4}
+\contentsline {section}{\numberline {3.5}BootStrap}{10}{section.3.5}
+\contentsline {section}{\numberline {3.6}Git}{13}{section.3.6}
+\contentsline {section}{\numberline {3.7}Pivotal tracker}{14}{section.3.7}
+\contentsline {section}{\numberline {3.8}Crontab}{15}{section.3.8}
+\contentsline {chapter}{\numberline {4}Dise\~no e implementaci\'on}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Arquitectura general}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Estructura Django del proyecto}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Introducci\'on a la estructura de Django}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Dise\~no de la base de datos}{23}{subsection.4.2.2}
+\contentsline {subsubsection}{\textit {Models}}{24}{section*.7}
+\contentsline {subsubsection}{\textit {Relaciones}}{26}{section*.8}
+\contentsline {subsection}{\numberline {4.2.3}Estructura de documentos \textit {HTML}}{28}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Dise\~no de las vistas y URLs}{29}{subsection.4.2.4}
+\contentsline {subsubsection}{P\'agina de inicio}{29}{section*.9}
+\contentsline {subsubsection}{Registro de alumno}{30}{section*.10}
+\contentsline {subsubsection}{Registro de tutor}{32}{section*.11}
+\contentsline {subsubsection}{Presentaci\'on de alumno}{33}{section*.12}
+\contentsline {subsubsection}{Personalizar dise\~no}{35}{section*.13}
+\contentsline {subsubsection}{Presentaci\'on de tutor}{37}{section*.14}
+\contentsline {subsubsection}{Resetear contrase\~na}{38}{section*.15}
+\contentsline {subsubsection}{Hilos}{39}{section*.16}
+\contentsline {subsubsection}{Hilo de alumno}{40}{section*.17}
+\contentsline {subsubsection}{Hilo de tutor}{41}{section*.18}
+\contentsline {subsubsection}{B\'usqueda avanzada}{42}{section*.19}
+\contentsline {subsubsection}{Ranking}{43}{section*.20}
+\contentsline {subsubsection}{Estad\'isticas}{44}{section*.21}
+\contentsline {subsubsection}{Informaci\'on de las puntuaciones}{46}{section*.22}
+\contentsline {subsubsection}{Ayuda}{47}{section*.23}
+\contentsline {subsubsection}{Vistas con AJAX}{48}{section*.24}
+\contentsline {subsubsection}{Cierre de sesi\'on}{59}{section*.25}
+\contentsline {chapter}{\numberline {5}Prueba en entorno real}{61}{chapter.5}
+\contentsline {section}{\numberline {5.1}Preparaci\'on de la prueba}{61}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Pasos iniciales}{63}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Archivo \textit {nohup.out}}{66}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Control estad\'istico}{66}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Resultados de la prueba}{67}{section.5.2}
+\contentsline {chapter}{\numberline {6}Conclusiones}{71}{chapter.6}
+\contentsline {section}{\numberline {6.1}Consecuci\'on de objetivos}{71}{section.6.1}
+\contentsline {section}{\numberline {6.2}Aplicaci\'on de lo aprendido}{73}{section.6.2}
+\contentsline {section}{\numberline {6.3}Lecciones aprendidas}{73}{section.6.3}
+\contentsline {section}{\numberline {6.4}Trabajos futuros}{73}{section.6.4}
+\contentsline {chapter}{\numberline {A}Instalaci\'on y uso}{75}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Instalaci\'on del entorno en el servidor}{75}{section.Alph1.1}
+\contentsline {section}{\numberline {A.2}Uso de la aplicaci\'on}{77}{section.Alph1.2}
+\contentsline {chapter}{\numberline {B}Manual de usuario}{79}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}P\'agina de inicio}{79}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}P\'agina de registro}{80}{section.Alph2.2}
+\contentsline {section}{\numberline {B.3}Presentaci\'on de tutor}{82}{section.Alph2.3}
+\contentsline {section}{\numberline {B.4}Presentaci\'on de alumno}{86}{section.Alph2.4}
+\contentsline {section}{\numberline {B.5}Personalizar dise\~no}{88}{section.Alph2.5}
+\contentsline {section}{\numberline {B.6}Hilo de alumno}{88}{section.Alph2.6}
+\contentsline {subsection}{\numberline {B.6.1}Entradas}{90}{subsection.Alph2.6.1}
+\contentsline {subsection}{\numberline {B.6.2}Logo}{95}{subsection.Alph2.6.2}
+\contentsline {subsection}{\numberline {B.6.3}Entradas m\'as valoradas}{96}{subsection.Alph2.6.3}
+\contentsline {subsection}{\numberline {B.6.4}Usuarios suscritos}{96}{subsection.Alph2.6.4}
+\contentsline {subsection}{\numberline {B.6.5}Paginador y flecha}{96}{subsection.Alph2.6.5}
+\contentsline {section}{\numberline {B.7}Hilo de profesor}{98}{section.Alph2.7}
+\contentsline {section}{\numberline {B.8}Opciones de men\'u en cabecera}{100}{section.Alph2.8}
+\contentsline {subsection}{\numberline {B.8.1}Mis hilos}{100}{subsection.Alph2.8.1}
+\contentsline {subsection}{\numberline {B.8.2}T\'itulo del hilo}{100}{subsection.Alph2.8.2}
+\contentsline {subsection}{\numberline {B.8.3}Buscar}{100}{subsection.Alph2.8.3}
+\contentsline {subsection}{\numberline {B.8.4}Puntuaci\'on}{100}{subsection.Alph2.8.4}
+\contentsline {subsection}{\numberline {B.8.5}Ayuda}{102}{subsection.Alph2.8.5}
+\contentsline {subsection}{\numberline {B.8.6}Cierre de sesi\'on}{102}{subsection.Alph2.8.6}
+\contentsline {chapter}{\numberline {C}Descarga de la aplicaci\'on}{105}{appendix.Alph3}
+\contentsline {chapter}{Bibliograf\'{\i }a}{107}{appendix*.26}

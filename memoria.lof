@@ -1,0 +1,114 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tama\~nos en diferentes dispositivos}}{12}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo para dispositivos medianos (clase col-md-x) y peque\~nos (clase col-xs-x)}}{13}{figure.3.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Dispositivo mediano}}}{13}{figure.3.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Dispositivo peque\~no}}}{13}{figure.3.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Estructura de directorios. Utilizando la herramienta \href {http://www.computerhope.com/unix/tree.htm}{\textit {tree}}.}}{21}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \textit {Estructura general del sistema \texttt {Django}.}}}{23}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \textit {Estructura gr\'afica de la base de datos.}}}{28}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {P\'agina de inicio.}}}{31}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \textit {P\'agina de registro de un alumno.}}}{32}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \textit {P\'agina de registro de un tutor.}}}{33}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \textit {Presentaci\'on del perfil de un alumno.}}}{35}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \textit {Gestionar dise\~nos personalizados.}}}{36}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \textit {Presentaci\'on del perfil de un tutor.}}}{38}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \textit {Modificar una contrase\~na desde el perfil de un tutor.}}}{39}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \textit {P\'agina principal de un hilo limpio.}}}{40}{figure.4.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hilo limpio en alumno}}}{40}{figure.4.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Hilo limpio en tutor}}}{40}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \textit {P\'agina principal de un hilo de un alumno.}}}{42}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \textit {P\'agina principal de un hilo de un tutor.}}}{43}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \textit {P\'agina de b\'usqueda avanzada de entradas.}}}{44}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \textit {P\'agina de ranking.}}}{45}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \textit {P\'agina de ranking.}}}{46}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces \textit {P\'agina con las bases de las puntuaciones.}}}{47}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces \textit {P\'agina con las bases de las puntuaciones.}}}{48}{figure.4.18}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces \textit {Eliminar hilo en una presentaci\'on de alumno.}}}{49}{figure.4.19}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces \textit {Eliminar hilo en una presentaci\'on de tutor.}}}{50}{figure.4.20}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces \textit {Comentario agregado en una entrada.}}}{51}{figure.4.21}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces \textit {Comentario eliminado en una entrada.}}}{52}{figure.4.22}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces \textit {Valoraci\'on de una entrada.}}}{53}{figure.4.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Botones sin valoraci\'on}}}{53}{figure.4.23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Botones con valoraci\'on}}}{53}{figure.4.23}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces \textit {Lectura de una entrada.}}}{54}{figure.4.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entrada le\'ida.}}}{54}{figure.4.24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Entrada no le\'ida.}}}{54}{figure.4.24}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces \textit {Visitantes de una entrada.}}}{55}{figure.4.25}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Lista de visitantes no vac\'ia.}}}{55}{figure.4.25}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lista de visitantes vac\'ia.}}}{55}{figure.4.25}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces \textit {Eliminaci\'on de una entrada en el hilo de un tutor.}}}{56}{figure.4.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entrada valorada en hilo de tutor.}}}{56}{figure.4.26}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Entrada sin valorar en hilo de tutor.}}}{56}{figure.4.26}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Cuadro de di\'alogo de borrado.}}}{56}{figure.4.26}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces \textit {Eliminaci\'on de un alumno en el hilo de un tutor.}}}{57}{figure.4.27}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Tabla de suscriptores en hilo de tutor.}}}{57}{figure.4.27}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cuadro de di\'alogo de borrado.}}}{57}{figure.4.27}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces \textit {Eliminaci\'on de un dise\~no en el hilo de un alumno.}}}{58}{figure.4.28}
+\contentsline {figure}{\numberline {4.29}{\ignorespaces \textit {Ejecuci\'on de una b\'usqueda.}}}{59}{figure.4.29}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Buscar entradas por Nick de usuario.}}}{59}{figure.4.29}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Buscar entrada por Id de entrada.}}}{59}{figure.4.29}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces \textit {Enlace de cierre de sesi\'on.}}}{60}{figure.4.30}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Hilo de la prueba.}}{65}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Suscriptores de la prueba.}}{65}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estad\'isticas generales de la prueba.}}{69}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Estad\'isticas individuales de dos usuarios de la prueba.}}{69}{figure.5.4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces P\'agina de inicio.}}{79}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Inicio de sesi\'on.}}{80}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Formulario de inicio de sesi\'on.}}}{80}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Inicio de sesi\'on err\'onea.}}}{80}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Inicio de sesi\'on}}{81}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Registro como alumno.}}}{81}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Registro como tutor.}}}{81}{figure.Alph2.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Rellenar nick}}{81}{figure.Alph2.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Registro err\'oneo}}{82}{figure.Alph2.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Informaci\'on de registro}}{83}{figure.Alph2.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces P\'agina de presentaci\'on de tutor.}}{84}{figure.Alph2.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Formulario para la creaci\'on de un hilo.}}{84}{figure.Alph2.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Secci\'on de \textit {Hilos disponibles} en una presentaci\'on de tutor.}}{85}{figure.Alph2.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Secci\'on de \textit {Mis hilos} en una presentaci\'on.}}{85}{figure.Alph2.10}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces }}{86}{figure.Alph2.11}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces \textit {P\'agina de presentaci\'on de alumno.}}}{86}{figure.Alph2.12}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sin dise\~no.}}}{86}{figure.Alph2.12}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Con dise\~no.}}}{86}{figure.Alph2.12}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Secci\'on de \textit {Hilos disponibles} en una presentaci\'on de alumno.}}{87}{figure.Alph2.13}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Error al introducir \textit {RSS} en una presentaci\'on de alumno.}}{88}{figure.Alph2.14}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Eliminar hilo de la secci\'on de \textit {Mis hilos} en una presentaci\'on de alumno.}}{89}{figure.Alph2.15}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces \textit {Gestionar dise\~nos personalizados.}}}{89}{figure.Alph2.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {P\'agina completa de personalizaci\'on.}}}{89}{figure.Alph2.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Secci\'on para eliminar dise\~nos.}}}{89}{figure.Alph2.16}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Hilo vac\'io de un alumno.}}{90}{figure.Alph2.17}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Hilo con entradas de un alumno.}}{91}{figure.Alph2.18}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Lectura de entradas.}}{92}{figure.Alph2.19}
+\contentsline {figure}{\numberline {B.20}{\ignorespaces Informaci\'on emergente de un comentario.}}{93}{figure.Alph2.20}
+\contentsline {figure}{\numberline {B.21}{\ignorespaces \textit {Valoraciones del tutor en entradas.}}}{94}{figure.Alph2.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Entrada valorada por el tutor.}}}{94}{figure.Alph2.21}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Entrada no valorada por el tutor.}}}{94}{figure.Alph2.21}
+\contentsline {figure}{\numberline {B.22}{\ignorespaces Informaci\'on emergente de un alumno.}}{94}{figure.Alph2.22}
+\contentsline {figure}{\numberline {B.23}{\ignorespaces Logo, nombre y eslogan aleatorio de la aplicaci\'on.}}{95}{figure.Alph2.23}
+\contentsline {figure}{\numberline {B.24}{\ignorespaces Entradas m\'as valoradas del hilo de alumno.}}{96}{figure.Alph2.24}
+\contentsline {figure}{\numberline {B.25}{\ignorespaces Usuarios suscritos al hilo.}}{97}{figure.Alph2.25}
+\contentsline {figure}{\numberline {B.26}{\ignorespaces Paginador y flecha.}}{97}{figure.Alph2.26}
+\contentsline {figure}{\numberline {B.27}{\ignorespaces Hilo con entradas de un tutor.}}{98}{figure.Alph2.27}
+\contentsline {figure}{\numberline {B.28}{\ignorespaces \textit {Eliminaciones en hilo de tutor.}}}{99}{figure.Alph2.28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Eliminar entrada.}}}{99}{figure.Alph2.28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Eliminar alumno.}}}{99}{figure.Alph2.28}
+\contentsline {figure}{\numberline {B.29}{\ignorespaces Valoraci\'on de tutor en una determinada entrada.}}{99}{figure.Alph2.29}
+\contentsline {figure}{\numberline {B.30}{\ignorespaces \textit {Interacciones de usuario en la p\'agina de Ranking.}}}{101}{figure.Alph2.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Color asociado al nivel.}}}{101}{figure.Alph2.30}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Foto de perfil ampliada.}}}{101}{figure.Alph2.30}
+\contentsline {figure}{\numberline {B.31}{\ignorespaces Opciones de estad\'isticas.}}{102}{figure.Alph2.31}
+\contentsline {figure}{\numberline {B.32}{\ignorespaces \textit {Visualizaci\'on de opciones estad\'isticas.}}}{103}{figure.Alph2.32}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Estad\'isticas generales.}}}{103}{figure.Alph2.32}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Resumen de entradas.}}}{103}{figure.Alph2.32}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ambas opciones anteriores.}}}{103}{figure.Alph2.32}
+\contentsline {figure}{\numberline {B.33}{\ignorespaces Ayuda.}}{104}{figure.Alph2.33}
+\contentsline {figure}{\numberline {B.34}{\ignorespaces Informaci\'on del creador del hilo.}}{104}{figure.Alph2.34}
+\addvspace {10\p@ }

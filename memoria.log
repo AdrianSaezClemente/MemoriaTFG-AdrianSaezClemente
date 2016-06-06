@@ -1,0 +1,2695 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.6)  6 JUN 2016 22:11
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**memoria.tex
+(./memoria.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 7 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count88
+\Hy@pagecounter=\count89
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count90
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count91
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen104
+\Fld@menulength=\count92
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count93
+\c@Item=\count94
+\c@Hfootnote=\count95
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count96
+\c@bookmark@seq@number=\count97
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count98
+\Gm@cntv=\count99
+\c@Gm@tempcnt=\count100
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/01/29 v5.0m Spanish support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
+\babel@savecnt=\count101
+\U@D=\dimen115
+)
+\es@datefmt=\count102
+\es@quottoks=\toks18
+\es@quotdepth=\count103
+Package babel Info: Making " an active character on input line 496.
+Package babel Info: Making . an active character on input line 599.
+Package babel Info: Making < an active character on input line 644.
+Package babel Info: Making > an active character on input line 644.
+Package babel Info: Making ' an active character on input line 671.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box26
+\shadowsize=\dimen116
+\@Sbox=\box27
+\do@VerbBox=\toks19
+\the@fancyput=\toks20
+\this@fancyput=\toks21
+\EndVerbatimTokens=\toks22
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip44
+\subfigcapskip=\skip45
+\subfigcaptopadj=\dimen117
+\subfigbottomskip=\skip46
+\subfigcapmargin=\dimen118
+\subfiglabelskip=\skip47
+\c@subfigure=\count104
+\c@lofdepth=\count105
+\c@subtable=\count106
+\c@lotdepth=\count107
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip48
+\subfig@bottom=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count108
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count109
+\float@exts=\toks23
+\float@box=\box28
+\@float@everytoks=\toks24
+\@floatcapt=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip50
+\fb@frw=\dimen121
+\fb@frh=\dimen122
+\FrameRule=\dimen123
+\FrameSep=\dimen124
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+) (./memoria.aux
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+
+LaTeX Warning: Label `fig:hilos' multiply defined.
+
+
+LaTeX Warning: Label `seccion:preparacionprueba' multiply defined.
+
+
+LaTeX Warning: Label `app:presentacionalumno' multiply defined.
+
+)
+\openout1 = `memoria.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 42.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 42.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count110
+)
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
+
+(./memoria.out) (./memoria.out)
+\@outlinefile=\write4
+\openout4 = `memoria.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=674.33032pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-18.78552pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=88.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen125
+\scratchbox=\box31
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen126
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks26
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 52.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+<img/logo_vect.png, id=277, 169.8345pt x 338.2236pt>
+File: img/logo_vect.png Graphic file (type png)
+ <use img/logo_vect.png>
+Package pdftex.def Info: img/logo_vect.png used on input line 54.
+(pdftex.def)             Requested size: 42.45851pt x 84.5557pt.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logo_vect.png>] [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 111.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+[3
+
+]
+LaTeX Info: Redefining \. on input line 122.
+LaTeX Info: Redefining \% on input line 122.
+ [4
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 126.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [5]
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+ [6
+
+]
+[7]
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
+ [8
+
+] (./memoria.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+ [9]
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
+ [10])
+\tf@toc=\write5
+\openout5 = `memoria.toc'.
+
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+ [11]
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+ [12
+
+] (./memoria.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <12> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 11.
+ [13
+
+]
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [14])
+\tf@lof=\write6
+\openout6 = `memoria.lof'.
+
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+ [15]
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+
+[16
+
+]
+Cap\'{\i }tulo 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 188.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.212 
+       [1
+
+]
+LaTeX Info: Redefining \. on input line 237.
+LaTeX Info: Redefining \% on input line 237.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.237 \cleardoublepage
+                       [2]
+Cap\'{\i }tulo 2.
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.265   \item \textit
+                      {Adaptabilidad:} La aplicaci\'on ha sido implementada ...
+[3
+
+
+]
+LaTeX Info: Redefining \. on input line 281.
+LaTeX Info: Redefining \% on input line 281.
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.281 \cleardoublepage
+                       [4]
+Cap\'{\i }tulo 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 287.
+
+Underfull \vbox (badness 3679) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.311 
+       [5
+
+
+]
+LaTeX Info: Redefining \. on input line 340.
+LaTeX Info: Redefining \% on input line 340.
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.340 
+       [6]
+LaTeX Info: Redefining \. on input line 368.
+LaTeX Info: Redefining \% on input line 368.
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.368   \item R
+               esponde a la interacci\'on del usuario. Ofrece una forma eleg...
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
+
+ []
+
+LaTeX Info: Redefining \. on input line 396.
+LaTeX Info: Redefining \% on input line 396.
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.396 
+       [8]
+LaTeX Info: Redefining \. on input line 423.
+LaTeX Info: Redefining \% on input line 423.
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.423 
+       [9]
+LaTeX Info: Redefining \. on input line 452.
+LaTeX Info: Redefining \% on input line 452.
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.452 
+       [10] <img/BootStrap.png, id=597, 728.7225pt x 510.90875pt>
+File: img/BootStrap.png Graphic file (type png)
+
+<use img/BootStrap.png>
+Package pdftex.def Info: img/BootStrap.png used on input line 472.
+(pdftex.def)             Requested size: 483.69684pt x 339.11859pt.
+
+Overfull \hbox (39.25272pt too wide) in paragraph at lines 472--473
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 484.
+LaTeX Info: Redefining \% on input line 484.
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.484 
+       [11]
+LaTeX Info: Redefining \. on input line 484.
+LaTeX Info: Redefining \% on input line 484.
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.484 
+       [12pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.484 
+       <./img/BootStrap.png>]
+<img/BootStrapMD.png, id=606, 1217.54875pt x 218.8175pt>
+File: img/BootStrapMD.png Graphic file (type png)
+
+<use img/BootStrapMD.png>
+Package pdftex.def Info: img/BootStrapMD.png used on input line 488.
+(pdftex.def)             Requested size: 312.9803pt x 56.2468pt.
+
+<img/BootStrapXS.png, id=607, 783.92876pt x 287.0725pt>
+File: img/BootStrapXS.png Graphic file (type png)
+
+<use img/BootStrapXS.png>
+Package pdftex.def Info: img/BootStrapXS.png used on input line 489.
+(pdftex.def)             Requested size: 312.9803pt x 114.61232pt.
+LaTeX Info: Redefining \. on input line 511.
+LaTeX Info: Redefining \% on input line 511.
+pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.511 
+       [13pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.511 
+       <./img/BootStrapMD.png (PNG copy)> <./img/BootStrapXS.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 535.
+LaTeX Info: Redefining \% on input line 535.
+pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.535   \item S
+               e centra en algo muy interesante que es la gesti\'on de la pi...
+[14]
+LaTeX Info: Redefining \. on input line 565.
+LaTeX Info: Redefining \% on input line 565.
+pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.565   \begin{verbatim}
+                         #chmod +x miscript.py \end{verbatim} [15]
+LaTeX Info: Redefining \. on input line 580.
+LaTeX Info: Redefining \% on input line 580.
+pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.580 \end{itemize}
+                    [16]
+Overfull \hbox (24.75589pt too wide) in paragraph at lines 610--610
+[]      \OT1/pcr/m/n/10 */1 * * * * cd /home/nombreMaquina/directorioGitProyect
+o/PlanetaBlogs/TFG;[] 
+ []
+
+LaTeX Info: Redefining \. on input line 617.
+LaTeX Info: Redefining \% on input line 617.
+[17]
+LaTeX Info: Redefining \. on input line 617.
+LaTeX Info: Redefining \% on input line 617.
+ [18
+
+]
+Cap\'{\i }tulo 4.
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--646
+
+ []
+
+<img/tree.png, id=637, 201.75375pt x 509.905pt>
+File: img/tree.png Graphic file (type png)
+ <use img/tree.png>
+Package pdftex.def Info: img/tree.png used on input line 651.
+(pdftex.def)             Requested size: 256.0748pt x 647.19868pt.
+
+
+LaTeX Warning: Float too large for page by 18.01625pt on input line 654.
+
+LaTeX Info: Redefining \. on input line 661.
+LaTeX Info: Redefining \% on input line 661.
+[20]
+LaTeX Info: Redefining \. on input line 661.
+LaTeX Info: Redefining \% on input line 661.
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.661 
+       <./img/tree.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 689.
+LaTeX Info: Redefining \% on input line 689.
+ [22]
+<img/diagrama.png, id=653, 834.11626pt x 430.60875pt>
+File: img/diagrama.png Graphic file (type png)
+ <use img/diagrama.png>
+Package pdftex.def Info: img/diagrama.png used on input line 695.
+(pdftex.def)             Requested size: 483.69684pt x 249.70724pt.
+
+Overfull \hbox (39.25272pt too wide) in paragraph at lines 695--696
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 707.
+LaTeX Info: Redefining \% on input line 707.
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.707 L
+       a gr\'afica ha sido obtenida mediante una extensi\'on de \texttt{Djan...
+ <./img/diagrama.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 710.
+LaTeX Info: Redefining \. on input line 735.
+LaTeX Info: Redefining \% on input line 735.
+ [24]
+LaTeX Info: Redefining \. on input line 755.
+LaTeX Info: Redefining \% on input line 755.
+ [25]
+LaTeX Info: Redefining \. on input line 783.
+LaTeX Info: Redefining \% on input line 783.
+ [26]
+Overfull \hbox (12.41644pt too wide) in paragraph at lines 791--793
+[]\OT1/ptm/b/n/12 Up\OT1/ptm/m/n/12 : El mo-de-lo \OT1/pcr/m/n/12 Up \OT1/ptm/m
+/n/12 tie-ne una re-la-ci[]on con los mo-de-los \OT1/pcr/m/n/12 Alumno\OT1/ptm/
+m/n/12 , \OT1/pcr/m/n/12 Asignatura \OT1/ptm/m/n/12 y \OT1/pcr/m/n/12 Entrada\O
+T1/ptm/m/n/12 .
+ []
+
+LaTeX Info: Redefining \. on input line 802.
+LaTeX Info: Redefining \% on input line 802.
+[27] <img/mis_modelos.png, id=680, 1642.135pt x 1072.005pt>
+File: img/mis_modelos.png Graphic file (type png)
+
+<use img/mis_modelos.png>
+Package pdftex.def Info: img/mis_modelos.png used on input line 809.
+(pdftex.def)             Requested size: 483.69684pt x 315.74802pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 809.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 809--810
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 815.
+LaTeX Info: Redefining \. on input line 823.
+LaTeX Info: Redefining \% on input line 823.
+[28pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.823 
+       <./img/mis_modelos.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 846.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 846.
+LaTeX Info: Redefining \. on input line 850.
+LaTeX Info: Redefining \% on input line 850.
+ [29]
+<imagenes/PaginaInicio.png, id=695, 1302.8675pt x 632.3625pt>
+File: imagenes/PaginaInicio.png Graphic file (type png)
+
+<use imagenes/PaginaInicio.png>
+Package pdftex.def Info: imagenes/PaginaInicio.png used on input line 871.
+(pdftex.def)             Requested size: 483.69684pt x 234.77133pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 871--872
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 886.
+LaTeX Info: Redefining \% on input line 886.
+[30] <imagenes/RegistroAlumno.png, id=704, 1302.8675pt x 636.3775pt>
+File: imagenes/RegistroAlumno.png Graphic file (type png)
+
+<use imagenes/RegistroAlumno.png>
+Package pdftex.def Info: imagenes/RegistroAlumno.png used on input line 902.
+(pdftex.def)             Requested size: 483.69684pt x 236.26195pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 902--903
+ [][] 
+ []
+
+
+Underfull \vbox (badness 6592) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+ [31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.906 
+       <./imagenes/PaginaInicio.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 927.
+LaTeX Info: Redefining \% on input line 927.
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.927 
+       <./imagenes/RegistroAlumno.png (PNG copy)>]
+<imagenes/RegistroTutor.png, id=717, 1301.86375pt x 638.385pt>
+File: imagenes/RegistroTutor.png Graphic file (type png)
+
+<use imagenes/RegistroTutor.png>
+Package pdftex.def Info: imagenes/RegistroTutor.png used on input line 933.
+(pdftex.def)             Requested size: 483.69684pt x 237.18257pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 933--934
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2990) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 945.
+LaTeX Info: Redefining \% on input line 945.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.945 
+       <./imagenes/RegistroTutor.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 956.
+LaTeX Info: Redefining \. on input line 969.
+LaTeX Info: Redefining \% on input line 969.
+ [34]
+<imagenes/PresentacionAlumno.png, id=734, 1266.7325pt x 641.39626pt>
+File: imagenes/PresentacionAlumno.png Graphic file (type png)
+
+<use imagenes/PresentacionAlumno.png>
+Package pdftex.def Info: imagenes/PresentacionAlumno.png used on input line 973
+.
+(pdftex.def)             Requested size: 483.69684pt x 244.90753pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 973--974
+ [][] 
+ []
+
+
+Overfull \hbox (31.02327pt too wide) in paragraph at lines 983--983
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te a la p[]agi-na de ges-tio-nar di-
+se[]nos: \OT1/pcr/m/n/10 /planetablogs/alumnos/agregardisenoalumno/| 
+ []
+
+LaTeX Info: Redefining \. on input line 999.
+LaTeX Info: Redefining \% on input line 999.
+[35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.999   \item {
+               \bfseries Eliminar dise\~no}: Es una lista de todos los dise\...
+ <./imagenes/PresentacionAlumno.png (PNG copy)>]
+<imagenes/PersonalizarDiseno.png, id=744, 1256.695pt x 641.39626pt>
+File: imagenes/PersonalizarDiseno.png Graphic file (type png)
+
+<use imagenes/PersonalizarDiseno.png>
+Package pdftex.def Info: imagenes/PersonalizarDiseno.png used on input line 100
+4.
+(pdftex.def)             Requested size: 483.69684pt x 246.86491pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1004--1005
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 1016.
+LaTeX Info: Redefining \% on input line 1016.
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1016 
+        <./imagenes/PersonalizarDiseno.png (PNG copy)>]
+Overfull \hbox (7.99982pt too wide) in paragraph at lines 1025--1032
+\OT1/ptm/m/n/12 ci[]on es en-via-da me-dian-te un for-mu-la-rio (\OT1/ptm/m/it/
+12 For-mu-la-rioHi-lo\OT1/ptm/m/n/12 ) de-fi-ni-do en \OT1/pcr/m/n/12 formulari
+os.py\OT1/ptm/m/n/12 .
+ []
+
+LaTeX Info: Redefining \. on input line 1036.
+LaTeX Info: Redefining \% on input line 1036.
+[37] <imagenes/PresentacionTutor.png, id=759, 1265.72874pt x 642.4pt>
+File: imagenes/PresentacionTutor.png Graphic file (type png)
+
+<use imagenes/PresentacionTutor.png>
+Package pdftex.def Info: imagenes/PresentacionTutor.png used on input line 1040
+.
+(pdftex.def)             Requested size: 483.69684pt x 245.48685pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1040--1041
+ [][] 
+ []
+
+
+Overfull \hbox (23.81311pt too wide) in paragraph at lines 1050--1050
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te a la p[]agi-na de re-se-tear con-
+tra-se[]na: \OT1/pcr/m/n/10 /planetablogs/tutores/resetear[]password/| 
+ []
+
+LaTeX Info: Redefining \. on input line 1061.
+LaTeX Info: Redefining \% on input line 1061.
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1061 
+        <./imagenes/PresentacionTutor.png (PNG copy)>]
+<imagenes/ResetPass.png, id=769, 1304.875pt x 538.01pt>
+File: imagenes/ResetPass.png Graphic file (type png)
+
+<use imagenes/ResetPass.png>
+Package pdftex.def Info: imagenes/ResetPass.png used on input line 1064.
+(pdftex.def)             Requested size: 483.69684pt x 199.43pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1064--1065
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <8> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 1078.
+
+
+Overfull \hbox (70.95622pt too wide) in paragraph at lines 1076--1079
+\OT1/pcr/m/n/8 /planetablogs/alumnos/hilo/\OT1/pcr/m/sl/8 (\OT1/pcr/m/n/8 IdAsi
+gnatura)/[\OT1/pcr/m/sl/8 (\OT1/pcr/m/n/8 buscar),\OT1/pcr/m/sl/8 (\OT1/pcr/m/n
+/8 puntuaciones),\OT1/pcr/m/sl/8 (\OT1/pcr/m/n/8 infopuntuaciones),\OT1/pcr/m/s
+l/8 (\OT1/pcr/m/n/8 estadisticas),\OT1/pcr/m/sl/8 (\OT1/pcr/m/n/8 ayuda)]\OT1/p
+tm/m/n/12 . 
+ []
+
+LaTeX Info: Redefining \. on input line 1086.
+LaTeX Info: Redefining \% on input line 1086.
+[39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1086   \item {
+                \bfseries \textit{Puntuaciones}}: Es una lista desplegable c...
+ <./imagenes/ResetPass.png (PNG copy)>]
+<imagenes/HiloAlumno.png, id=783, 1284.8pt x 624.3325pt>
+File: imagenes/HiloAlumno.png Graphic file (type png)
+
+<use imagenes/HiloAlumno.png>
+Package pdftex.def Info: imagenes/HiloAlumno.png used on input line 1098.
+(pdftex.def)             Requested size: 199.16928pt x 96.78006pt.
+
+<imagenes/HiloTutor.png, id=784, 1290.8225pt x 641.39626pt>
+File: imagenes/HiloTutor.png Graphic file (type png)
+
+<use imagenes/HiloTutor.png>
+Package pdftex.def Info: imagenes/HiloTutor.png used on input line 1099.
+(pdftex.def)             Requested size: 199.16928pt x 98.9652pt.
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 1109.
+
+
+Overfull \hbox (45.50294pt too wide) in paragraph at lines 1109--1109
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te al hi-lo al que est[]a sus-cri-to
+ un alumno: \OT1/pcr/m/n/10 /planetablogs/alumnos/hilo/\OT1/pcr/m/sl/10 (\OT1/p
+cr/m/n/10 IdAsignatura)| 
+ []
+
+LaTeX Info: Redefining \. on input line 1115.
+LaTeX Info: Redefining \% on input line 1115.
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1115 L
+        a vista filtra por el usuario conectado y por el Id de la asignatura...
+ <./imagenes/HiloAlumno.png (PNG copy)> <./imagenes/HiloTutor.png (PNG copy)>]
+<imagenes/HiloAlumnoEntradas.png, id=797, 1266.7325pt x 626.34pt>
+File: imagenes/HiloAlumnoEntradas.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEntradas.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEntradas.png used on input line 113
+0.
+(pdftex.def)             Requested size: 483.69684pt x 239.15852pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1130.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1130--1131
+ [][] 
+ []
+
+
+Overfull \hbox (34.39296pt too wide) in paragraph at lines 1140--1140
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te al hi-lo al que est[]a sus-cri-to
+ un tu-tor: \OT1/pcr/m/n/10 /planetablogs/tutores/hilo/\OT1/pcr/m/sl/10 (\OT1/p
+cr/m/n/10 IdAsignatura)| 
+ []
+
+LaTeX Info: Redefining \. on input line 1152.
+LaTeX Info: Redefining \% on input line 1152.
+[41] <imagenes/HiloTutorEntradas.png, id=806, 1268.74pt x 643.40375pt>
+File: imagenes/HiloTutorEntradas.png Graphic file (type png)
+
+<use imagenes/HiloTutorEntradas.png>
+Package pdftex.def Info: imagenes/HiloTutorEntradas.png used on input line 1163
+.
+(pdftex.def)             Requested size: 483.69684pt x 245.29118pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1163.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1163--1164
+ [][] 
+ []
+
+
+Overfull \hbox (42.23389pt too wide) in paragraph at lines 1173--1173
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te a la p[]agi-na de b[]usque-da: \O
+T1/pcr/m/n/10 /planetablogs/alumnos/hilo/\OT1/pcr/m/sl/10 (\OT1/pcr/m/n/10 IdAs
+ignatura)/buscar/| 
+ []
+
+LaTeX Info: Redefining \. on input line 1175.
+LaTeX Info: Redefining \% on input line 1175.
+[42pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1175 
+        <./imagenes/HiloAlumnoEntradas.png (PNG copy)>]
+<imagenes/HiloAlumnoBuscar.png, id=814, 1303.87125pt x 635.37375pt>
+File: imagenes/HiloAlumnoBuscar.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoBuscar.png>
+Package pdftex.def Info: imagenes/HiloAlumnoBuscar.png used on input line 1184.
+
+(pdftex.def)             Requested size: 483.69684pt x 235.70508pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1184--1185
+ [][] 
+ []
+
+
+Overfull \hbox (71.0139pt too wide) in paragraph at lines 1194--1194
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te a la p[]agi-na de ran-king: \OT1/
+pcr/m/n/10 /planetablogs/alumnos/hilo/\OT1/pcr/m/sl/10 (\OT1/pcr/m/n/10 IdAsign
+atura)/puntuaciones/| 
+ []
+
+LaTeX Info: Redefining \. on input line 1200.
+LaTeX Info: Redefining \% on input line 1200.
+[43pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1200 L
+        a cabecera re\'une todos los \'items de la barra de navegaci\'on exp...
+ <./imagenes/HiloTutorEntradas.png (PNG copy)>]
+<imagenes/HiloAlumnoRanking.png, id=825, 1302.8675pt x 635.37375pt>
+File: imagenes/HiloAlumnoRanking.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoRanking.png>
+Package pdftex.def Info: imagenes/HiloAlumnoRanking.png used on input line 1211
+.
+(pdftex.def)             Requested size: 483.69684pt x 235.88928pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1211--1212
+ [][] 
+ []
+
+
+Overfull \hbox (71.0139pt too wide) in paragraph at lines 1221--1221
+[][][]\OT1/ptm/m/n/10 URL co-rres-pon-dien-te a la p[]agi-na de ran-king: \OT1/
+pcr/m/n/10 /planetablogs/alumnos/hilo/\OT1/pcr/m/sl/10 (\OT1/pcr/m/n/10 IdAsign
+atura)/estadisticas/| 
+ []
+
+LaTeX Info: Redefining \. on input line 1226.
+LaTeX Info: Redefining \% on input line 1226.
+[44pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1226 
+        <./imagenes/HiloAlumnoBuscar.png (PNG copy)>]
+Overfull \hbox (47.90889pt too wide) in paragraph at lines 1233--1234
+[]\OT1/ptm/m/n/12 Toda esa in-for-ma-ci[]on es en-via-da co-mo res-pues-ta a la
+ so-li-ci-tud en la plan-ti-lla \OT1/pcr/m/n/12 estadisticas.html\OT1/ptm/m/n/1
+2 . 
+ []
+
+<imagenes/HiloAlumnoEstadisticas.png, id=835, 1289.81876pt x 641.39626pt>
+File: imagenes/HiloAlumnoEstadisticas.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEstadisticas.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEstadisticas.png used on input line
+ 1245.
+(pdftex.def)             Requested size: 483.69684pt x 240.523pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1245--1246
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 1248.
+LaTeX Info: Redefining \% on input line 1248.
+ [45pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1248 \end{figure}
+                    <./imagenes/HiloAlumnoRanking.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 1267.
+LaTeX Info: Redefining \% on input line 1267.
+ [46pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1267 
+        <./imagenes/HiloAlumnoEstadisticas.png (PNG copy)>]
+<imagenes/HiloAlumnoInfoPuntuaciones.png, id=850, 1287.81125pt x 639.38875pt>
+File: imagenes/HiloAlumnoInfoPuntuaciones.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoInfoPuntuaciones.png>
+Package pdftex.def Info: imagenes/HiloAlumnoInfoPuntuaciones.png used on input 
+line 1270.
+(pdftex.def)             Requested size: 483.69684pt x 240.15068pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1270--1271
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1289.
+LaTeX Info: Redefining \% on input line 1289.
+[47pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1289 
+        <./imagenes/HiloAlumnoInfoPuntuaciones.png (PNG copy)>]
+<imagenes/Ayuda.png, id=859, 1286.8075pt x 637.38126pt>
+File: imagenes/Ayuda.png Graphic file (type png)
+
+<use imagenes/Ayuda.png>
+Package pdftex.def Info: imagenes/Ayuda.png used on input line 1292.
+(pdftex.def)             Requested size: 483.69684pt x 239.58147pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1292--1293
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1321.
+LaTeX Info: Redefining \% on input line 1321.
+[48pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1321 
+        <./imagenes/Ayuda.png (PNG copy)>]
+<imagenes/PresentacionAlumnoEliminarHilo.png, id=866, 484.81125pt x 243.91125pt
+>
+File: imagenes/PresentacionAlumnoEliminarHilo.png Graphic file (type png)
+ <use imagenes/PresentacionAlumnoEliminarHilo.png>
+Package pdftex.def Info: imagenes/PresentacionAlumnoEliminarHilo.png used on in
+put line 1324.
+(pdftex.def)             Requested size: 483.69684pt x 243.36354pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1324.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1324--1325
+ [][] 
+ []
+
+
+Overfull \hbox (22.47086pt too wide) in paragraph at lines 1329--1337
+\OT1/ptm/m/n/12 fun-ci[]on rea-li-za una pe-ti-ci[]on \OT1/ptm/m/it/12 AJAX \OT
+1/ptm/m/n/12 de ti-po \OT1/pcr/m/n/12 GET \OT1/ptm/m/n/12 a la vis-ta \OT1/pcr/
+m/n/12 agregarasignaturaprofesor\OT1/ptm/m/n/12 .
+ []
+
+LaTeX Info: Redefining \. on input line 1338.
+LaTeX Info: Redefining \% on input line 1338.
+[49pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1338   \item {
+                \bfseries \textit{Eliminar hilo en presentaci\'on de tutor}}...
+ <./imagenes/PresentacionAlumnoEliminarHilo.png (PNG copy)>]
+<imagenes/PresentacionTutorEliminarHilo.png, id=872, 963.6pt x 285.31593pt>
+File: imagenes/PresentacionTutorEliminarHilo.png Graphic file (type png)
+
+<use imagenes/PresentacionTutorEliminarHilo.png>
+Package pdftex.def Info: imagenes/PresentacionTutorEliminarHilo.png used on inp
+ut line 1352.
+(pdftex.def)             Requested size: 483.69684pt x 143.21922pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1352.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1352--1353
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1368.
+LaTeX Info: Redefining \% on input line 1368.
+[50pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+0}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1368 
+        <./imagenes/PresentacionTutorEliminarHilo.png>]
+<imagenes/HiloAlumnoEntradaComentario.png, id=879, 721.69624pt x 407.5225pt>
+File: imagenes/HiloAlumnoEntradaComentario.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEntradaComentario.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEntradaComentario.png used on input
+ line 1371.
+(pdftex.def)             Requested size: 483.69684pt x 273.13193pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1371.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1371--1372
+ [][] 
+ []
+
+
+Overfull \hbox (13.93948pt too wide) in paragraph at lines 1376--1379
+\OT1/ptm/m/n/12 dad de eli-mi-nar co-men-ta-rios so-bre esa en-tra-da al pul-sa
+r el bot[]on \OT1/pcr/m/n/12 Eliminar comentario
+ []
+
+
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 1386.
+LaTeX Info: Redefining \% on input line 1386.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1386 
+        <./imagenes/HiloAlumnoEntradaComentario.png (PNG copy)>]
+<imagenes/HiloAlumnoEntradaComentarioBorrado.png, id=886, 724.7075pt x 363.3575
+pt>
+File: imagenes/HiloAlumnoEntradaComentarioBorrado.png Graphic file (type png)
+ <use imagenes/HiloAlumnoEntradaComentarioBorrado.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEntradaComentarioBorrado.png used o
+n input line 1389.
+(pdftex.def)             Requested size: 483.69684pt x 242.52234pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1389.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1389--1390
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1401.
+LaTeX Info: Redefining \% on input line 1401.
+[52pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1401 
+        <./imagenes/HiloAlumnoEntradaComentarioBorrado.png (PNG copy)>]
+<imagenes/SinValoracion.png, id=893, 722.7pt x 303.1325pt>
+File: imagenes/SinValoracion.png Graphic file (type png)
+
+<use imagenes/SinValoracion.png>
+Package pdftex.def Info: imagenes/SinValoracion.png used on input line 1419.
+(pdftex.def)             Requested size: 199.16928pt x 83.53976pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1419.
+
+<imagenes/ConValoracion.png, id=894, 722.7pt x 303.1325pt>
+File: imagenes/ConValoracion.png Graphic file (type png)
+
+<use imagenes/ConValoracion.png>
+Package pdftex.def Info: imagenes/ConValoracion.png used on input line 1420.
+(pdftex.def)             Requested size: 199.16928pt x 83.53976pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1420.
+
+LaTeX Info: Redefining \. on input line 1430.
+LaTeX Info: Redefining \% on input line 1430.
+[53pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1430   D
+          icha funci\'on env\'ia una petici\'on \textit{AJAX} de tipo \textt...
+ <./imagenes/SinValoracion.png (PNG copy)> <./imagenes/ConValoracion.png (PNG c
+opy)>] <imagenes/LecturaEntradaLeida.png, id=902, 749.80125pt x 255.95625pt>
+File: imagenes/LecturaEntradaLeida.png Graphic file (type png)
+
+<use imagenes/LecturaEntradaLeida.png>
+Package pdftex.def Info: imagenes/LecturaEntradaLeida.png used on input line 14
+46.
+(pdftex.def)             Requested size: 199.16928pt x 67.9882pt.
+
+<imagenes/LecturaEntradaNoLeida.png, id=903, 737.75626pt x 247.92625pt>
+File: imagenes/LecturaEntradaNoLeida.png Graphic file (type png)
+
+<use imagenes/LecturaEntradaNoLeida.png>
+Package pdftex.def Info: imagenes/LecturaEntradaNoLeida.png used on input line 
+1447.
+(pdftex.def)             Requested size: 199.16928pt x 66.92963pt.
+LaTeX Info: Redefining \. on input line 1461.
+LaTeX Info: Redefining \% on input line 1461.
+ [54pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1461 
+        <./imagenes/LecturaEntradaLeida.png (PNG copy)> <./imagenes/LecturaEntr
+adaNoLeida.png (PNG copy)>]
+<imagenes/VisitantesLleno.png, id=911, 972.63374pt x 239.89626pt>
+File: imagenes/VisitantesLleno.png Graphic file (type png)
+
+<use imagenes/VisitantesLleno.png>
+Package pdftex.def Info: imagenes/VisitantesLleno.png used on input line 1466.
+(pdftex.def)             Requested size: 199.16928pt x 49.12413pt.
+
+<imagenes/VisitantesVacio.png, id=912, 1011.78pt x 239.89626pt>
+File: imagenes/VisitantesVacio.png Graphic file (type png)
+
+<use imagenes/VisitantesVacio.png>
+Package pdftex.def Info: imagenes/VisitantesVacio.png used on input line 1467.
+(pdftex.def)             Requested size: 199.16928pt x 47.22067pt.
+
+<imagenes/EntradaTutorConValoracion.png, id=916, 717.68124pt x 265.99374pt>
+File: imagenes/EntradaTutorConValoracion.png Graphic file (type png)
+
+<use imagenes/EntradaTutorConValoracion.png>
+Package pdftex.def Info: imagenes/EntradaTutorConValoracion.png used on input l
+ine 1488.
+(pdftex.def)             Requested size: 284.52756pt x 105.45398pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1488.
+
+<imagenes/EntradaTutorSinValoracion.png, id=917, 722.7pt x 276.03125pt>
+File: imagenes/EntradaTutorSinValoracion.png Graphic file (type png)
+
+<use imagenes/EntradaTutorSinValoracion.png>
+Package pdftex.def Info: imagenes/EntradaTutorSinValoracion.png used on input l
+ine 1489.
+(pdftex.def)             Requested size: 284.52756pt x 108.67523pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1489.
+
+<imagenes/HiloTutorEliminarEntrada.png, id=918, 1195.46625pt x 355.3275pt>
+File: imagenes/HiloTutorEliminarEntrada.png Graphic file (type png)
+
+<use imagenes/HiloTutorEliminarEntrada.png>
+Package pdftex.def Info: imagenes/HiloTutorEliminarEntrada.png used on input li
+ne 1490.
+(pdftex.def)             Requested size: 284.52756pt x 84.57007pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1490.
+
+
+Overfull \hbox (6.51257pt too wide) in paragraph at lines 1496--1500
+\OT1/ptm/m/n/12 lla-ma a la fun-ci[]on \OT1/ptm/m/it/12 Ja-vaS-cript \OT1/pcr/m
+/n/12 EliminarAlumnoPopUp \OT1/ptm/m/n/12 del fi-che-ro \OT1/pcr/m/n/12 index[]
+tutor.js\OT1/ptm/m/n/12 .
+ []
+
+LaTeX Info: Redefining \. on input line 1500.
+LaTeX Info: Redefining \% on input line 1500.
+[55pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1500 
+        <./imagenes/VisitantesLleno.png (PNG copy)> <./imagenes/VisitantesVacio
+.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 1500.
+LaTeX Info: Redefining \% on input line 1500.
+ [56pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+26}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1500 
+        <./imagenes/EntradaTutorConValoracion.png (PNG copy)> <./imagenes/Entra
+daTutorSinValoracion.png (PNG copy)> <./imagenes/HiloTutorEliminarEntrada.png (
+PNG copy)>] <imagenes/HiloTutorAlumnos.png, id=934, 400.49625pt x 213.79875pt>
+File: imagenes/HiloTutorAlumnos.png Graphic file (type png)
+
+<use imagenes/HiloTutorAlumnos.png>
+Package pdftex.def Info: imagenes/HiloTutorAlumnos.png used on input line 1511.
+
+(pdftex.def)             Requested size: 227.62204pt x 121.51422pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1511.
+
+<imagenes/HiloTutorEliminarAlumno.png, id=935, 1197.47375pt x 371.3875pt>
+File: imagenes/HiloTutorEliminarAlumno.png Graphic file (type png)
+
+<use imagenes/HiloTutorEliminarAlumno.png>
+Package pdftex.def Info: imagenes/HiloTutorEliminarAlumno.png used on input lin
+e 1512.
+(pdftex.def)             Requested size: 227.62204pt x 70.59268pt.
+LaTeX Info: Redefining \. on input line 1526.
+LaTeX Info: Redefining \% on input line 1526.
+ [57pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+27}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1526 
+        <./imagenes/HiloTutorAlumnos.png (PNG copy)> <./imagenes/HiloTutorElimi
+narAlumno.png (PNG copy)>]
+<imagenes/EliminarDiseno.png, id=944, 1158.3275pt x 246.9225pt>
+File: imagenes/EliminarDiseno.png Graphic file (type png)
+
+<use imagenes/EliminarDiseno.png>
+Package pdftex.def Info: imagenes/EliminarDiseno.png used on input line 1531.
+(pdftex.def)             Requested size: 483.69684pt x 103.11142pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1531.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 1531--1532
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 1554.
+LaTeX Info: Redefining \% on input line 1554.
+[58pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1554 
+        <./imagenes/EliminarDiseno.png (PNG copy)>]
+<imagenes/HiloAlumnoBuscarPorNick.png, id=951, 1205.50375pt x 510.90875pt>
+File: imagenes/HiloAlumnoBuscarPorNick.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoBuscarPorNick.png>
+Package pdftex.def Info: imagenes/HiloAlumnoBuscarPorNick.png used on input lin
+e 1560.
+(pdftex.def)             Requested size: 284.52756pt x 120.58589pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1560.
+
+<imagenes/HiloAlumnoBuscarPorId.png, id=952, 1205.50375pt x 516.93124pt>
+File: imagenes/HiloAlumnoBuscarPorId.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoBuscarPorId.png>
+Package pdftex.def Info: imagenes/HiloAlumnoBuscarPorId.png used on input line 
+1561.
+(pdftex.def)             Requested size: 284.52756pt x 122.00732pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 1561.
+
+LaTeX Info: Redefining \. on input line 1574.
+LaTeX Info: Redefining \% on input line 1574.
+[59pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1574 
+        <./imagenes/HiloAlumnoBuscarPorNick.png (PNG copy)> <./imagenes/HiloAlu
+mnoBuscarPorId.png (PNG copy)>]
+<imagenes/CierreSesion.png, id=960, 358.33875pt x 35.13126pt>
+File: imagenes/CierreSesion.png Graphic file (type png)
+
+<use imagenes/CierreSesion.png>
+Package pdftex.def Info: imagenes/CierreSesion.png used on input line 1579.
+(pdftex.def)             Requested size: 284.52756pt x 27.8965pt.
+LaTeX Info: Redefining \. on input line 1590.
+LaTeX Info: Redefining \% on input line 1590.
+ [60pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+30}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1590 \cleardoublepage
+                        <./imagenes/CierreSesion.png (PNG copy)>]
+Cap\'{\i }tulo 5.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1609.
+[61
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1651--1663
+
+ []
+
+LaTeX Info: Redefining \. on input line 1663.
+LaTeX Info: Redefining \% on input line 1663.
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 1685--1687
+
+ []
+
+LaTeX Info: Redefining \. on input line 1690.
+LaTeX Info: Redefining \% on input line 1690.
+[63] <ImagenesPrueba/Hilo.png, id=990, 944.52875pt x 149.55875pt>
+File: ImagenesPrueba/Hilo.png Graphic file (type png)
+
+<use ImagenesPrueba/Hilo.png>
+Package pdftex.def Info: ImagenesPrueba/Hilo.png used on input line 1712.
+(pdftex.def)             Requested size: 483.69684pt x 76.59116pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 1712--1713
+ [][] 
+ []
+
+<ImagenesPrueba/Suscriptores.png, id=992, 370.38374pt x 562.1pt>
+File: ImagenesPrueba/Suscriptores.png Graphic file (type png)
+
+<use ImagenesPrueba/Suscriptores.png>
+Package pdftex.def Info: ImagenesPrueba/Suscriptores.png used on input line 172
+1.
+(pdftex.def)             Requested size: 227.62204pt x 345.445pt.
+LaTeX Info: Redefining \. on input line 1731.
+LaTeX Info: Redefining \% on input line 1731.
+ [64]
+LaTeX Info: Redefining \. on input line 1731.
+LaTeX Info: Redefining \% on input line 1731.
+ [65pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1731 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.5.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1731 
+        <./ImagenesPrueba/Hilo.png (PNG copy)> <./ImagenesPrueba/Suscriptores.p
+ng (PNG copy)>]
+Overfull \hbox (22.26486pt too wide) in paragraph at lines 1738--1740
+[]\OT1/ptm/m/n/12 La sa-li-da por de-fec-to que saldr[]^^Pa en el ter-mi-nal, s
+er[]a pro-ce-sa-da a un fi-che-ro lla-ma-do \OT1/pcr/m/n/12 nohup.out
+ []
+
+LaTeX Info: Redefining \. on input line 1763.
+LaTeX Info: Redefining \% on input line 1763.
+[66]
+LaTeX Info: Redefining \. on input line 1790.
+LaTeX Info: Redefining \% on input line 1790.
+ [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1804--1808
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1804--1808
+
+ []
+
+LaTeX Info: Redefining \. on input line 1812.
+LaTeX Info: Redefining \% on input line 1812.
+[68] <ImagenesPrueba/EstadGener.png, id=1028, 719.68875pt x 437.635pt>
+File: ImagenesPrueba/EstadGener.png Graphic file (type png)
+
+<use ImagenesPrueba/EstadGener.png>
+Package pdftex.def Info: ImagenesPrueba/EstadGener.png used on input line 1816.
+
+(pdftex.def)             Requested size: 227.62204pt x 138.41669pt.
+
+<ImagenesPrueba/EstadIndiv.png, id=1030, 687.56876pt x 596.2275pt>
+File: ImagenesPrueba/EstadIndiv.png Graphic file (type png)
+
+<use ImagenesPrueba/EstadIndiv.png>
+Package pdftex.def Info: ImagenesPrueba/EstadIndiv.png used on input line 1824.
+
+(pdftex.def)             Requested size: 227.62204pt x 197.38342pt.
+LaTeX Info: Redefining \. on input line 1844.
+LaTeX Info: Redefining \% on input line 1844.
+ [69pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1844 \cleardoublepage
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{figure.5.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1844 \cleardoublepage
+                        <./ImagenesPrueba/EstadGener.png (PNG copy)> <./Imagene
+sPrueba/EstadIndiv.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 1844.
+LaTeX Info: Redefining \% on input line 1844.
+ [70
+
+]
+Cap\'{\i }tulo 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1860--1869
+
+ []
+
+[71
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 1889.
+LaTeX Info: Redefining \% on input line 1889.
+ [72]
+Underfull \hbox (badness 10000) in paragraph at lines 1893--1900
+
+ []
+
+LaTeX Info: Redefining \. on input line 1918.
+LaTeX Info: Redefining \% on input line 1918.
+[73]
+LaTeX Info: Redefining \. on input line 1943.
+LaTeX Info: Redefining \% on input line 1943.
+ [74]
+Ap\'endice A.
+[75
+
+
+]
+Overfull \hbox (42.13058pt too wide) in paragraph at lines 1988--1988
+ []    \OT1/pcr/m/n/10 */1 * * * * cd /home/nombreMaquina/directorioGitProyecto
+/PlanetaBlogs/TFG;[] 
+ []
+
+LaTeX Info: Redefining \. on input line 2002.
+LaTeX Info: Redefining \% on input line 2002.
+[76]
+LaTeX Info: Redefining \. on input line 2016.
+LaTeX Info: Redefining \% on input line 2016.
+ [77]
+LaTeX Info: Redefining \. on input line 2016.
+LaTeX Info: Redefining \% on input line 2016.
+ [78
+
+]
+Ap\'endice B.
+File: imagenes/PaginaInicio.png Graphic file (type png)
+<use imagenes/PaginaInicio.png>
+Package pdftex.def Info: imagenes/PaginaInicio.png used on input line 2026.
+(pdftex.def)             Requested size: 483.69684pt x 234.77133pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2026--2027
+ [][] 
+ []
+
+[79pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2034   \item {
+                \bfseries Reg\'istrate}: Antes de iniciar sesi\'on como usua...
+] <imagenes/InicioComoAlumno.png, id=1107, 471.7625pt x 462.72874pt>
+File: imagenes/InicioComoAlumno.png Graphic file (type png)
+
+<use imagenes/InicioComoAlumno.png>
+Package pdftex.def Info: imagenes/InicioComoAlumno.png used on input line 2040.
+
+(pdftex.def)             Requested size: 199.16928pt x 195.35442pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2040.
+
+<imagenes/InicioError.png, id=1108, 478.78876pt x 466.74374pt>
+File: imagenes/InicioError.png Graphic file (type png)
+
+<use imagenes/InicioError.png>
+Package pdftex.def Info: imagenes/InicioError.png used on input line 2041.
+(pdftex.def)             Requested size: 199.16928pt x 194.15796pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2041.
+
+File: imagenes/RegistroAlumno.png Graphic file (type png)
+<use imagenes/RegistroAlumno.png>
+Package pdftex.def Info: imagenes/RegistroAlumno.png used on input line 2054.
+(pdftex.def)             Requested size: 341.43306pt x 166.76514pt.
+File: imagenes/RegistroTutor.png Graphic file (type png)
+ <use imagenes/RegistroTutor.png>
+Package pdftex.def Info: imagenes/RegistroTutor.png used on input line 2055.
+(pdftex.def)             Requested size: 341.43306pt x 167.42758pt.
+
+<imagenes/NickCorrectoOcupado.png, id=1112, 390.70969pt x 118.19156pt>
+File: imagenes/NickCorrectoOcupado.png Graphic file (type png)
+
+<use imagenes/NickCorrectoOcupado.png>
+Package pdftex.def Info: imagenes/NickCorrectoOcupado.png used on input line 20
+64.
+(pdftex.def)             Requested size: 483.69684pt x 146.32697pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2064.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2064--2065
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2060--2068
+
+ []
+
+<imagenes/RegistroAlumnoError.png, id=1114, 640.3925pt x 164.615pt>
+File: imagenes/RegistroAlumnoError.png Graphic file (type png)
+
+<use imagenes/RegistroAlumnoError.png>
+Package pdftex.def Info: imagenes/RegistroAlumnoError.png used on input line 20
+75.
+(pdftex.def)             Requested size: 483.69684pt x 124.33755pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2075.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2075--2076
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2079.
+LaTeX Info: Redefining \% on input line 2079.
+[80pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2079 
+        <./imagenes/InicioComoAlumno.png (PNG copy)> <./imagenes/InicioError.pn
+g (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2079.
+LaTeX Info: Redefining \% on input line 2079.
+ [81pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2079 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2079 
+        <./imagenes/NickCorrectoOcupado.png>]
+<imagenes/RegistroAlumnoInfo.png, id=1129, 476.53032pt x 190.46156pt>
+File: imagenes/RegistroAlumnoInfo.png Graphic file (type png)
+
+<use imagenes/RegistroAlumnoInfo.png>
+Package pdftex.def Info: imagenes/RegistroAlumnoInfo.png used on input line 208
+5.
+(pdftex.def)             Requested size: 483.69684pt x 193.33531pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2085.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2085--2086
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2102.
+LaTeX Info: Redefining \% on input line 2102.
+[82pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2102 
+        <./imagenes/RegistroAlumnoError.png (PNG copy)>]
+File: imagenes/PresentacionTutor.png Graphic file (type png)
+
+<use imagenes/PresentacionTutor.png>
+Package pdftex.def Info: imagenes/PresentacionTutor.png used on input line 2105
+.
+(pdftex.def)             Requested size: 483.69684pt x 245.48685pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2105--2106
+ [][] 
+ []
+
+<imagenes/PresentacionTutorCrearHilo.png, id=1136, 633.86812pt x 239.39438pt>
+File: imagenes/PresentacionTutorCrearHilo.png Graphic file (type png)
+
+<use imagenes/PresentacionTutorCrearHilo.png>
+Package pdftex.def Info: imagenes/PresentacionTutorCrearHilo.png used on input 
+line 2118.
+(pdftex.def)             Requested size: 483.69684pt x 182.68314pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2118.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2118--2119
+ [][] 
+ []
+
+
+<imagenes/PresentacionTutorHilosDisponibles.png, id=1138, 703.62875pt x 269.005
+pt>
+File: imagenes/PresentacionTutorHilosDisponibles.png Graphic file (type png)
+ <use imagenes/PresentacionTutorHilosDisponibles.png>
+Package pdftex.def Info: imagenes/PresentacionTutorHilosDisponibles.png used on
+ input line 2128.
+(pdftex.def)             Requested size: 483.69684pt x 184.91995pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2128.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2128--2129
+ [][] 
+ []
+
+<imagenes/PresentacionTutorMisHilos.png, id=1140, 728.7225pt x 182.93344pt>
+File: imagenes/PresentacionTutorMisHilos.png Graphic file (type png)
+
+<use imagenes/PresentacionTutorMisHilos.png>
+Package pdftex.def Info: imagenes/PresentacionTutorMisHilos.png used on input l
+ine 2139.
+(pdftex.def)             Requested size: 483.69684pt x 121.4231pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2139.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2139--2140
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2152.
+LaTeX Info: Redefining \% on input line 2152.
+[83pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2152 
+        <./imagenes/RegistroAlumnoInfo.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2152.
+LaTeX Info: Redefining \% on input line 2152.
+ [84pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2152 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2152 
+        <./imagenes/PresentacionTutorCrearHilo.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2152.
+LaTeX Info: Redefining \% on input line 2152.
+ [85pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2152 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2152 
+        <./imagenes/PresentacionTutorHilosDisponibles.png (PNG copy)> <./imagen
+es/PresentacionTutorMisHilos.png (PNG copy)>]
+<imagenes/ListaPersonalizarDiseno.png, id=1155, 1037.8775pt x 153.57375pt>
+File: imagenes/ListaPersonalizarDiseno.png Graphic file (type png)
+
+<use imagenes/ListaPersonalizarDiseno.png>
+Package pdftex.def Info: imagenes/ListaPersonalizarDiseno.png used on input lin
+e 2159.
+(pdftex.def)             Requested size: 483.69684pt x 71.57274pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2159--2160
+ [][] 
+ []
+
+File: imagenes/PresentacionAlumno.png Graphic file (type png)
+<use imagenes/PresentacionAlumno.png>
+Package pdftex.def Info: imagenes/PresentacionAlumno.png used on input line 216
+8.
+(pdftex.def)             Requested size: 199.16928pt x 100.84427pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2168.
+
+<imagenes/PresentacionAlumnoConDiseno.png, id=1156, 1262.7175pt x 644.4075pt>
+File: imagenes/PresentacionAlumnoConDiseno.png Graphic file (type png)
+
+<use imagenes/PresentacionAlumnoConDiseno.png>
+Package pdftex.def Info: imagenes/PresentacionAlumnoConDiseno.png used on input
+ line 2169.
+(pdftex.def)             Requested size: 199.16928pt x 101.64221pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2169.
+
+
+<imagenes/PresentacionAlumnoHilosDisponibles.png, id=1158, 506.6428pt x 352.316
+25pt>
+File: imagenes/PresentacionAlumnoHilosDisponibles.png Graphic file (type png)
+ <use imagenes/PresentacionAlumnoHilosDisponibles.png>
+Package pdftex.def Info: imagenes/PresentacionAlumnoHilosDisponibles.png used o
+n input line 2184.
+(pdftex.def)             Requested size: 483.69684pt x 336.37044pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2184.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2184--2185
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2188.
+LaTeX Info: Redefining \% on input line 2188.
+[86pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2188 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2188 
+        <./imagenes/ListaPersonalizarDiseno.png (PNG copy)> <./imagenes/Present
+acionAlumnoConDiseno.png (PNG copy)>]
+<imagenes/HiloAlumnoErrorRss.png, id=1166, 684.5575pt x 275.0275pt>
+File: imagenes/HiloAlumnoErrorRss.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoErrorRss.png>
+Package pdftex.def Info: imagenes/HiloAlumnoErrorRss.png used on input line 219
+3.
+(pdftex.def)             Requested size: 483.69684pt x 194.33505pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2193.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2193--2194
+ [][] 
+ []
+
+File: imagenes/PresentacionAlumnoEliminarHilo.png Graphic file (type png)
+<use imagenes/PresentacionAlumnoEliminarHilo.png>
+Package pdftex.def Info: imagenes/PresentacionAlumnoEliminarHilo.png used on in
+put line 2205.
+(pdftex.def)             Requested size: 483.69684pt x 243.36354pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2205.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2205--2206
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2209.
+LaTeX Info: Redefining \% on input line 2209.
+[87pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2209 \end{itemize}
+                     <./imagenes/PresentacionAlumnoHilosDisponibles.png>]
+File: imagenes/PersonalizarDiseno.png Graphic file (type png)
+
+<use imagenes/PersonalizarDiseno.png>
+Package pdftex.def Info: imagenes/PersonalizarDiseno.png used on input line 222
+1.
+(pdftex.def)             Requested size: 199.16928pt x 101.6468pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2221.
+
+File: imagenes/EliminarDiseno.png Graphic file (type png)
+<use imagenes/EliminarDiseno.png>
+Package pdftex.def Info: imagenes/EliminarDiseno.png used on input line 2222.
+(pdftex.def)             Requested size: 199.16928pt x 42.45476pt.
+File: imagenes/HiloAlumno.png Graphic file (type png)
+ <use imagenes/HiloAlumno.png>
+Package pdftex.def Info: imagenes/HiloAlumno.png used on input line 2233.
+(pdftex.def)             Requested size: 483.69684pt x 235.04819pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2233--2234
+ [][] 
+ []
+
+<imagenes/HiloAlumnoLleno.png, id=1178, 1263.72125pt x 630.355pt>
+File: imagenes/HiloAlumnoLleno.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoLleno.png>
+Package pdftex.def Info: imagenes/HiloAlumnoLleno.png used on input line 2244.
+(pdftex.def)             Requested size: 483.69684pt x 241.2687pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2244--2245
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2248.
+LaTeX Info: Redefining \% on input line 2248.
+[88pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2248 
+        <./imagenes/HiloAlumnoErrorRss.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2248.
+LaTeX Info: Redefining \% on input line 2248.
+ [89pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2248 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2248 
+       ]
+<imagenes/LecturaEntradaLeidayNoLeida.png, id=1191, 730.73pt x 524.96124pt>
+File: imagenes/LecturaEntradaLeidayNoLeida.png Graphic file (type png)
+
+<use imagenes/LecturaEntradaLeidayNoLeida.png>
+Package pdftex.def Info: imagenes/LecturaEntradaLeidayNoLeida.png used on input
+ line 2260.
+(pdftex.def)             Requested size: 483.69684pt x 347.4928pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2260.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2260--2261
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2264.
+LaTeX Info: Redefining \% on input line 2264.
+[90pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2264   \item {
+                \bfseries Valoraci\'on cuantitativa}: Los botones verde y ro...
+] <imagenes/HiloAlumnoInfoComentario.png, id=1197, 830.10126pt x 411.5375pt>
+File: imagenes/HiloAlumnoInfoComentario.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoInfoComentario.png>
+Package pdftex.def Info: imagenes/HiloAlumnoInfoComentario.png used on input li
+ne 2276.
+(pdftex.def)             Requested size: 483.69684pt x 239.79712pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2276.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2276--2277
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2280.
+LaTeX Info: Redefining \% on input line 2280.
+[91pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2280 
+        <./imagenes/HiloAlumnoLleno.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2280.
+LaTeX Info: Redefining \% on input line 2280.
+ [92pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2280 
+        <./imagenes/LecturaEntradaLeidayNoLeida.png (PNG copy)>]
+<imagenes/ValoracionTutorCalificada.png, id=1208, 721.69624pt x 234.8775pt>
+File: imagenes/ValoracionTutorCalificada.png Graphic file (type png)
+
+<use imagenes/ValoracionTutorCalificada.png>
+Package pdftex.def Info: imagenes/ValoracionTutorCalificada.png used on input l
+ine 2288.
+(pdftex.def)             Requested size: 312.9803pt x 101.85909pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2288.
+
+<imagenes/ValoracionTutorNoCalificada.png, id=1209, 726.715pt x 235.88126pt>
+File: imagenes/ValoracionTutorNoCalificada.png Graphic file (type png)
+
+<use imagenes/ValoracionTutorNoCalificada.png>
+Package pdftex.def Info: imagenes/ValoracionTutorNoCalificada.png used on input
+ line 2289.
+(pdftex.def)             Requested size: 312.9803pt x 101.58893pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2289.
+
+<imagenes/HiloAlumnoInfoAlumno.png, id=1211, 771.88374pt x 366.36874pt>
+File: imagenes/HiloAlumnoInfoAlumno.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoInfoAlumno.png>
+Package pdftex.def Info: imagenes/HiloAlumnoInfoAlumno.png used on input line 2
+303.
+(pdftex.def)             Requested size: 483.69684pt x 229.58365pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2303.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2303--2304
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2310.
+LaTeX Info: Redefining \% on input line 2310.
+[93pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2310 \end{itemize}
+                     <./imagenes/HiloAlumnoInfoComentario.png (PNG copy)>]
+LaTeX Info: Redefining \. on input line 2310.
+LaTeX Info: Redefining \% on input line 2310.
+
+[94pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2310 \end{itemize}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.Alph2.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2310 \end{itemize}
+                     <./imagenes/ValoracionTutorCalificada.png (PNG copy)> <./i
+magenes/ValoracionTutorNoCalificada.png (PNG copy)> <./imagenes/HiloAlumnoInfoA
+lumno.png (PNG copy)>]
+<imagenes/LogoNombreFrase.png, id=1225, 424.58624pt x 313.17pt>
+File: imagenes/LogoNombreFrase.png Graphic file (type png)
+
+<use imagenes/LogoNombreFrase.png>
+Package pdftex.def Info: imagenes/LogoNombreFrase.png used on input line 2318.
+(pdftex.def)             Requested size: 483.69684pt x 356.78812pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2318.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2318--2319
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2327.
+LaTeX Info: Redefining \% on input line 2327.
+[95pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2327 
+        <./imagenes/LogoNombreFrase.png (PNG copy)>]
+<imagenes/HiloAlumnoEntradasValoradas.png, id=1231, 659.46375pt x 235.88126pt>
+File: imagenes/HiloAlumnoEntradasValoradas.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEntradasValoradas.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEntradasValoradas.png used on input
+ line 2334.
+(pdftex.def)             Requested size: 483.69684pt x 173.01611pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2334.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2334--2335
+ [][] 
+ []
+
+
+<imagenes/HiloAlumnoUsuariosSuscritos.png, id=1233, 386.44376pt x 189.70876pt>
+File: imagenes/HiloAlumnoUsuariosSuscritos.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoUsuariosSuscritos.png>
+Package pdftex.def Info: imagenes/HiloAlumnoUsuariosSuscritos.png used on input
+ line 2345.
+(pdftex.def)             Requested size: 483.69684pt x 237.45377pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2345.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2345--2346
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2355.
+LaTeX Info: Redefining \% on input line 2355.
+[96pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2355 
+        <./imagenes/HiloAlumnoEntradasValoradas.png (PNG copy)>]
+<imagenes/HiloAlumnoPaginatorYFlecha.png, id=1239, 1263.72125pt x 283.0575pt>
+File: imagenes/HiloAlumnoPaginatorYFlecha.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoPaginatorYFlecha.png>
+Package pdftex.def Info: imagenes/HiloAlumnoPaginatorYFlecha.png used on input 
+line 2360.
+(pdftex.def)             Requested size: 483.69684pt x 108.3404pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2360.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2360--2361
+ [][] 
+ []
+
+File: imagenes/HiloTutorEntradas.png Graphic file (type png)
+<use imagenes/HiloTutorEntradas.png>
+Package pdftex.def Info: imagenes/HiloTutorEntradas.png used on input line 2371
+.
+(pdftex.def)             Requested size: 483.69684pt x 245.29118pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2371.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2371--2372
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3919) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 2378.
+LaTeX Info: Redefining \% on input line 2378.
+ [97pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.25}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2378 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.26}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2378 
+        <./imagenes/HiloAlumnoUsuariosSuscritos.png (PNG copy)> <./imagenes/Hil
+oAlumnoPaginatorYFlecha.png (PNG copy)>]
+File: imagenes/HiloTutorEliminarEntrada.png Graphic file (type png)
+
+<use imagenes/HiloTutorEliminarEntrada.png>
+Package pdftex.def Info: imagenes/HiloTutorEliminarEntrada.png used on input li
+ne 2383.
+(pdftex.def)             Requested size: 312.9803pt x 93.02817pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2383.
+
+File: imagenes/HiloTutorEliminarAlumno.png Graphic file (type png)
+<use imagenes/HiloTutorEliminarAlumno.png>
+Package pdftex.def Info: imagenes/HiloTutorEliminarAlumno.png used on input lin
+e 2384.
+(pdftex.def)             Requested size: 312.9803pt x 97.06848pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2384.
+
+<imagenes/HiloTutorValoracionEntradas.png, id=1249, 727.71875pt x 118.4425pt>
+File: imagenes/HiloTutorValoracionEntradas.png Graphic file (type png)
+
+<use imagenes/HiloTutorValoracionEntradas.png>
+Package pdftex.def Info: imagenes/HiloTutorValoracionEntradas.png used on input
+ line 2394.
+(pdftex.def)             Requested size: 483.69684pt x 78.72893pt.
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2394--2395
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2403.
+LaTeX Info: Redefining \% on input line 2403.
+[98pdfTeX warning (ext4): destination with the same identifier (name{figure.Alp
+h2.27}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2403 
+       ]
+LaTeX Info: Redefining \. on input line 2403.
+LaTeX Info: Redefining \% on input line 2403.
+ [99pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.28}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2403 
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.Alph2.29}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2403 
+        <./imagenes/HiloTutorValoracionEntradas.png>]
+LaTeX Info: Redefining \. on input line 2427.
+LaTeX Info: Redefining \% on input line 2427.
+ [100]
+<imagenes/HiloAlumnoRankingColor.png, id=1273, 467.7475pt x 160.6pt>
+File: imagenes/HiloAlumnoRankingColor.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoRankingColor.png>
+Package pdftex.def Info: imagenes/HiloAlumnoRankingColor.png used on input line
+ 2432.
+(pdftex.def)             Requested size: 312.9803pt x 107.46664pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2432.
+
+<imagenes/HiloAlumnoRankingFoto.png, id=1274, 475.7775pt x 263.98625pt>
+File: imagenes/HiloAlumnoRankingFoto.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoRankingFoto.png>
+Package pdftex.def Info: imagenes/HiloAlumnoRankingFoto.png used on input line 
+2433.
+(pdftex.def)             Requested size: 312.9803pt x 173.66348pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2433.
+
+<imagenes/HiloAlumnoEstadisticasRB.png, id=1278, 1171.37625pt x 239.89626pt>
+File: imagenes/HiloAlumnoEstadisticasRB.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEstadisticasRB.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEstadisticasRB.png used on input li
+ne 2442.
+(pdftex.def)             Requested size: 483.69684pt x 99.06091pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2442.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2442--2443
+ [][] 
+ []
+
+
+<imagenes/HiloAlumnoEstadisticasGenerales.png, id=1280, 1161.33875pt x 275.0275
+pt>
+File: imagenes/HiloAlumnoEstadisticasGenerales.png Graphic file (type png)
+ <use imagenes/HiloAlumnoEstadisticasGenerales.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEstadisticasGenerales.png used on i
+nput line 2451.
+(pdftex.def)             Requested size: 312.9803pt x 74.11992pt.
+
+<imagenes/HiloAlumnoEstadisticasEntradas.png, id=1281, 1162.3425pt x 292.09125p
+t>
+File: imagenes/HiloAlumnoEstadisticasEntradas.png Graphic file (type png)
+ <use imagenes/HiloAlumnoEstadisticasEntradas.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEstadisticasEntradas.png used on in
+put line 2452.
+(pdftex.def)             Requested size: 312.9803pt x 78.65175pt.
+
+<imagenes/HiloAlumnoEstadisticasAmbas.png, id=1282, 1160.335pt x 437.635pt>
+File: imagenes/HiloAlumnoEstadisticasAmbas.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoEstadisticasAmbas.png>
+Package pdftex.def Info: imagenes/HiloAlumnoEstadisticasAmbas.png used on input
+ line 2453.
+(pdftex.def)             Requested size: 312.9803pt x 118.04282pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2453.
+
+LaTeX Info: Redefining \. on input line 2457.
+LaTeX Info: Redefining \% on input line 2457.
+[101pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.30}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2457 
+        <./imagenes/HiloAlumnoRankingColor.png (PNG copy)> <./imagenes/HiloAlum
+noRankingFoto.png (PNG copy)>]
+File: imagenes/Ayuda.png Graphic file (type png)
+ <use imagenes/Ayuda.png>
+Package pdftex.def Info: imagenes/Ayuda.png used on input line 2471.
+(pdftex.def)             Requested size: 483.69684pt x 239.58147pt.
+
+Overfull \hbox (38.4526pt too wide) in paragraph at lines 2471--2472
+ [][] 
+ []
+
+<imagenes/HiloAlumnoInfoCreador.png, id=1293, 354.32375pt x 166.6225pt>
+File: imagenes/HiloAlumnoInfoCreador.png Graphic file (type png)
+
+<use imagenes/HiloAlumnoInfoCreador.png>
+Package pdftex.def Info: imagenes/HiloAlumnoInfoCreador.png used on input line 
+2484.
+(pdftex.def)             Requested size: 483.69684pt x 227.46548pt.
+
+
+LaTeX Warning: \oval, \circle, or \line size unavailable on input line 2484.
+
+
+Overfull \hbox (36.0527pt too wide) in paragraph at lines 2484--2485
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 2491.
+LaTeX Info: Redefining \% on input line 2491.
+[102pdfTeX warning (ext4): destination with the same identifier (name{figure.Al
+ph2.31}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2491 \chapter
+               {Descarga de la aplicaci\'on} <./imagenes/HiloAlumnoEstadisticas
+RB.png>]
+LaTeX Info: Redefining \. on input line 2491.
+LaTeX Info: Redefining \% on input line 2491.
+ [103pdfTeX warning (ext4): destination with the same identifier (name{figure.A
+lph2.32}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2491 \chapter
+               {Descarga de la aplicaci\'on} <./imagenes/HiloAlumnoEstadisticas
+Generales.png> <./imagenes/HiloAlumnoEstadisticasEntradas.png> <./imagenes/Hilo
+AlumnoEstadisticasAmbas.png>]
+LaTeX Info: Redefining \. on input line 2491.
+LaTeX Info: Redefining \% on input line 2491.
+ [104pdfTeX warning (ext4): destination with the same identifier (name{figure.A
+lph2.33}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2491 \chapter
+               {Descarga de la aplicaci\'on}pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.Alph2.34}) has been already used, duplica
+te ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2491 \chapter
+               {Descarga de la aplicaci\'on} <./imagenes/HiloAlumnoInfoCreador.
+png (PNG copy)>]
+Ap\'endice C.
+[105
+
+]
+LaTeX Info: Redefining \. on input line 2500.
+LaTeX Info: Redefining \% on input line 2500.
+ [106
+
+] (./memoria.bbl
+! Undefined control sequence.
+<argument> \Â
+             ¿C\'omo usar cron?
+l.31 ...cont=info_admon_006}{\Â¿C\'omo usar cron?}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[107
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2513.
+LaTeX Info: Redefining \. on input line 2513.
+LaTeX Info: Redefining \% on input line 2513.
+ [108]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2513.
+ (./memoria.aux
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2513.
+
+Package rerunfilecheck Info: File `memoria.out' has not changed.
+(rerunfilecheck)             Checksum: F07928D9230FCD8D20BDBE7DE722D6D4;4585.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2513.
+ ) 
+Here is how much of TeX's memory you used:
+ 8043 strings out of 494925
+ 122745 string characters out of 6178545
+ 205675 words of memory out of 5000000
+ 10696 multiletter control sequences out of 15000+600000
+ 40690 words of font info for 80 fonts, out of 8000000 for 9000
+ 62 hyphenation exceptions out of 8191
+ 29i,13n,30p,271b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/latxfont/lcirclew.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/co
+urier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on memoria.pdf (124 pages, 2973004 bytes).
+PDF statistics:
+ 1482 PDF objects out of 1728 (max. 8388607)
+ 1251 compressed objects within 13 object streams
+ 372 named destinations out of 1000 (max. 500000)
+ 925 words of extra memory for PDF output out of 10000 (max. 10000000)
+
